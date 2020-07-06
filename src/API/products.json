@@ -1,0 +1,30 @@
+{
+    "Samsung": [
+        {
+            "name": "Samsung Galaxy A20"
+        }
+    ],
+    "Xiaomi": [
+        {
+            "name": "Xiaomi MI A1",
+            "procesador": "Intel Core ¡7",
+            "GPU": "Adreno 520",
+            "storage": "128GB",
+            "Expandible": true,
+            "Bateria": "5200mAh",
+            "Carga": "Carga Rápida 18W",
+            "patanlla": 6.5,
+            "quality": "FullHD+ 2280x1440",
+            "camara1": 1,
+            "camara1_quality": [48, 22, 2],
+            "camara2": 3,
+            "notch": "true",
+            "notch_type": "Gota",
+            "huella": true,
+            "huella_position": "trasera",
+            "USB": "typo C"
+
+        }
+    ]
+
+}
