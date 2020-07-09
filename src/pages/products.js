@@ -5,7 +5,7 @@ import ProductList from '../components/productList'
 function Product() {
     return <>
         <Header />
-        <ProductList />
+        <ProductList nombers="hola Mundo"/>
     </> 
 }
 

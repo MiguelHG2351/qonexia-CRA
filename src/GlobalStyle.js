@@ -25,6 +25,10 @@ export const GlobalStyles = createGlobalStyle`
         cursor: pointer;
     }
 
+    body {
+        overflow-x: hidden;
+    }
+
     :root {
         --width: 1440px;
         --bezel-colors: #e62427;

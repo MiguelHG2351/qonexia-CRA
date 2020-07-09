@@ -1,10 +1,11 @@
-import { useEffect } from 'react'
-// import API from '../API/index.json'
+import { useEffect, useState } from 'react'
+import API from '../API/carrousel.json'
 
-function useCarrousel(cards) {
+function useCarrousel(reference) {
+
+    const [images, setImages] = useState(0);
     useEffect(()=> {
-        console.log(API)
-        let card = scrollCard.current
+        let card = reference.current
         let interval = setTimeout(() => {
             switch (images) {
                 case 0:
@@ -57,9 +58,10 @@ function useCarrousel(cards) {
         }, 3000);
         setTimeout(()=> {
             card.style.transform = "translate(500px, 0)"
-        },2750)
-        return (() => clearInterval(interval))
+        },2500)
+        return (() => clearInterval(interval)) // eslint-disable-next-line
     }, [images])
+
 }
         
 

@@ -40,7 +40,7 @@ export const Header = styled.header`
     }
 `
 
-export const Slider = styled.div`
+export const Sidenav = styled.div`
     position: fixed;
     top: 0;
     left: 0;
@@ -53,11 +53,29 @@ export const Slider = styled.div`
     transition: all ease 0.3s;
     z-index: 5;
     transform: translateX(-3000px);
+
     &.active {
         transform: translateX(0);
     }
     & .profile {
         padding: 12px;
+        position: relative;
+        & .background {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            & img {
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+                padding: 0;
+                margin: 0;
+            }
+        }
+
         & img {
             border-radius: 50%;
             padding: 11px;
@@ -66,11 +84,11 @@ export const Slider = styled.div`
 
         & strong {
             font-size: 25px;
-        color: #000;
+        color: #fff;
         }
         & span {
             font-size: 14px;
-        color: #000;
+        color: #fff;
         }
     }
     & .header-nav {
@@ -107,10 +125,14 @@ export const Slider = styled.div`
 
     }
 
+    @media screen and (min-width: 768px) {
+        width: 75%;
+    }
+
 `
 
 export const Overlay = styled.div`
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     top: 0;

@@ -6,9 +6,15 @@ export const Header = styled.header`
     height: 100vh;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: 10% 30% 60%;
+    grid-template-areas: "menu menu" "title title" "list list";
     justify-content: center;
-    grid-template-areas: "menu menu" "title list";
+    align-items: center;
+    @media screen and (min-width: 992px) {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto 1fr;
+        grid-template-areas: "menu menu" "title list";
+    }
 `
 export const HeaderNav = styled.div`
     margin-top: 12px;
@@ -29,6 +35,11 @@ export const Background = styled.div`
     justify-content: center;
     box-sizing: content-box;
 
+    & img {
+        object-fit: cover;
+        background: #0b0b2a;
+    }
+
     & video {
         object-fit: cover;
         background: #0b0b2a;
@@ -36,24 +47,52 @@ export const Background = styled.div`
 `
 
 export const ListNav = styled.ul`
-    
-    display: flex;
-    justify-content: space-evenly;
-    width: 35%;
-    padding: 0;
 
-    & li {
-        list-style: none;
-        background: blue;
+    @media screen and (min-width: 275px) {
         display: flex;
-        align-items: center;
-        padding: 15px;
+        justify-content: flex-start;
+        width: 50%;
+        padding: 5px;
+        & li {
+            list-style: none;
+            background: blue;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-right: 12px;
+            & a {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
     }
 
-    & li a {
-        color: #fff;
-        text-decoration: none;
+    @media screen and (max-width: 1024px) {
+        & li {
+            padding: 8px;
+            & a {
+                font-size: 14px;
+            }
+        }
     }
+
+
+    @media screen and (min-width: 1440px) {
+        display: flex;
+        justify-content: space-evenly;
+        width: 35%;
+        padding: 0;
+
+        & li {
+            padding: 15px;
+            & a {
+                color: #fff;
+                text-decoration: none;
+                font-size: initial;
+            }
+        }
+    }
+
 `
 
 export const HeaderTitle = styled.div`
@@ -66,13 +105,21 @@ export const HeaderTitle = styled.div`
     flex-direction: column;
     font-size:21px;
     & h1 {
-        font-family: "Be Vietnam";
-        font-size: 2em;
-    }
-    & p {
-        font-family: "Be Vietnam";
         font-size: 1em;
     }
+
+    @media screen and (min-width: 1024px) {
+        & h1 {
+            font-family: "Be Vietnam";
+            font-size: 2em;
+        }
+        & p {
+            font-family: "Be Vietnam";
+            font-size: 1em;
+        }
+    }
+
+    
 `
 
 
@@ -104,40 +151,52 @@ export const BtnPrimary = styled.a`
 export const HeaderListCard = styled.div`
         grid-area: list;
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        max-height: 100%;
 `
 
 export const Card = styled.div`
-    color: greenyellow;
+
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 90vh;
-    width: 62%;
-    flex-wrap: wrap;
-    flex-direction: column;
-    flex-shrink: 0;
-    overflow: hidden;
-    clear: both;
-    /* white-space: nowrap; */
-    /* scroll-snap-type: x mandatory; */
-    scroll-behavior: smooth;
+        & .card-image {
+            display: flex;
+            justify-content: center;
+            & img {
+                margin-right: 12px;
+                border-radius: 12px;
+                width: 50%;
+                height: auto;
+                transition: all ease .2s;
+            }
+        }
 
-    &::-webkit-scrollbar {
-        display: none;
-    }
+    @media screen and (min-width: 992px) {
+        color: greenyellow;
+        flex-direction: column;
+        align-items: center;
+        width: 62%;
+        flex-shrink: 0;
+        overflow: hidden;
+        clear: both;
+        scroll-behavior: smooth;
 
-    & .card-image {
-        display: flex;
-        justify-content: center;
-    }
-    & .card-image img {
-        margin-right: 12px;
-        border-radius: 12px;
-        object-fit: cover;
-        width: 100%;
-        height: auto;
-        transition: all ease .2s;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        & .card-image {
+            & img {
+                margin-right: 12px;
+                border-radius: 12px;
+                width: 100%;
+                height: auto;
+                transition: all ease .2s;
+            }
+        }
+
     }
 `
