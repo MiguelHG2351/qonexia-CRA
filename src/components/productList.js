@@ -1,8 +1,8 @@
 import React, { useState }  from 'react'
 import styled from 'styled-components'
 // import img from '../static/images/MIA3.webp'
-import { borderAnimation } from '../GlobalStyle'
-import DescriptionPhone from './descriptionPhone'
+import { borderAnimation } from 'GlobalStyle'
+import DescriptionPhone from 'components/descriptionPhone'
 
 const ProductSection = styled.section`
     background: linear-gradient(to right ,#11b5e1, #1bd6d2, rgba(36, 100, 179, 0.7));
@@ -96,12 +96,14 @@ const ProductSection = styled.section`
     }
 
     & table {
+        max-width: 100%;
         width: 100%;
+        overflow-x: auto;
     }
 
     & table, td, tr {
-        border-collapse: collapse;
         border: 1px solid #2196f3;
+        border-collapse: collapse;
     }
 
     & td {
@@ -126,8 +128,7 @@ const ProductSection = styled.section`
 `
 
 function ProductList(props) {
-
-    console.log(props.nombers)
+    console.log(props)
 
     const [option, setOption] = useState(Number(localStorage.getItem("position")) || 1)
 
@@ -140,16 +141,16 @@ function ProductList(props) {
         </div>
         <div className="option">
             <div className="summary">
-                <button onClick={() => { setOption(1); localStorage.setItem("position",option);}} className="color">Colores</button>
-                <button onClick={() => { setOption(2); localStorage.setItem("position",option);}} className="description">Caracteristicas</button>
-                <button onClick={() => { setOption(3); localStorage.setItem("position",option);}} className="precio">Precio</button>
+                <button onClick={() => { setOption(1); localStorage.setItem("position",option); }} className="color">Colores</button>
+                <button onClick={() => { setOption(2); localStorage.setItem("position",option); }} className="description">Caracteristicas</button>
+                <button onClick={() => { setOption(3); localStorage.setItem("position",option); }} className="precio">Precio</button>
             </div>
             {
                 option === 1 ? 
                     <div className="colors">
-                        <button className="btn-primary"></button>
-                        <button className="btn-secondary"></button>
-                        <button className="btn-warining"></button>
+                        <button aria-hidden="true" className="btn-primary"></button>
+                        <button aria-hidden="true" className="btn-secondary"></button>
+                        <button aria-hidden="true" className="btn-warining"></button>
                     </div>
                 :
                 option === 2 ? <DescriptionPhone /> :

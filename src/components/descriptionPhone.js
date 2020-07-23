@@ -8,7 +8,7 @@ export default function DescriptionPhone() {
                         <tr>
                             <th></th>
                             <th>
-                                Xiaomi Redmin Note 8
+                                Xiaomi Redmi Note 8
                             </th>
                             <th></th>
                         </tr>
@@ -47,7 +47,7 @@ export default function DescriptionPhone() {
                         </tr>
                         <tr>
                             <td>Camara frontal</td>
-                            <td>1, notch->gota</td>
+                            <td>1, notch-&gt;gota</td>
                             <td>22mpx</td>
                         </tr>
                         <tr>

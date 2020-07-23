@@ -13,20 +13,23 @@ export const borderAnimation = keyframes`
 `
 
 export const GlobalStyles = createGlobalStyle`
+
     * {
         margin: 0;
         box-sizing: border-box;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Roboto', sans-serif, Arial;
+    }
+
+    -webkit-appearance: none;
+
+    ::-webkit-progress-bar {
+        background: red;    
     }
 
     button {
         outline: none;
         border: none;
         cursor: pointer;
-    }
-
-    body {
-        overflow-x: hidden;
     }
 
     :root {

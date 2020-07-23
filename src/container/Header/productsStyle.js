@@ -4,7 +4,7 @@ export const Header = styled.header`
     background: var(--background-header);
     color: #fff;
     padding: 15px;
-    height: 10vh;
+    height: 73px;
     display: flex;
     justify-content: space-between;
     box-shadow: var(--shadow);
@@ -38,6 +38,7 @@ export const Header = styled.header`
             display: none;
         }
     }
+
 `
 
 export const Sidenav = styled.div`
@@ -49,10 +50,15 @@ export const Sidenav = styled.div`
     height: 100vh;
     width: 90vw;
     background: #fff;
-    overflow: hidden;
+    overflow-y: auto;
     transition: all ease 0.3s;
     z-index: 5;
     transform: translateX(-3000px);
+
+    &::-webkit-scrollbar {
+        width: 8px;
+        background: red;
+    }
 
     &.active {
         transform: translateX(0);

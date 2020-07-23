@@ -1,7 +1,7 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { Header, Card, HeaderNav, Background, ListNav, HeaderTitle, HeaderListCard, BtnPrimary } from './style'
+import { Header, Card, HeaderNav, Background, HeaderTitle, HeaderListCard, BtnPrimary } from './style'
 import useCarrousel from "../../hooks/useCarrousel";
 import gif from '../../static/images/loading.gif'
 
@@ -12,12 +12,14 @@ function Headers() {
 
     // Custom Hooks
     useCarrousel(scrollCard);
+    let mediaQuery = matchMedia('(max-width: 576px)').matches
+    const [menu, setMenu] = useState(undefined)
 
     // JSX
     return <Header>
         <Background>
             {
-                matchMedia('(max-width: 614px)').matches // Tamaño estandar de la imagen
+                mediaQuery // Tamaño estandar de la imagen
                 ?
                 <img src="https://miguelhg2351.github.io/API/imagenes/backgroundMobile.webp" alt="Bienvenidos a qonexia" />
                 :
@@ -25,13 +27,14 @@ function Headers() {
 
             }
         </Background>
-        <HeaderNav>
-            <ListNav>
+        <button className="toggle-menu" onClick={() => menu===undefined?setMenu("active"):setMenu(undefined)}><i className="material-icons">menu</i></button>
+        <HeaderNav className={menu}>
+            <ul className="list-nav">
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/products">Products</Link></li>
                 <li><a target="_blank" rel="noopener noreferrer" href="https://facebook.com/QONEXIA">Social Media</a></li>
                 <li><Link to="/trends">Tendencias</Link></li>
-            </ListNav>
+            </ul>
         </HeaderNav>
         <HeaderTitle>
             <h1>Bienvenidos a Qonexia</h1>
@@ -49,4 +52,4 @@ function Headers() {
 
 }
 
-export default Headers
+export default React.memo(Headers)

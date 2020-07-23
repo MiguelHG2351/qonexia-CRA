@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@0,500;0,700;1,400&display=swap" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#09f" />
     <meta
       name="description"
@@ -30,18 +30,19 @@
     <title>Qonexia | Tecnología que une</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <p>Lo sentimos pero el sitio no funciona por que ha desactivado JavaScript, lenguaje escencia para este sitio, favor activarlo.</p>
+      <h2>¿No sabe como?</h2>
+      <ul>
+        <li>Ve a confuguración</li>
+        <li>Configuración de sitios web</li>
+        <li>y en la opción de JavaScript active la opción de habilitar</li>
+        <li>o verifique si es solo en este sitio el problema y en la misma opción de config de sitios web entre a https://qonexia.com/ y active JavaScript</li>
+      </ul>
+      <p>Si no encuentra la opción por estar en un navegador direfente a chrome o firefox, puede usar el buscador inteligente que proporciona la Configuración y buscar JavaScript para activarlo.</p>
+      <p>Gracias por visitarnos!!!</p>
+    </noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
     <script>
       CSS.paintWorklet.addModule('bezel.js');
       if ('serviceWorker' in navigator) {

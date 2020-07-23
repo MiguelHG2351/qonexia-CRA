@@ -21,7 +21,6 @@ function useCarrousel(reference) {
                 case 2:
                     card.src=API[3].url
                         card.style.transform = "translate(0, 0)"
-                        console.log("ComponentDidMount")
                         setImages(3)
                         break;
                 case 3:
@@ -57,7 +56,7 @@ function useCarrousel(reference) {
             }
         }, 3000);
         setTimeout(()=> {
-            card.style.transform = "translate(500px, 0)"
+            card.style.transform = "translate(3000px, 0)"
         },2500)
         return (() => clearInterval(interval)) // eslint-disable-next-line
     }, [images])
