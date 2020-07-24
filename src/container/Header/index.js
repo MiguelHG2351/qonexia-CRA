@@ -39,7 +39,7 @@ function Headers() {
         <HeaderTitle>
             <h1>Bienvenidos a Qonexia</h1>
             <p>Visita la gran variedad de dispositivos moviles</p>
-            <BtnPrimary href="/catalogo">Catalogo</BtnPrimary>
+            <BtnPrimary href="/catalogo">Catálogo</BtnPrimary>
         </HeaderTitle>
         <HeaderListCard>
             <Card>

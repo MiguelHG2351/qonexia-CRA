@@ -1,7 +1,7 @@
 import React, { Suspense, lazy,  } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import { GlobalStyles } from 'GlobalStyle'
-import API from 'API/products.json'
+import {ContextProducts} from 'context/descriptionContext'
 
 // Component
 const Home = lazy(() => import('../pages/index'))
@@ -9,20 +9,24 @@ const Products = lazy(() => import('../pages/products'))
 const Trends = lazy(() => import('../pages/trends'))
 const NotFound = lazy(() => import('../pages/notFound'))
 
-const APIProducts = React.createContext("HolaMundo")
+const Preloader = () => {
+  return <div style={{width:"100%", height: "100vh", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center"}}>
+    <h2>Loading...</h2>
+  </div>
+}
 
 function App() {
   return (
     <Router>
       <GlobalStyles />
-      <Suspense fallback={<div><h2>Loading</h2></div>}>
+      <Suspense fallback={ <Preloader/> }>
       <Switch>
         <Redirect from="/hola" to="/" />
         <Route exact path="/" component={Home} />
         <Route exact path="/trends" component={Trends} />
-        <APIProducts.Provider value={API}>
+        <ContextProducts>
           <Route exact path="/products" component={Products} />
-        </APIProducts.Provider>
+        </ContextProducts>
         <Route component={NotFound} />
       </Switch>
     </Suspense> 

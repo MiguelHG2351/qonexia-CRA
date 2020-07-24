@@ -27,7 +27,8 @@
             "USB": "typo C",
             "Android": 10,
             "capa": "MIUI 11",
-            "precio": 200
+            "precio": 200,
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/MI9.webp"
         },
         {
             "name": "Xiaomi POCO F2 Prox",
@@ -51,7 +52,8 @@
             "USB": "typo C",
             "Android": 10,
             "capa": "MIUI 11",
-            "precio": 595
+            "precio": 595,
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/MI9.webp"
         },
         {
             "name": "Xiaomi Redmi Note 8 Pro",
@@ -76,7 +78,8 @@
             "Android": 10,
             "capa": "MIUI 11",
             "precio": 595,
-            "NFC": "Efectivamente"
+            "NFC": "Efectivamente",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/MI9.webp"
         },
         {
             "name": "Xiaomi Mi Note 10 Lite",
@@ -101,7 +104,8 @@
             "Android": 10,
             "capa": "MIUI 11",
             "precio": 595,
-            "NFC": "Efectivamente"
+            "NFC": "Efectivamente",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/MI9.webp"
         }
     ]
 

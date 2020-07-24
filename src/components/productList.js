@@ -1,8 +1,9 @@
-import React, { useState }  from 'react'
+import React, { useState, useContext, useEffect }  from 'react'
 import styled from 'styled-components'
 // import img from '../static/images/MIA3.webp'
 import { borderAnimation } from 'GlobalStyle'
 import DescriptionPhone from 'components/descriptionPhone'
+import {DescriptionData} from 'context/descriptionContext'
 
 const ProductSection = styled.section`
     background: linear-gradient(to right ,#11b5e1, #1bd6d2, rgba(36, 100, 179, 0.7));
@@ -110,6 +111,12 @@ const ProductSection = styled.section`
         padding: 8px;
     }
 
+    .precios {
+        color: purple;
+        margin: auto;
+        text-align: center;
+        margin: 12px;
+    }
 
     @media screen and (max-width: 300px) {
         & .summary {
@@ -121,14 +128,35 @@ const ProductSection = styled.section`
         & table {
             font-size: 20px;
         }
-
     }
+
+    /* Detecta el modo oscuro en el navegador o en el sistema operativo (Windows es más usado) */
+
+    /* 
+    @media (prefers-color-scheme: dark) {
+            background: red;
+    } */
+
+    /*
+    @media (prefers-color-scheme: light) {
+            background: orange;
+    } */
 
 
 `
 
-function ProductList(props) {
-    console.log(props)
+function ProductList() {
+
+    useEffect(() => {
+        (async function () {
+        const api = await fetch("http://localhost:5000")
+        const data = await api.json()
+        console.log(data)
+    }) ()
+
+    })
+    const context = useContext(DescriptionData)
+    console.log(context.Xiaomi)
 
     const [option, setOption] = useState(Number(localStorage.getItem("position")) || 1)
 
@@ -141,9 +169,9 @@ function ProductList(props) {
         </div>
         <div className="option">
             <div className="summary">
-                <button onClick={() => { setOption(1); localStorage.setItem("position",option); }} className="color">Colores</button>
-                <button onClick={() => { setOption(2); localStorage.setItem("position",option); }} className="description">Caracteristicas</button>
-                <button onClick={() => { setOption(3); localStorage.setItem("position",option); }} className="precio">Precio</button>
+                <button onClick={() => { setOption(1); localStorage.setItem("position", option) }} className="color">Colores</button>
+                <button onClick={() => { setOption(2); localStorage.setItem("position", option) }} className="description">Caracteristicas</button>
+                <button onClick={() => { setOption(3); localStorage.setItem("position", option) }} className="precio">Precio</button>
             </div>
             {
                 option === 1 ? 
@@ -153,11 +181,13 @@ function ProductList(props) {
                         <button aria-hidden="true" className="btn-warining"></button>
                     </div>
                 :
-                option === 2 ? <DescriptionPhone /> :
+                option === 2 ? 
+                    <DescriptionPhone /> 
+                :
                 option === 3 ? 
                 <div className="precios">
                     <h2>256$</h2>
-                    <p>Pagos con CREDEX, tajreta de crédito y efectivo</p>
+                    <p>Pagos con CREDEX, tajeta de crédito y efectivo</p>
                 </div>
                 :
                 console.log("Error")
