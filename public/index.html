@@ -44,18 +44,18 @@
     </noscript>
     <div id="main"></div>
     <script>
-      CSS.paintWorklet.addModule('bezel.js');
-      if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
-              navigator.serviceWorker.register('service-worker.js')
-              .then(register => {
-                  console.log(register)
-              })
-              .catch(err => {
-                  console.log(err)
-              })
-          })
-      }
+      // CSS.paintWorklet.addModule('bezel.js');
+      // if ('serviceWorker' in navigator) {
+      //     window.addEventListener('load', () => {
+      //         navigator.serviceWorker.register('service-worker.js')
+      //         .then(register => {
+      //             console.log(register)
+      //         })
+      //         .catch(err => {
+      //             console.log(err)
+      //         })
+      //     })
+      // }
     </script>
   </body>
 </html>

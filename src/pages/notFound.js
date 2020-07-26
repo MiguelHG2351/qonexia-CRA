@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Container = styled.div`
-    background: linear-gradient(to left, red, green, blue);
+    background: linear-gradient(135deg, red, green, blue), linear-gradient(45deg, blue, green, red);
     height: 100vh;
     display: flex;
     align-items: center;
@@ -32,6 +32,7 @@ const Container = styled.div`
     & ul li a {
         color: #fff;
         text-decoration: none;
+        transition: all ease 0.3s;
     }
     & ul li a:hover {
         color: #fff;
@@ -43,7 +44,7 @@ const Container = styled.div`
 function NotFound() {
     return <Container>
         <h2>Dirección no encontrada 404 Not found</h2>
-        <img src="https://miguelhg2351.github.io/API/logos/qonexia.jpg" alt="Logo de la empresa :)" title="Logo de la empresa :)" />
+        <img src="https://media.giphy.com/media/6uGhT1O4sxpi8/giphy.gif" alt="No encontramos su sitio" title="No encontramos su sitio" />
         <p>Lista de rutas del sito: </p>
         <ul>
             <li><Link to="/">Inicio</Link></li>

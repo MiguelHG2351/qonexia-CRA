@@ -188,6 +188,30 @@ export const HeaderTitle = styled.div`
         font-size: 1em;
     }
 
+    a {
+        margin-top: 20px;
+        background-color: #1b1fb0;
+        color: #fff;
+        width: 50%;
+        outline: none;
+        border: none;
+        border-radius: 12px;
+        padding: 12px;
+        display: inline-block;
+        cursor: pointer;
+        font-size: 1em;
+        transition: all ease .2s;
+        text-align: center;
+        text-decoration: none;
+        &:hover {
+            background-color: #2c2fac;
+            transform: scale(.9);
+        }
+        &:active {
+            font-size: .9em;
+        }
+    }
+
     /* Media query basado en bootstrap | SMALL SCREEN */
 
     @media screen and (max-width: 576px) {
@@ -219,31 +243,6 @@ export const HeaderTitle = styled.div`
     }
 
     
-`
-
-
-export const BtnPrimary = styled.a`
-    margin-top: 20px;
-    background-color: #1b1fb0;
-    color: #fff;
-    width: 50%;
-    outline: none;
-    border: none;
-    border-radius: 12px;
-    padding: 12px;
-    display: inline-block;
-    cursor: pointer;
-    font-size: 1em;
-    transition: all ease .2s;
-    text-align: center;
-    text-decoration: none;
-    &:hover {
-        background-color: #2c2fac;
-        transform: scale(.9);
-    }
-    &:active {
-        font-size: .9em;
-    }
 `
 
 export const HeaderListCard = styled.div`

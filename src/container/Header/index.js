@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { Header, Card, HeaderNav, Background, HeaderTitle, HeaderListCard, BtnPrimary } from './style'
+import { Header, Card, HeaderNav, Background, HeaderTitle, HeaderListCard } from './style'
 import useCarrousel from "../../hooks/useCarrousel";
 import gif from '../../static/images/loading.gif'
 
@@ -39,7 +39,7 @@ function Headers() {
         <HeaderTitle>
             <h1>Bienvenidos a Qonexia</h1>
             <p>Visita la gran variedad de dispositivos moviles</p>
-            <BtnPrimary href="/catalogo">Catálogo</BtnPrimary>
+            <Link to="/catalogo">Catálogo</Link>
         </HeaderTitle>
         <HeaderListCard>
             <Card>

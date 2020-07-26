@@ -1,4 +1,7 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
+import context from 'API/product.json'
+
 
 function Form() {
 
@@ -10,8 +13,19 @@ function Form() {
         trending
     }
 
+    console.log(keyword, categories)
+
+    const history = useHistory()
+
+    function getData(formData) {
+        const devices = formData.get("devices");
+        history.push(devices)
+    }
+
     function searchForm(e) {
         e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        getData(formData);
     }
 
     return <form onSubmit={searchForm}>

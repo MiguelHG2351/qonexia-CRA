@@ -60,7 +60,7 @@ function Head() {
                 </ul>
             </Sidenav>
             <form className="form" onSubmit={e => e.preventDefault()}>
-                <button><i className="material-icons">search</i></button>
+                <button type="button"><i className="material-icons">search</i></button>
                 <input placeholder="Buscar"/>
             </form>
         </Header>

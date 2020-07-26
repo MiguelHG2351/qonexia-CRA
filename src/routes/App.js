@@ -2,6 +2,7 @@ import React, { Suspense, lazy,  } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import { GlobalStyles } from 'GlobalStyle'
 import {ContextProducts} from 'context/descriptionContext'
+import Catalogo from 'pages/catalogo'
 
 // Component
 const Home = lazy(() => import('../pages/index'))
@@ -15,22 +16,30 @@ const Preloader = () => {
   </div>
 }
 
+function RouteProducts() {
+  return (
+        <ContextProducts>
+          <Route exact path="/products" component={Products} />
+          <Route exact path="/catalogo" component={Catalogo} />
+        </ContextProducts>
+  )
+}
+
 function App() {
   return (
+    <Suspense fallback={ <Preloader/> }>
     <Router>
       <GlobalStyles />
-      <Suspense fallback={ <Preloader/> }>
       <Switch>
         <Redirect from="/hola" to="/" />
         <Route exact path="/" component={Home} />
         <Route exact path="/trends" component={Trends} />
-        <ContextProducts>
-          <Route exact path="/products" component={Products} />
-        </ContextProducts>
-        <Route component={NotFound} />
+        <RouteProducts />
+        <Route exact path="/NotFound" component={NotFound} />
+        <Redirect to="/NotFound" />
       </Switch>
-    </Suspense> 
     </Router>
+    </Suspense> 
   );
 }
 

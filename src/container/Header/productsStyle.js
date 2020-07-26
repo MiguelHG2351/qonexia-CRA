@@ -14,7 +14,7 @@ export const Header = styled.header`
         display: flex;
         align-items: center;
         & button {
-            margin-right: 33px;
+            margin-right: 20px;
             border: none;
             background: transparent;
             color: #fff;

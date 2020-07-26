@@ -1,9 +1,9 @@
-import React, { useState, useContext, useEffect }  from 'react'
+import React, { useState, useContext }  from 'react'
 import styled from 'styled-components'
 // import img from '../static/images/MIA3.webp'
 import { borderAnimation } from 'GlobalStyle'
 import DescriptionPhone from 'components/descriptionPhone'
-import {DescriptionData} from 'context/descriptionContext'
+import DescriptionData from 'context/descriptionContext'
 
 const ProductSection = styled.section`
     background: linear-gradient(to right ,#11b5e1, #1bd6d2, rgba(36, 100, 179, 0.7));
@@ -147,16 +147,8 @@ const ProductSection = styled.section`
 
 function ProductList() {
 
-    useEffect(() => {
-        (async function () {
-        const api = await fetch("http://localhost:5000")
-        const data = await api.json()
-        console.log(data)
-    }) ()
-
-    })
     const context = useContext(DescriptionData)
-    console.log(context.Xiaomi)
+    console.log(context)
 
     const [option, setOption] = useState(Number(localStorage.getItem("position")) || 1)
 
