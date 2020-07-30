@@ -34,10 +34,19 @@ export const Header = styled.header`
                 user-select: none;
             }
         }
-        & input {
+        
+        & .search {
             display: none;
+            & input {
+            outline: none;
+            padding: 8px;
+            }
+        }
+        & .search.active {
+        display: block;
         }
     }
+
 
 `
 

@@ -16,15 +16,6 @@ const Preloader = () => {
   </div>
 }
 
-function RouteProducts() {
-  return (
-        <ContextProducts>
-          <Route exact path="/products" component={Products} />
-          <Route exact path="/catalogo" component={Catalogo} />
-        </ContextProducts>
-  )
-}
-
 function App() {
   return (
     <Suspense fallback={ <Preloader/> }>
@@ -34,7 +25,12 @@ function App() {
         <Redirect from="/hola" to="/" />
         <Route exact path="/" component={Home} />
         <Route exact path="/trends" component={Trends} />
-        <RouteProducts />
+        <ContextProducts>
+          <Route exact path="/products/" component={Products} />
+          <Route exact path="/products/:random/" component={Products} />
+          <Route exact path="/products/:brand/:devices/" component={Products} />
+          <Route exact path="/catalogo" component={Catalogo} />
+        </ContextProducts>
         <Route exact path="/NotFound" component={NotFound} />
         <Redirect to="/NotFound" />
       </Switch>

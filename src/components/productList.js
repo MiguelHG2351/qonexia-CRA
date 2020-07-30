@@ -1,9 +1,11 @@
-import React, { useState, useContext }  from 'react'
+import React, { useState, useContext } from 'react'
+import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 // import img from '../static/images/MIA3.webp'
 import { borderAnimation } from 'GlobalStyle'
 import DescriptionPhone from 'components/descriptionPhone'
 import DescriptionData from 'context/descriptionContext'
+import processData from 'data/'
 
 const ProductSection = styled.section`
     background: linear-gradient(to right ,#11b5e1, #1bd6d2, rgba(36, 100, 179, 0.7));
@@ -18,7 +20,7 @@ const ProductSection = styled.section`
     }
 
     & .card-image img {
-        width: 100%; 
+        width: 100%;
         height: auto;
         user-select: none;
     }
@@ -148,16 +150,21 @@ const ProductSection = styled.section`
 function ProductList() {
 
     const context = useContext(DescriptionData)
-    console.log(context)
+    
+    //console.log(context)
 
     const [option, setOption] = useState(Number(localStorage.getItem("position")) || 1)
 
+    const params = useParams()
+
+    const data = processData(context, params)
+
     return <ProductSection className="productList">
         <div className="card-image">
-            <img src="https://miguelhg2351.github.io/API/XIAOMI/MI9.webp" alt="Xiaomi MI A3" draggable={false} />
+            <img src={data.img} alt="Xiaomi MI A3" draggable={false} />
         </div>
         <div className="name">
-            <h3>Xiaomi MI A3</h3>
+            <h3>{data.name}</h3>
         </div>
         <div className="option">
             <div className="summary">
@@ -174,11 +181,11 @@ function ProductList() {
                     </div>
                 :
                 option === 2 ? 
-                    <DescriptionPhone /> 
+                    <DescriptionPhone data={data} />
                 :
                 option === 3 ? 
                 <div className="precios">
-                    <h2>256$</h2>
+                    <h2>{data.precio}$</h2>
                     <p>Pagos con CREDEX, tajeta de crédito y efectivo</p>
                 </div>
                 :

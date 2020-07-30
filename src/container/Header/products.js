@@ -1,10 +1,17 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useContext } from 'react'
 import { Header, Sidenav, Overlay } from 'container/Header/productsStyle'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import baseContext from 'context/descriptionContext'
 
 function Head() {
 
     const [active, setActive] = useState(null)
+    const [formActive, setFormActive] = useState("search");
+
+
+    const history = useHistory()
+
+    const context = useContext(baseContext)
 
     function loadSideNav() {
         setActive(null)
@@ -14,6 +21,52 @@ function Head() {
     
     function openMenu() {
         setActive("active")
+    }
+
+    function getData(formData) {
+    const search = formData.get("search");
+    //console.log(search);
+    //console.log(context);
+
+    // Que use un custom hooks le envie los datos y devulva un objeto con la url
+    //let coincide =
+    context.all.forEach((e, index) => {
+      if (e.name.indexOf(search) <= 8 && e.name.indexOf(search) >= 0) {
+        console.log(e.name);
+        let brand =
+          index <= 23
+            ? "Xiaomi"
+            : index <= 46
+            ? "Samsung"
+            : index <= 57
+            ? "Apple"
+            : index <= 65
+            ? "Huawei"
+            : index <= 70
+            ? "Realme"
+            : index <= 74
+            ? "Nintendo"
+            : index <= 75
+            ? "GoPro"
+            : index <= 75
+            ? "Amazfit"
+            : "default";
+        history.push(`/Products/${brand}/${e.name}`);
+        //console.log(e.name.indexOf(search));
+      }
+    });
+
+    }
+
+    function searchDevices(e) {
+        e.preventDefault()
+        const formData = new FormData(e.currentTarget)
+        getData(formData)
+    }
+
+    function toggleMenu() {
+        if (formActive === "search active") setFormActive("search");
+        else setFormActive("search active");
     }
 
     return <Fragment>
@@ -59,9 +112,11 @@ function Head() {
                     <li><i className="material-icons">laptop</i><Link to="/catalogo#laptop">Mac MacOS Catalina</Link></li>
                 </ul>
             </Sidenav>
-            <form className="form" onSubmit={e => e.preventDefault()}>
-                <button type="button"><i className="material-icons">search</i></button>
-                <input placeholder="Buscar"/>
+            <form className="form" onSubmit={searchDevices}>
+                <button type="button" onClick={toggleMenu}><i className="material-icons">search</i></button>
+                <div className={formActive}>
+                    <input name="search" type="text" placeholder="Buscar"/>
+                </div>
             </form>
         </Header>
         <Overlay className={active} onClick={loadSideNav} />

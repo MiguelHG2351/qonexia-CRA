@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import context from 'API/product.json'
+import context from 'context/descriptionContext'
 
 
 function Form() {

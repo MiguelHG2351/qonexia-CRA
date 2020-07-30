@@ -1,67 +1,61 @@
-import React from 'react'
+import React from "react";
 
-export default function DescriptionPhone() {
-    return <>
-            <div className="descriptions">
-                <table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>
-                                Xiaomi Redmi Note 8
-                            </th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                Procesador
-                            </td>
-                            <td>
-                                Intel Core ¡7
-                            </td>
-                            <td>
-                                Adreno 520
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Almacanamiento</td>
-                            <td>128gb interna</td>
-                            <td>Expandible</td>
-                        </tr>
-                        <tr>
-                            <td>Bateria</td>
-                            <td>5200mAh</td>
-                            <td>cargar rápida 18w</td>
-                        </tr>
-                        <tr>
-                            <td>Patanlla</td>
-                            <td>6.5 pulgadas</td>
-                            <td>FullHD+ 2280*1440p</td>
-                        </tr>
-                        <tr>
-                            <td>Camara trasera</td>
-                            <td>3 camaras</td>
-                            <td>48mpx + 22mpx + 2px</td>
-                        </tr>
-                        <tr>
-                            <td>Camara frontal</td>
-                            <td>1, notch-&gt;gota</td>
-                            <td>22mpx</td>
-                        </tr>
-                        <tr>
-                            <td>Sensor de huella</td>
-                            <td>Si</td>
-                            <td>trasero</td>
-                        </tr>
-                        <tr>
-                            <td>USB</td>
-                            <td>TIPO C</td>
-                            <td>18 watts</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+export default function DescriptionPhone({ data }) {
+  return (
+    <>
+      <div className="descriptions">
+        <table>
+          <thead>
+            <tr>
+              <th />
+              <th>{data.name}</th>
+              <th />
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Procesador</td>
+              <td>{data.procesador}</td>
+              <td>{data.GPU}</td>
+            </tr>
+            <tr>
+              <td>Almacanamiento</td>
+              <td>{data.storage}</td>
+              <td>{data.expandible}</td>
+            </tr>
+            <tr>
+              <td>Bateria</td>
+              <td>{data.bateria}</td>
+              <td>{data.carga}</td>
+            </tr>
+            <tr>
+              <td>Patanlla</td>
+              <td>{data.pantalla} pulgadas</td>
+              <td>{data.quality}</td>
+            </tr>
+            <tr>
+              <td>Camara trasera</td>
+              <td>{data.camara2} camaras</td>
+              <td>{data.camara2_quality}</td>
+            </tr>
+            <tr>
+              <td>Camara frontal</td>
+              <td>{data.camara1}, {data.notch_type}</td>
+              <td>{data.camara1_quality}MP</td>
+            </tr>
+            <tr>
+              <td>Sensor de huella</td>
+              <td>{data.huella}</td>
+              <td>{data.huella_position}</td>
+            </tr>
+            <tr>
+              <td>USB</td>
+              <td>{data.USB}</td>
+              <td>18 watts</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </>
+  );
 }
