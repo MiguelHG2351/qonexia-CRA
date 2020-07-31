@@ -1,7 +1,6 @@
 export default function(getRoute, getData) {
     // console.log(getRoute, getData);
     let data;
-    debugger
     if (getRoute.category.brand[getData.brand] !== undefined) {
       getRoute.category.brand[getData.brand].forEach((element, index) => {
         if (
@@ -10,7 +9,11 @@ export default function(getRoute, getData) {
         ) {
           data = element;
         }
+        // data = getRoute.default[0];
       });
+      if(data === undefined) {
+        data = getRoute.default[0]
+      }
     } else {
       data = getRoute.default[0];
     }

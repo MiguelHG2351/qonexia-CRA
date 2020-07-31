@@ -301,7 +301,7 @@
         "Android": 10,
         "capa": "MIUI 11",
         "NFC": "Efectivamente",
-        "precio": 595,
+        "precio": 250,
         "img": "https://miguelhg2351.github.io/API/XIAOMI/MI9.webp",
         "colores": [""]
       },
@@ -327,7 +327,7 @@
         "Android": 10,
         "capa": "MIUI 11",
         "NFC": "Efectivamente",
-        "precio": 595,
+        "precio": 345,
         "trailer": "",
         "img": "https://miguelhg2351.github.io/API/XIAOMI/MI9.webp"
       }

@@ -12,6 +12,14 @@ function Head() {
     const history = useHistory()
 
     const context = useContext(baseContext)
+    console.log(context.all.sort((a, b) => {
+        if(a.precio > b.precio) {
+            return 1;
+        } else if(a.precio < b.precio){
+            return -1;
+        }
+        return 0;
+    }))
 
     function loadSideNav() {
         setActive(null)

@@ -2,11 +2,14 @@ import React, { Suspense, lazy,  } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import { GlobalStyles } from 'GlobalStyle'
 import {ContextProducts} from 'context/descriptionContext'
-import Catalogo from 'pages/catalogo'
 
 // Component
 const Home = lazy(() => import('../pages/index'))
 const Products = lazy(() => import('../pages/products'))
+const Catalogo = lazy(() => import('pages/catalogo'))
+const RedirectToCatalogo = lazy(() => import('pages/redirectToCatalogo'))
+const RedirectToProducts = lazy(() => import('pages/redirectToProducts'))
+const Agenda = lazy(() => import('../pages/agenda'))
 const Trends = lazy(() => import('../pages/trends'))
 const NotFound = lazy(() => import('../pages/notFound'))
 
@@ -23,15 +26,16 @@ function App() {
       <GlobalStyles />
       <Switch>
         <Redirect from="/hola" to="/" />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/trends" component={Trends} />
+        <Route exact path="/" component={ Home } />
+        <Route exact path="/trends" component={ Trends }  />
+        <Route exact path="/agenda" component={ Agenda } />
         <ContextProducts>
-          <Route exact path="/products/" component={Products} />
-          <Route exact path="/products/:random/" component={Products} />
-          <Route exact path="/products/:brand/:devices/" component={Products} />
-          <Route exact path="/catalogo" component={Catalogo} />
+          <Route exact path="/products/" component={ RedirectToCatalogo } />
+          <Route exact path="/products/:brand/" component={ RedirectToProducts } />
+          <Route exact path="/products/:brand/:devices/" component={ Products } />
+          <Route exact path="/catalogo" component={ Catalogo } />
         </ContextProducts>
-        <Route exact path="/NotFound" component={NotFound} />
+        <Route exact path="/NotFound" component={ NotFound } />
         <Redirect to="/NotFound" />
       </Switch>
     </Router>
