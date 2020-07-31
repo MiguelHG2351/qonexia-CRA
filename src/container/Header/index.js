@@ -31,7 +31,7 @@ function Headers() {
         <HeaderNav className={menu}>
             <ul className="list-nav">
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/products">Products</Link></li>
+                <li><Link to="/products/Xiaomi/Xiaomi Redmi Note 8 Pro">Products</Link></li>
                 <li><a target="_blank" rel="noopener noreferrer" href="https://facebook.com/QONEXIA">Social Media</a></li>
                 <li><Link to="/trends">Tendencias</Link></li>
             </ul>

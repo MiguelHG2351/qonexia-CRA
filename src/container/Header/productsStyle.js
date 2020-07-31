@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { inputForm } from 'GlobalStyle'
 
 export const Header = styled.header`
     background: var(--background-header);
@@ -25,10 +26,17 @@ export const Header = styled.header`
         
     }
     & .form {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        flex-direction: row-reverse;
         & button {
             border: none;
-            background: none;
+            background: transparent;
             color: #fff;
+            width: auto;
             & i {
                 font-size: 30px;
                 user-select: none;
@@ -38,13 +46,17 @@ export const Header = styled.header`
         & .search {
             display: none;
             & input {
+            transition: all ease 0.3s;
+            animation: ${ inputForm } 0.4s forwards;
             outline: none;
             padding: 8px;
             }
         }
+
         & .search.active {
         display: block;
         }
+        
     }
 
 

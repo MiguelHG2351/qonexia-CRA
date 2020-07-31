@@ -12,6 +12,17 @@ export const borderAnimation = keyframes`
     }
 `
 
+export const inputForm = keyframes`
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+
+`
+
 export const GlobalStyles = createGlobalStyle`
 
     * {
