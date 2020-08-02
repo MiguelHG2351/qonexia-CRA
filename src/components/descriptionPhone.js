@@ -30,7 +30,7 @@ export default function DescriptionPhone({ data }) {
             </tr>
             <tr>
               <td>Pantalla</td>
-              <td>{data.pantalla} pulgadas</td>
+              <td>{data.screen} pulgadas</td>
               <td>{data.quality}</td>
             </tr>
             <tr>
