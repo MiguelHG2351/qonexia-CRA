@@ -12,14 +12,6 @@ function Head() {
     const history = useHistory()
 
     const context = useContext(baseContext)
-    console.log(context.all.sort((a, b) => {
-        if(a.precio > b.precio) {
-            return 1;
-        } else if(a.precio < b.precio){
-            return -1;
-        }
-        return 0;
-    }))
 
     function loadSideNav() {
         setActive(null)
@@ -38,10 +30,11 @@ function Head() {
 
     // Que use un custom hooks le envie los datos y devulva un objeto con la url
     //let coincide =
+    let brand;
+    let name;
     context.all.forEach((e, index) => {
       if (e.name.indexOf(search) <= 8 && e.name.indexOf(search) >= 0) {
-        console.log(e.name);
-        let brand =
+        brand =
           index <= 23
             ? "Xiaomi"
             : index <= 46
@@ -59,10 +52,11 @@ function Head() {
             : index <= 75
             ? "Amazfit"
             : "default";
-        history.push(`/Products/${brand}/${e.name}`);
-        //console.log(e.name.indexOf(search));
-      }
+            name = e.name
+            console.log(e.name);
+        }
     });
+    history.push(`/Products/${brand}/${name}`);
 
     }
 

@@ -129,7 +129,7 @@ export const Sidenav = styled.div`
             display: flex;
             padding: 0 12px;
             align-items: center;
-            transition: background ease 0.2s;
+            transition: background ease-in 0.2s;
             & a {
                 padding: 15px;
                 color: #000;
@@ -143,6 +143,7 @@ export const Sidenav = styled.div`
         }
 
         & li:hover {
+            will-change: background;
             background: var(--background-header);
             color: #fff;
             & a {

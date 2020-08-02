@@ -3,7 +3,7 @@ import React from "react";
 export default function DescriptionPhone({ data }) {
   return (
     <>
-      <div className="descriptions">
+      <div className="description">
         <table>
           <thead>
             <tr>
@@ -24,12 +24,12 @@ export default function DescriptionPhone({ data }) {
               <td>{data.expandible}</td>
             </tr>
             <tr>
-              <td>Bateria</td>
+              <td>Batería</td>
               <td>{data.bateria}</td>
               <td>{data.carga}</td>
             </tr>
             <tr>
-              <td>Patanlla</td>
+              <td>Pantalla</td>
               <td>{data.pantalla} pulgadas</td>
               <td>{data.quality}</td>
             </tr>

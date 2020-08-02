@@ -127,8 +127,43 @@ const ProductSection = styled.section`
     }
 
     @media screen and (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 80vh 20vh;
+        grid-template-areas: "images Menu" 
+                              "name Menu";
+
+        align-items: start;
+        & .card-image {
+            grid-area: images;
+            height: 100%;
+            & img {
+                max-width: 100%;
+                height: 100%;
+            }
+        }
+
+        & .name {
+            grid-area: name;
+        }
+
+        & .option {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            grid-column: 2 / span 3;
+            grid-area: Menu;
+            height: 100%;
+        }
+
+        & .description {
+            height: 100%;
+        }
+
         & table {
             font-size: 20px;
+            height: 90%;
         }
     }
 
@@ -150,7 +185,7 @@ const ProductSection = styled.section`
 function ProductList() {
 
     const context = useContext(DescriptionData)
-    
+    console.log(context)
     //console.log(context)
 
     const [option, setOption] = useState(Number(localStorage.getItem("position")) || 1)
@@ -175,9 +210,9 @@ function ProductList() {
             {
                 option === 1 ? 
                     <div className="colors">
-                        <button aria-hidden="true" className="btn-primary"></button>
-                        <button aria-hidden="true" className="btn-secondary"></button>
-                        <button aria-hidden="true" className="btn-warining"></button>
+                        {
+                            data.colores.map((colors, index) => (<button aria-hidden="true" style={{background: colors}} key={index}></button>))
+                        }
                     </div>
                 :
                 option === 2 ? 
