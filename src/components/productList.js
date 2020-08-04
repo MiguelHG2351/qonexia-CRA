@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 // import img from '../static/images/MIA3.webp'
-import { borderAnimation } from 'GlobalStyle'
+import { borderAnimation, opacityAnimation } from 'GlobalStyle'
 import DescriptionPhone from 'components/descriptionPhone'
 import DescriptionData from 'context/descriptionContext'
 import processData from 'data/'
@@ -13,6 +13,8 @@ const ProductSection = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    animation: ${opacityAnimation} 0.4s;
+
 
     & .card-image {
         display: flex;
@@ -112,7 +114,7 @@ const ProductSection = styled.section`
     & td {
         padding: 8px;
     }
-
+    
     .precios {
         color: purple;
         margin: auto;
@@ -216,7 +218,9 @@ function ProductList() {
                     </div>
                 :
                 option === 2 ? 
-                    <DescriptionPhone data={data} />
+                    <div className="description">
+                        <DescriptionPhone data={data} />
+                    </div>
                 :
                 option === 3 ? 
                 <div className="precios">

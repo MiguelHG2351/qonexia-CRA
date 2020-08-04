@@ -1,61 +1,41 @@
 import React from "react";
+import Device from 'components/device'
+import Band from 'components/band'
+import Charger from 'components/charger'
+import PowerBank from 'components/powerBank'
+import Usb from 'components/usb'
+import NotFound from 'pages/notFound'
+
+function Description({data}) {
+  return <>
+  {
+    data.type === "device"
+    ?
+      <Device data={ data } />
+    : data.type === "band"
+    ?
+      <Band data={ data } />
+    : data.type === "charger"
+    ?
+      <Charger data={ data } />
+    : data.type === "powe_bank"
+    ?
+      <PowerBank data={ data } />
+    :
+      data.type === "USB"
+    ?
+      <Usb data={ data } />
+    :
+      <NotFound />
+  }
+  </>
+}
 
 export default function DescriptionPhone({ data }) {
+  debugger
   return (
-    <>
-      <div className="description">
-        <table>
-          <thead>
-            <tr>
-              <th />
-              <th>{data.name}</th>
-              <th />
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Procesador</td>
-              <td>{data.procesador}</td>
-              <td>{data.GPU}</td>
-            </tr>
-            <tr>
-              <td>Almacanamiento</td>
-              <td>{data.storage}</td>
-              <td>{data.expandible}</td>
-            </tr>
-            <tr>
-              <td>Batería</td>
-              <td>{data.bateria}</td>
-              <td>{data.carga}</td>
-            </tr>
-            <tr>
-              <td>Pantalla</td>
-              <td>{data.screen} pulgadas</td>
-              <td>{data.quality}</td>
-            </tr>
-            <tr>
-              <td>Camara trasera</td>
-              <td>{data.camara2} camaras</td>
-              <td>{data.camara2_quality}</td>
-            </tr>
-            <tr>
-              <td>Camara frontal</td>
-              <td>{data.camara1}, {data.notch_type}</td>
-              <td>{data.camara1_quality}MP</td>
-            </tr>
-            <tr>
-              <td>Sensor de huella</td>
-              <td>{data.huella}</td>
-              <td>{data.huella_position}</td>
-            </tr>
-            <tr>
-              <td>USB</td>
-              <td>{data.USB}</td>
-              <td>18 watts</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </>
+    <div className="description">
+      <Description data={data} />
+    </div>
   );
 }

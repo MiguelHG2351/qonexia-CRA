@@ -23,6 +23,15 @@ export const inputForm = keyframes`
 
 `
 
+export const opacityAnimation = keyframes`
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+`
+
 export const GlobalStyles = createGlobalStyle`
 
     * {

@@ -1,5 +1,5 @@
 import React, { Suspense, lazy,  } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { GlobalStyles } from 'GlobalStyle'
 import {ContextProducts} from 'context/descriptionContext'
 
@@ -14,7 +14,7 @@ const Trends = lazy(() => import('../pages/trends'))
 const NotFound = lazy(() => import('../pages/notFound'))
 
 const Preloader = () => {
-  return <div style={{width:"100%", height: "100vh", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center"}}>
+  return <div style={ { width:"100%", height: "100vh", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center"} }>
     <h2>Loading...</h2>
   </div>
 }
@@ -22,23 +22,21 @@ const Preloader = () => {
 function App() {
   return (
     <Suspense fallback={ <Preloader/> }>
-    <Router>
+    <ContextProducts>
+      <Router>
       <GlobalStyles />
-      <Switch>
-        <Redirect from="/hola" to="/" />
-        <Route exact path="/" component={ Home } />
-        <Route exact path="/trends" component={ Trends }  />
-        <Route exact path="/agenda" component={ Agenda } />
-        <ContextProducts>
-          <Route exact path="/products/" component={ RedirectToCatalogo } />
-          <Route exact path="/products/:brand/" component={ RedirectToProducts } />
-          <Route exact path="/products/:brand/:devices/" component={ Products } />
-          <Route exact path="/catalogo" component={ Catalogo } />
-        </ContextProducts>
-        <Route exact path="/NotFound" component={ NotFound } />
-        <Redirect to="/NotFound" />
-      </Switch>
-    </Router>
+        <Switch>
+            <Route exact component={ Home } path="/" />
+            <Route exact component={ Trends } path="/trends"  />
+            <Route exact component={ Agenda } path="/agenda" />
+            <Route exact component={ RedirectToCatalogo } path="/products/" />
+            <Route exact component={ RedirectToProducts } path="/products/:brand/" />
+            <Route exact component={ Products } path="/products/:brand/:devices/" />
+            <Route exact component={ Catalogo } path="/catalogo" />
+            <Route component={ NotFound } path="*" />
+          </Switch>
+        </Router>
+      </ContextProducts>
     </Suspense> 
   );
 }
