@@ -12,6 +12,8 @@ const RedirectToProducts = lazy(() => import('pages/redirectToProducts'))
 const Agenda = lazy(() => import('../pages/agenda'))
 const Trends = lazy(() => import('../pages/trends'))
 const NotFound = lazy(() => import('../pages/notFound'))
+const Footer = lazy(() => import('../container/footer/'))
+
 
 const Preloader = () => {
   return <div style={ { width:"100%", height: "100vh", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center"} }>
@@ -35,6 +37,7 @@ function App() {
             <Route exact component={ Catalogo } path="/catalogo" />
             <Route component={ NotFound } path="*" />
           </Switch>
+          <Footer/>
         </Router>
       </ContextProducts>
     </Suspense> 

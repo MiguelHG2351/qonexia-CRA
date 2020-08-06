@@ -32,10 +32,7 @@ function Description({data}) {
 }
 
 export default function DescriptionPhone({ data }) {
-  debugger
   return (
-    <div className="description">
       <Description data={data} />
-    </div>
   );
 }

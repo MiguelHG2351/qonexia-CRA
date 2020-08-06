@@ -1,57 +1,90 @@
-import React from 'react'
+import React from "react";
+import styled from "styled-components";
 
-export default function Device({data}) {
-    return <>
-        <table>
-          <thead>
-            <tr>
-              <th />
-              <th>{data.name}</th>
-              <th />
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Procesador</td>
-              <td>{data.procesador}</td>
-              <td>{data.GPU}</td>
-            </tr>
-            <tr>
-              <td>Almacanamiento</td>
-              <td>{data.storage}</td>
-              <td>{data.expandible}</td>
-            </tr>
-            <tr>
-              <td>Batería</td>
-              <td>{data.bateria}</td>
-              <td>{data.carga}</td>
-            </tr>
-            <tr>
-              <td>Pantalla</td>
-              <td>{data.screen} pulgadas</td>
-              <td>{data.quality}</td>
-            </tr>
-            <tr>
-              <td>Camara trasera</td>
-              <td>{data.camara2} camaras</td>
-              <td>{data.camara2_quality}</td>
-            </tr>
-            <tr>
-              <td>Camara frontal</td>
-              <td>{data.camara1}, {data.notch_type}</td>
-              <td>{data.camara1_quality}MP</td>
-            </tr>
-            <tr>
-              <td>Sensor de huella</td>
-              <td>{data.huella}</td>
-              <td>{data.huella_position}</td>
-            </tr>
-            <tr>
-              <td>USB</td>
-              <td>{data.USB}</td>
-              <td>18 watts</td>
-            </tr>
-          </tbody>
-        </table>
-</>
+const ContainerDescription = styled.div`
+  height: 80%;
+  & .nameProduct {
+    text-align: center;
+    height: 10%;
+    padding: 12px;
+  }
+  & .info {
+    height: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    & div:not(.colors) {
+      padding: 8px;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    & .colors {
+      grid-column: 1 / 3;
+      & button {
+        border-radius: 12px;
+        padding: 12px;
+        border: 1px solid #fff;
+        background-origin: content-box;
+        margin: 8px;
+      }
+    }
+  }
+`;
+
+export default function Device({ data }) {
+  return (
+    <ContainerDescription>
+      <div className="nameProduct">
+        <strong>{data.name}</strong>
+      </div>
+      <div className="info">
+        <div>
+          <p>{data.procesador}</p>
+          <p>{data.GPU}</p>
+        </div>
+        <div>
+          <p>{data.storage}</p>
+          <p>{data.expandible}</p>
+        </div>
+        <div>
+          <p>{data.bateria}</p>
+          <p>{data.carga}</p>
+        </div>
+        <div>
+          <p>{data.screen} pulgadas</p>
+          <p>{data.quality}</p>
+        </div>
+        <div>
+          <p>{data.camara2} camaras</p>
+          <p>{data.camara2_quality}</p>
+        </div>
+        <div>
+          <p>
+            {data.camara1}, {data.notch_type}
+          </p>
+          <p>{data.camara1_quality}MP</p>
+        </div>
+        <div>
+          <p>{data.huella}</p>
+          <p>{data.huella_position}</p>
+        </div>
+        <div>
+          <p>{data.USB}</p>
+        </div>
+        <div className="colors">
+          {data.colores.map((colors, index) => (
+            <button
+              aria-hidden="true"
+              style={{ background: colors }}
+              key={index}
+            ></button>
+          ))}
+        </div>
+      </div>
+    </ContainerDescription>
+  );
 }

@@ -53,7 +53,6 @@ function Head() {
             ? "Amazfit"
             : "default";
             name = e.name
-            console.log(e.name);
         }
     });
     history.push(`/Products/${brand}/${name}`);

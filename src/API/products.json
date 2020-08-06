@@ -235,7 +235,7 @@
             "NFC": "Efectivamente",
             "precio": 435,
             "type": "device",
-            "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi10/section20-s2.jpg",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/note10.webp",
             "colores": ["black"]
           },
           {
@@ -571,7 +571,7 @@
           "precio": 435,
           "NFC": "No NFC",
           "type": "device",
-          "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi10/section20-s2.jpg",
+          "img": "https://miguelhg2351.github.io/API/XIAOMI/note10.webp",
           "colores": ["black"]
         },
         {
@@ -864,7 +864,7 @@
         "precio": 435,
         "NFC": "No NFC",
         "type": "device",
-        "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi10/section20-s2.jpg",
+        "img": "https://miguelhg2351.github.io/API/XIAOMI/note10.webp",
         "colores": ["black"]
       },
       {
@@ -1207,7 +1207,7 @@
         "precio": 435,
         "NFC": "No NFC",
         "type": "device",
-        "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi10/section20-s2.jpg",
+        "img": "https://miguelhg2351.github.io/API/XIAOMI/note10.webp",
         "colores": ["black"]
       }
     ]

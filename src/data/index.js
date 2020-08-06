@@ -19,7 +19,6 @@ export default function(getRoute, getData) {
     }
 
     return data;
-    
   }
   
 //   console.log(context.all.sort((a, b) => {
