@@ -40,16 +40,89 @@ const FooterSite = styled.footer`
             }
         }
     }
-    .social-media {
+    & .social-media {
       margin-bottom: 30px;
+      display: flex;
     }
     & .form-footer {
-        margin: auto;
-        & input {
-          color: #fff;
+      --padding: 12px;
+      --font: 14px;
+        margin: 30px 0;
+        width: 100%;
+        & .form-footer-container {
+          box-shadow: 0 0 5px 5px #09f;
+          & input {
+            /* padding: 8px; */
+            font-size: var(--font);
+            padding: var(--padding);
+            border: none;
+            background: transparent;
+            outline: blue;
+            color: #fff;
+            width: 80%;
+          }
+          & button {
+            width: 20%;
+            padding: var(--padding);
+            text-align: center;
+            outline: none;
+            margin: 0;
+            border: none;
+            background: #1f27b2;
+            color: #fff;
+          }
         }
     }
   }
+
+  @media screen and (min-width: 992px) {
+    & .container {
+      width: auto;
+      grid-template-columns: 20% 40% 40%;
+      grid-template-rows: repeat(2, 1fr);
+      align-items: center;
+      justify-content: center;
+      grid-template-areas: "logo navigation form" "social navigation form";
+      gap: 5px;
+      & .logo {
+        grid-area: logo;
+        padding: 18px;
+        max-width: 100%;
+      }
+
+      & .section-site {
+        grid-area: navigation;
+      }
+      & .form-footer {
+        --padding: 16px 12px;
+        grid-area: form;
+        width: calc(100% - (var(--padding) * 4));
+        & .form-footer-container {
+          & input {
+            width: 80%;
+          }
+          & button {
+            width: 20%;
+          }
+        }
+      }
+
+      & .social-media {
+        margin: 0;
+        grid-area: social;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        height: 100%;
+        & a {
+          & img {
+            width: 150%;
+          }
+        }
+      }
+    
+    }
+  }
+
   @media screen and (max-width: 576px) {
     & .container {
     gap: 20px;
@@ -59,11 +132,10 @@ const FooterSite = styled.footer`
     }
 
       & .social-media {
-          display: flex;
           justify-content: center;
           grid-row: 4;
           & img {
-              width: 15%;
+              width: 70%;
               margin: 0 12px;
           }
       }
@@ -76,25 +148,15 @@ const FooterSite = styled.footer`
           }
       }
       & .form-footer {
-        box-shadow: 0 0 5px 5px #09f;
-        width: fit-content;
-        & input {
-          padding: 8px;
-          border: none;
-          background: transparent;
-          outline: blue;
-        }
-        & button {
-          padding: 8px;
-          outline: none;
-          margin: 0;
-          border: none;
-          background: #1f27b2;
-          color: #fff;
-        }
+        --padding: 10px;
+        --font: 18px;
+
+        /* width: fit-content; */
+
       }
     }
   }
+
 `;
 
 function Footer() {
@@ -102,12 +164,15 @@ function Footer() {
     <FooterSite>
       <div className="container">
         <div className="logo">
-          <h2>Gracias por visitarnos!</h2>
           <img src={logo} alt="Logo de nuestra empresa" />
         </div>
         <div className="social-media">
-          <img src={facebook} alt="Visitanos en Facebook" />
-          <img src={instagram} alt="Visitanos en Instagram" />
+          <a href="https://facebook.com/Qonexia" target="_blank" rel="noopener noreferrer" >
+            <img src={facebook} alt="Visitanos en Facebook" />
+          </a>
+          <a href="https://instagram.com/Qonexia" target="_blank" rel="noopener noreferrer" >
+            <img src={instagram} alt="Visitanos en Instagram" />
+          </a>
         </div>
         <ul className="section-site">
           <li>
@@ -135,13 +200,16 @@ function Footer() {
           <Link to="/support">Soporte</Link>
           </li>
         </ul>
-        <form className="form-footer">
-          <input
-            type="text"
-            name="email"
-            placeholder="Ingresa tu correo electionico"
-          />
-          <button type="submit">Enviar</button>
+        <form className="form-footer" onSubmit={e => e.preventDefault()}>
+          <div className="form-footer-container">
+            <input
+              type="text"
+              name="email"
+              placeholder="Subscribete para recibir novedades por correo"
+              required
+            />
+            <button type="submit">Enviar</button>
+          </div>
         </form>
       </div>
     </FooterSite>

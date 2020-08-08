@@ -32,6 +32,20 @@ export const opacityAnimation = keyframes`
     }
 `
 
+export const backExpand = keyframes`
+    25% {
+        background-image: linear-gradient(to right, blue 25%, transparent);
+    }
+
+    100% {
+        background-image: linear-gradient(to right, blue 30%, blue 70%);
+    }
+
+    /* 100% {
+        background-image: linear-gradient(to right, blue 50%, blue 50%);
+    } */
+`
+
 export const GlobalStyles = createGlobalStyle`
 
     * {

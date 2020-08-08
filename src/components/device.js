@@ -4,7 +4,8 @@ import styled from "styled-components";
 const ContainerDescription = styled.div`
   height: 80%;
   & .nameProduct {
-      color: #fff;
+    color: var(--color-text);
+    font-weight: 700;
     text-align: center;
     height: 10%;
     padding: 12px;
@@ -15,9 +16,8 @@ const ContainerDescription = styled.div`
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     align-items: center;
-      color: #fff;
-    /* & div {
-    } */
+    color: var(--color-text);
+    font-weight: 700;
     & div:not(.colors) {
       padding: 8px;
       align-items: center;
@@ -35,6 +35,15 @@ const ContainerDescription = styled.div`
         background-origin: content-box;
         margin: 8px;
       }
+    }
+  }
+  @media screen and (min-width: 992px) {
+    .nameProduct {
+      font-size: 20px;
+      /* #00558f */
+    }
+    .info {
+      font-size: 20px;
     }
   }
 `;

@@ -27,7 +27,7 @@
             "NFC": "Efectivamente",
             "precio": 595,
             "type": "device",
-            "img": "https://miguelhg2351.github.io/API/XIAOMI/MI9.webp",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/pocof2pro.webp",
             "colores": [
                   "linear-gradient(45deg, #47336d 5% , #7b669e 100%)",
                   "linear-gradient(45deg, #c9c7c1, #e7eff4)",
@@ -59,7 +59,7 @@
             "NFC": "Efectivamente",
             "precio": 550,
             "type": "device",
-            "img": "https://miguelhg2351.github.io/API/XIAOMI/MI9.webp",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/pocof2pro.webp",
             "colores": [
                   "linear-gradient(45deg, #47336d 5% , #7b669e 100%)",
                   "linear-gradient(45deg, #c9c7c1, #e7eff4)",
@@ -152,7 +152,7 @@
             "precio": 250,
             "type": "device",
             "trailer": "https://cdn.cnbj1.fds.api.mi-img.com/g7g7g7/Redmi%20Note%208%20Pro-Product%20video-EU,UK,RU%20AND%20OTHER-Clean.mp4?GalaxyAccessKeyId=5151729087601&Expires=9223372036854775807&Signature=3B5myRwXhN4z+xDSmkcLZh3Dw+8=",
-            "img": "https://miguelhg2351.github.io/API/XIAOMI/RedmiNote8Pro.webp",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/redminote8.webp",
             "colores": ["linear-gradient(90deg, #130adf, #588feb)"]
           },
           {
@@ -180,7 +180,7 @@
             "precio": 250,
             "type": "device",
             "trailer": "https://cdn.cnbj1.fds.api.mi-img.com/g7g7g7/Redmi%20Note%208%20Pro-Product%20video-EU,UK,RU%20AND%20OTHER-Clean.mp4?GalaxyAccessKeyId=5151729087601&Expires=9223372036854775807&Signature=3B5myRwXhN4z+xDSmkcLZh3Dw+8=",
-            "img": "https://miguelhg2351.github.io/API/XIAOMI/RedmiNote8Pro.webp",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/redminote8.webp",
             "colores": ["black", "white", "blue"]
           },
           {
@@ -207,7 +207,7 @@
             "precio": 395,
             "type": "device",
             "NFC": "Efectivamente",
-            "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/minote10lite.webp",
             "colores": ["black", "linear-gradient(90deg, #4b4d8a, #5e65b1)", "white"]
 
           },
@@ -320,7 +320,7 @@
             "precio": 265,
             "NFC": "Efectivamente",
             "type": "device",
-            "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/redminote9pro.webp",
             "colores": [
               "linear-gradient(90deg, rgb(60 56 69) 5%, #01bbab 90%)",
               "white"
@@ -598,7 +598,7 @@
           "precio": 395,
           "NFC": "Efectivamente",
           "type": "device",
-          "img": "https://miguelhg2351.github.io/API/XIAOMI/MI9.webp",
+          "img": "https://miguelhg2351.github.io/API/XIAOMI/minote10lite.webp",
           "colores": ["black", "linear-gradient(90deg, #4b4d8a, #5e65b1)", "white"]
         }
       ],
@@ -627,7 +627,7 @@
           "NFC": "",
           "precio": 550,
           "type": "device",
-          "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/poco-f2-pro/phone1.png",
+          "img": "https://miguelhg2351.github.io/API/XIAOMI/pocof2pro.webp",
           "colores": [
             "linear-gradient(45deg, #47336d 5% , #7b669e 100%)",
             "linear-gradient(45deg, #c9c7c1, #e7eff4)",
@@ -661,7 +661,7 @@
         "capa": "MIUI 11",
         "precio": 595,
         "type": "device",
-        "img": "https://miguelhg2351.github.io/API/XIAOMI/MI9.webp",
+        "img": "https://miguelhg2351.github.io/API/XIAOMI/pocof2pro.webp",
         "colores": [
               "linear-gradient(45deg, #47336d 5% , #7b669e 100%)",
               "linear-gradient(45deg, #c9c7c1, #e7eff4)",
@@ -692,7 +692,7 @@
         "capa": "MIUI 11",
         "precio": 550,
         "type": "device",
-        "img": "https://miguelhg2351.github.io/API/XIAOMI/MI9.webp",
+        "img": "https://miguelhg2351.github.io/API/XIAOMI/pocof2pro.webp",
         "colores": [
               "linear-gradient(45deg, #47336d 5% , #7b669e 100%)",
               "linear-gradient(45deg, #c9c7c1, #e7eff4)",
@@ -781,7 +781,7 @@
         "precio": 250,
         "type": "device",
         "trailer": "https://cdn.cnbj1.fds.api.mi-img.com/g7g7g7/Redmi%20Note%208%20Pro-Product%20video-EU,UK,RU%20AND%20OTHER-Clean.mp4?GalaxyAccessKeyId=5151729087601&Expires=9223372036854775807&Signature=3B5myRwXhN4z+xDSmkcLZh3Dw+8=",
-        "img": "https://miguelhg2351.github.io/API/XIAOMI/RedmiNote8Pro.webp",
+        "img": "https://miguelhg2351.github.io/API/XIAOMI/redminote8.webp",
         "colores": ["blue"]
       },
       {
@@ -809,7 +809,7 @@
         "precio": 250,
         "type": "device",
         "trailer": "https://cdn.cnbj1.fds.api.mi-img.com/g7g7g7/Redmi%20Note%208%20Pro-Product%20video-EU,UK,RU%20AND%20OTHER-Clean.mp4?GalaxyAccessKeyId=5151729087601&Expires=9223372036854775807&Signature=3B5myRwXhN4z+xDSmkcLZh3Dw+8=",
-        "img": "https://miguelhg2351.github.io/API/XIAOMI/RedmiNote8Pro.webp",
+        "img": "https://miguelhg2351.github.io/API/XIAOMI/redminote8.webp",
         "colores": ["black", "white", "blue"]
       },
       {
@@ -837,7 +837,7 @@
         "precio": 345,
         "type": "device",
         "trailer": "",
-        "img": "https://miguelhg2351.github.io/API/XIAOMI/MI9.webp",
+        "img": "https://miguelhg2351.github.io/API/XIAOMI/minote10lite.webp",
         "colores": ["black", "linear-gradient(90deg, #4b4d8a, #5e65b1)", "white"]
       },
       {

@@ -33,3 +33,5 @@ export default function(getRoute, getData) {
 // for(let data in api.category.brand.Xiaomi[4]) {console.log(api.category.brand.Xiaomi[5][data])}
 // guardar en el localstorage la cantidad de veces que una persona visita un telefono para recomendarselo cada vez que vaya a otro
 // Algorítmo para calcular según el precio y la potencia del dispositivo que tipo de telefonos le gusta a una perosona
+// Los productos con venta flash tendran un background rojizo
+// Utilizar slice para tener un string más corto para dar las sugerencias

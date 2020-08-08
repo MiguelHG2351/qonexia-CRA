@@ -55,7 +55,11 @@ function Head() {
             name = e.name
         }
     });
-    history.push(`/Products/${brand}/${name}`);
+    if(brand === undefined || name === undefined) {
+        history.push("/notFound");
+    } else {
+        history.push(`/Products/${brand}/${name}`);
+    }
 
     }
 
