@@ -235,7 +235,7 @@
             "NFC": "Efectivamente",
             "precio": 435,
             "type": "device",
-            "img": "https://miguelhg2351.github.io/API/XIAOMI/note10.webp",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/minote10.webp",
             "colores": ["black"]
           },
           {
@@ -350,7 +350,7 @@
             "precio": 270,
             "NFC": "Efectivamente",
             "type": "device",
-            "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/redminote9pro.webp",
             "colores": [
               "linear-gradient(90deg, rgb(88 77 115) 5%, rgb(92 68 68) 90%)",
               "linear-gradient(90deg, rgb(60, 56, 69) 5%, rgb(1 37 252) 90%)",
@@ -381,7 +381,7 @@
             "precio": 235,
             "NFC": "Efectivamente",
             "type": "device",
-            "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/redminote9pro.webp",
             "colores": [
               "linear-gradient(90deg, rgb(60 56 69) 5%, #01bbab 90%)",
               "linear-gradient(90deg, rgb(60, 56, 69) 5%, rgb(77 66 66) 90%)",
@@ -412,7 +412,7 @@
             "precio": 220,
             "NFC": "Efectivamente",
             "type": "device",
-            "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/redminote9.webp",
             "colores": ["linear-gradient(90deg, rgb(60 56 69) 5%, #01bbab 90%)", "linear-gradient(90deg, rgb(198 192 192) 5%, rgb(81 72 72) 90%)", "white"]
           },
           {
@@ -439,7 +439,7 @@
             "precio": 340,
             "NFC": "Efectivamente",
             "type": "device",
-            "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/Redmik30.webp",
             "colores": ["#146dbd", "#c3258a"]
           },
           {
@@ -466,7 +466,7 @@
             "precio": 340,
             "NFC": "Efectivamente",
             "type": "device",
-            "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/Redmik30.webp",
             "colores": ["#146dbd", "#c3258a"]
           },
           {
@@ -493,7 +493,7 @@
             "precio": 315,
             "NFC": "Efectivamente",
             "type": "device",
-            "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/black-shark.webp",
             "colores": ["#0F0F0F"]
           },
           {
@@ -505,7 +505,7 @@
             "OS": "Android y ¡OS",
             "precio": 55,
             "type": "band",
-            "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/Mi-band-4.webp",
             "colores": ["#0F0F0F"]
           },
           {
@@ -517,7 +517,7 @@
             "OS": "Android y ¡OS",
             "precio": 55,
             "type": "band",
-            "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/Xiaomi-Mijia.webp",
             "colores": ["linear-gradient(9deg, black, #607D8B)"]
           },
           {
@@ -571,7 +571,7 @@
           "precio": 435,
           "NFC": "No NFC",
           "type": "device",
-          "img": "https://miguelhg2351.github.io/API/XIAOMI/note10.webp",
+          "img": "https://miguelhg2351.github.io/API/XIAOMI/minote10.webp",
           "colores": ["black"]
         },
         {
@@ -864,7 +864,7 @@
         "precio": 435,
         "NFC": "No NFC",
         "type": "device",
-        "img": "https://miguelhg2351.github.io/API/XIAOMI/note10.webp",
+        "img": "https://miguelhg2351.github.io/API/XIAOMI/minote10.webp",
         "colores": ["black"]
       },
       {
@@ -918,7 +918,7 @@
         "precio": 285,
         "NFC": "Efectivamente",
         "type": "device",
-        "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+        "img": "https://miguelhg2351.github.io/API/XIAOMI/redminote9pro.webp",
         "colores": [
           "linear-gradient(90deg, rgb(60 56 69) 5%, #01bbab 90%)",
           "linear-gradient(90deg, rgb(198 192 192) 5%, rgb(81 72 72) 90%)",
@@ -949,7 +949,7 @@
         "precio": 265,
         "NFC": "Efectivamente",
         "type": "device",
-        "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+        "img": "https://miguelhg2351.github.io/API/XIAOMI/redminote9pro.webp",
         "colores": [
           "linear-gradient(90deg, rgb(60 56 69) 5%, #01bbab 90%)",
           "white"
@@ -979,7 +979,7 @@
         "precio": 270,
         "NFC": "Efectivamente",
         "type": "device",
-        "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+        "img": "https://miguelhg2351.github.io/API/XIAOMI/redminote9pro.webp",
         "colores": [
           "linear-gradient(90deg, rgb(88 77 115) 5%, rgb(92 68 68) 90%)",
           "linear-gradient(90deg, rgb(60, 56, 69) 5%, rgb(1 37 252) 90%)",
@@ -1010,7 +1010,7 @@
         "precio": 235,
         "NFC": "Efectivamente",
         "type": "device",
-        "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+        "img": "https://miguelhg2351.github.io/API/XIAOMI/redminote9pro.webp",
         "colores": [
           "linear-gradient(90deg, rgb(60 56 69) 5%, #01bbab 90%)",
           "linear-gradient(90deg, rgb(60, 56, 69) 5%, rgb(77 66 66) 90%)",
@@ -1041,7 +1041,7 @@
         "precio": 220,
         "NFC": "Efectivamente",
         "type": "device",
-        "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+        "img": "https://miguelhg2351.github.io/API/XIAOMI/redminote9.webp",
         "colores": ["linear-gradient(90deg, rgb(60 56 69) 5%, #01bbab 90%)", "linear-gradient(90deg, rgb(198 192 192) 5%, rgb(81 72 72) 90%)", "white"]
     },
     {
@@ -1068,7 +1068,7 @@
       "precio": 340,
       "NFC": "Efectivamente",
       "type": "device",
-      "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+      "img": "https://miguelhg2351.github.io/API/XIAOMI/Redmik30.webp",
       "colores": ["#146dbd", "#c3258a"]
     },
     {
@@ -1095,7 +1095,7 @@
       "precio": 340,
       "NFC": "Efectivamente",
       "type": "device",
-      "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+      "img": "https://miguelhg2351.github.io/API/XIAOMI/Redmik30.webp",
       "colores": ["#146dbd", "#c3258a"]
     },
     {
@@ -1122,7 +1122,7 @@
       "precio": 315,
       "NFC": "Efectivamente",
       "type": "device",
-      "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+      "img": "https://miguelhg2351.github.io/API/XIAOMI/black-shark.webp",
       "colores": ["#0F0F0F"]
       },
       {
@@ -1134,7 +1134,7 @@
         "OS": "Android y ¡OS",
         "precio": 55,
         "type": "band",
-        "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+        "img": "https://miguelhg2351.github.io/API/XIAOMI/Mi-band-4.webp",
         "colores": ["#0F0F0F"]
       },
       {
@@ -1146,7 +1146,7 @@
         "OS": "Android y ¡OS",
         "precio": 65,
         "type": "band",
-        "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+        "img": "https://miguelhg2351.github.io/API/XIAOMI/Xiaomi-Mijia.webp",
         "colores": ["#0F0F0F"]
       },
       {
@@ -1207,7 +1207,7 @@
         "precio": 435,
         "NFC": "No NFC",
         "type": "device",
-        "img": "https://miguelhg2351.github.io/API/XIAOMI/note10.webp",
+        "img": "https://miguelhg2351.github.io/API/XIAOMI/minote10.webp",
         "colores": ["black"]
       }
     ]

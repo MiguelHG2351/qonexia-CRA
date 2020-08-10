@@ -94,7 +94,7 @@ const ProductSection = styled.section`
             }
             vertical-align: middle;
             font-weight: 700;
-            font-size: 22px;
+            font-size: 18px;
             & img {
                 width: 20%;
             }
@@ -173,7 +173,6 @@ const ProductSection = styled.section`
             background: orange;
     } */
 
-
 `
 
 function ProductList() {
@@ -186,7 +185,7 @@ function ProductList() {
     const data = processData(context, params)
 
     let similars = [];
-    console.log(params.devices.slice(0, 15))
+    console.log(data.img)
     context.all.forEach((e) => {
                      if (e.name.indexOf(params.devices.slice(0, 8)) <= 8 && e.name.indexOf(params.devices.slice(0, 8)) >= 0) {
                            similars.push(e)
@@ -207,7 +206,7 @@ function ProductList() {
             <DescriptionPhone data={data} />
             <div className="precios">
                 <h2>{data.precio}$</h2>
-                <p>Pagos con CREDEX, tajeta de crédito y efectivo</p>
+                <p>Pagos con CREDEX, tajeta de crédito y efectivos</p>
             </div>
         </div>
         <div className="recommendations">
@@ -215,21 +214,13 @@ function ProductList() {
             <div className="recomendationDevice">
                 {
                     similars.map((id, index) => (
+                        id.name !== data.name &&
                         <Link to={`${id.name}`} key={index}>
-                             <img src={id.img} alt={id.name} />
+                             <img loading="lazy" src={id.img} alt={id.name} />
                              <p>{id.name}</p>
                          </Link>
                     )) 
-                    // console.log(similars)
                 }
-                {/* <Link to={`${data.img}`}>
-                    <img src="https://miguelhg2351.github.io/API/XIAOMI/RedmiNote8Pro.webp" />
-                    <p>Xiaomi Redmi Note 8</p>
-                </Link>
-                <Link to={`${data.img}`}>
-                    <img src="https://miguelhg2351.github.io/API/XIAOMI/RedmiNote8Pro.webp" />
-                    <p>Xiaomi Redmi Note 8</p>
-                </Link> */}
             </div>
         </div>
     </ProductSection>
