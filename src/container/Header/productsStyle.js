@@ -44,17 +44,32 @@ export const Header = styled.header`
         }
         
         & .search {
+            position: absolute;
+            width: 50%;
             display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            & .close-attachment {
+                cursor: pointer;
+                user-select: none;
+                background: #fff;
+                & i {
+                    color: #000;
+                    padding: 4px;
+                }
+            }
             & input {
             transition: all ease 0.3s;
             animation: ${ inputForm } 0.4s forwards;
             outline: none;
             padding: 8px;
+            border: none;
             }
         }
 
         & .search.active {
-        display: block;
+        display: flex;
         }
         
     }

@@ -10,152 +10,159 @@ import processData from 'data/'
 const ProductSection = styled.section`
     /* background: linear-gradient(to right ,#11b5e1, #1bd6d2, rgba(36, 100, 179, 0.7)); */
     --color-text: #00558f;
-    background: linear-gradient(to right ,#1cd0b3,#54ddd5,#29c7ca);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    animation: ${opacityAnimation} 0.4s;
-
-
-    & .card-image {
+    & .container {
         display: flex;
-        flex-wrap: wrap;
-    }
-
-    & .card-image img {
-        width: 100%;
-        height: auto;
-        user-select: none;
-    }
-
-    & .name {
-        color: rgba(255, 255, 255, 0.8);
-    }
-
-    /* & .colors button {
-      
-    } */
-
-    & .name {
-        text-align: center;
-        background-image: linear-gradient(to right, #1ebcff, blue);
-        padding: 22px;
-    }
-
-    & .option {
-        margin-top: 10px;
-        display: flex;
-        justify-content: center;
         flex-direction: column;
-    }
-
-    & .colors {
-        display: flex;
-        margin-top: 20px;
         justify-content: center;
-    }
-    
-    .precios {
-        color: purple;
-        margin: auto;
-        text-align: center;
-        margin: 12px;
-    }
+        animation: ${opacityAnimation} 0.4s;
 
-    .recommendations {
-        &::selection {
-            color: #fff;
-        }
-        color: var(--color-text);
-        width: 90%;
-        margin: auto;
-        grid-column: 1 / span 2;
-        width: 100%;
-        & .recomendationDevice {
-            display: grid;
-            grid-template-columns: 1fr;
-            & a {
-                &:focus {
-                    color: #fff;
-                }
-                &:hover {
-                    animation: ${backExpand} 0.3s ease-in;
-                    transition: all ease 0.3s;
-                    color: #fff;
-                    animation-fill-mode: forwards;
-                }
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-decoration: none;
-                box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
-                padding: 8px;
-                margin: 20px;
-            }
-            vertical-align: middle;
-            font-weight: 700;
-            font-size: 18px;
-            & img {
-                width: 20%;
-            }
-            & p {
-            }
-        }
-    }
 
-    @media screen and (max-width: 300px) {
-        & .summary {
-            font-size: 15px;
-        }
-    }
-
-    @media screen and (min-width: 768px) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto auto;
-        grid-template-areas: "images Menu" 
-                              "name Menu";
-
-        align-items: start;
         & .card-image {
-            grid-area: images;
-            height: 100%;
-            & img {
-                max-width: 100%;
-                height: auto;
-            }
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        & .card-image img {
+            width: 100%;
+            height: auto;
+            user-select: none;
         }
 
         & .name {
-            grid-area: name;
+            color: rgba(255, 255, 255, 0.8);
+        }
+    
+        & .name {
+            text-align: center;
+            background-image: linear-gradient(to right, #1ebcff, blue);
+            padding: 22px;
         }
 
         & .option {
-            margin: 0;
+            margin-top: 10px;
             display: flex;
+            justify-content: center;
             flex-direction: column;
-            justify-content: flex-start;
-            grid-column: 2 / span 3;
-            grid-area: Menu;
-            height: 100%;
         }
-        & .recommendations {
-            .recomendationDevice {
-                grid-template-columns: 1fr 1fr 1fr;
+
+        & .colors {
+            display: flex;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .precios {
+            color: purple;
+            margin: auto;
+            text-align: center;
+            margin: 12px;
+        }
+
+        .recommendations {
+            &::selection {
+                color: #fff;
+            }
+            color: var(--color-text);
+            width: 90%;
+            margin: auto;
+            grid-column: 1 / span 2;
+            width: 100%;
+            & .recomendationDevice {
+                display: grid;
+                grid-template-columns: 1fr;
                 & a {
-                    font-size: 14px;
+                    &:focus {
+                        color: #fff;
+                    }
+                    &:hover {
+                        animation: ${backExpand} 0.3s ease-in;
+                        transition: all ease 0.3s;
+                        color: #fff;
+                        animation-fill-mode: forwards;
+                    }
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none;
+                    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
+                    padding: 8px;
+                    margin: 20px;
+                }
+                vertical-align: middle;
+                font-weight: 700;
+                font-size: 18px;
+                & img {
+                    width: 20%;
+                }
+                & p {
+                }
+            }
+        }
+    }
+    background: linear-gradient(to right ,#1cd0b3,#54ddd5,#29c7ca);
+
+    @media screen and (max-width: 300px) {
+        & .container {
+            & .summary {
+                
+                font-size: 15px;
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto auto;
+            grid-template-areas: "images Menu" 
+                                  "name Menu";
+
+            align-items: start;
+            & .card-image {
+                grid-area: images;
+                height: 100%;
+                & img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+
+            & .name { 
+                grid-area: name;
+            }
+
+            & .option {
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                grid-column: 2 / span 3;
+                grid-area: Menu;
+                height: 100%;
+            }
+            & .recommendations {
+                .recomendationDevice {
+                    grid-template-columns: 1fr 1fr 1fr;
+                    & a {
+                        font-size: 14px;
+                    }
                 }
             }
         }
     }
 
     @media screen and (min-width: 768px) {
-        & .recommendations {
+        .container {
             width: 85%;
-            margin: 30px auto;
-            .recomendationDevice {
-                & a {
-                    font-size: 18px;
+            margin: auto;
+            & .recommendations {
+                width: 85%;
+                margin: 30px auto;
+                .recomendationDevice {
+                    & a {
+                        font-size: 18px;
+                    }
                 }
             }
         }
@@ -196,31 +203,33 @@ function ProductList() {
                    }
 
     return <ProductSection className="productList">
-        <div className="card-image">
-            <img src={data.img} alt={data.name} draggable={false} />
-        </div>
-        <div className="name">
-            <h3>{data.name}</h3>
-        </div>
-        <div className="option">
-            <DescriptionPhone data={data} />
-            <div className="precios">
-                <h2>{data.precio}$</h2>
-                <p>Pagos con CREDEX, tajeta de crédito y efectivos</p>
+        <div className="container">
+            <div className="card-image">
+                <img src={data.img} alt={data.name} draggable={false} />
             </div>
-        </div>
-        <div className="recommendations">
-            <h2>Dispositivos Similares</h2>
-            <div className="recomendationDevice">
-                {
-                    similars.map((id, index) => (
-                        id.name !== data.name &&
-                        <Link to={`${id.name}`} key={index}>
-                             <img loading="lazy" src={id.img} alt={id.name} />
-                             <p>{id.name}</p>
-                         </Link>
-                    )) 
-                }
+            <div className="name">
+                <h3>{data.name}</h3>
+            </div>
+            <div className="option">
+                <DescriptionPhone data={data} />
+                <div className="precios">
+                    <h2>{data.precio}$</h2>
+                    <p>Pagos con CREDEX, tajeta de crédito y efectivos</p>
+                </div>
+            </div>
+            <div className="recommendations">
+                <h2>Dispositivos Similares</h2>
+                <div className="recomendationDevice">
+                    {
+                        similars.map((id, index) => (
+                            id.name !== data.name &&
+                            <Link to={`${id.name}`} key={index}>
+                                <img loading="lazy" src={id.img} alt={id.name} />
+                                <p>{id.name}</p>
+                            </Link>
+                        )) 
+                    }
+                </div>
             </div>
         </div>
     </ProductSection>
@@ -228,4 +237,5 @@ function ProductList() {
 
 export default React.memo(ProductList);
 
-/* Idea: Añadir recomendaciones los dispositivos por los que paso el ciclo añadiendolos con Array.prototype.push(element)  */
+/* Idea: Añadir recomendaciones los dispositivos
+por los que paso el ciclo añadiendolos con Array.prototype.push(element)  */

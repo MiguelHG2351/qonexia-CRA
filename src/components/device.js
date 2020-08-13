@@ -18,13 +18,11 @@ const ContainerDescription = styled.div`
     align-items: center;
     color: var(--color-text);
     font-weight: 700;
+    & div p {
+      margin-left: 50%;
+    }
     & div:not(.colors) {
       padding: 8px;
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      flex-wrap: wrap;
     }
     & .colors {
       grid-column: 1 / 3;

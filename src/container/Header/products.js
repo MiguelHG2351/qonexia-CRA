@@ -120,6 +120,9 @@ function Head() {
             <form className="form" onSubmit={searchDevices}>
                 <button type="button" onClick={toggleMenu}><i className="material-icons">search</i></button>
                 <div className={formActive}>
+                    <div className="close-attachment" onClick={toggleMenu}>
+                        <i className="material-icons">west</i>
+                    </div>
                     <input name="search" type="text" placeholder="Buscar"/>
                 </div>
             </form>
