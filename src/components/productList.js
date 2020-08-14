@@ -53,7 +53,7 @@ const ProductSection = styled.section`
         }
 
         .precios {
-            color: purple;
+            color: #665863;
             margin: auto;
             text-align: center;
             margin: 12px;
