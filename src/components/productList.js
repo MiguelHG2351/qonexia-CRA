@@ -9,7 +9,8 @@ import processData from 'data/'
 
 const ProductSection = styled.section`
     /* background: linear-gradient(to right ,#11b5e1, #1bd6d2, rgba(36, 100, 179, 0.7)); */
-    --color-text: #00558f;
+    /* --color-text: #00558f; */
+    --color-text: rgba(255, 255, 255, 0.9);
     & .container {
         display: flex;
         flex-direction: column;
@@ -99,7 +100,9 @@ const ProductSection = styled.section`
             }
         }
     }
-    background: linear-gradient(to right ,#1cd0b3,#54ddd5,#29c7ca);
+    /* background: linear-gradient(to right ,#1cd0b3,#54ddd5,#29c7ca); */
+    /* background: linear-gradient(to right ,#190009,#020104,#10051f); */
+    background: linear-gradient(to right ,#002239,#002043,#10051f);
 
     @media screen and (max-width: 300px) {
         & .container {
