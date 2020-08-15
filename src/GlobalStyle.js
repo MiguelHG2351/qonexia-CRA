@@ -66,6 +66,51 @@ export const GlobalStyles = createGlobalStyle`
         cursor: pointer;
     }
 
+    a {
+        text-decoration: none !important;
+    }
+
+    [class*="btn-"] {
+        padding: 0.756em 1.25em;
+        color: #fff;
+        border-radius: 22px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        & img {
+            width: 8%;
+        }
+
+        &:hover {
+            opacity: 0.75;
+            transform: scale(0.85);
+            transition: transform 0.35s ease;
+        }
+    }
+
+    .btn-xiaomi:not(.disabled) {
+        background: #f57921 !important;
+    }
+
+    .btn-huawei:not(.disabled) {
+        background: #c9191c !important;
+    }
+
+    .btn-realme:not(.disabled) {
+        background: #ffc107 !important;
+    }
+
+    .btn-apple:not(.disabled) {
+        background: #1cc7da !important;
+    }
+
+    .btn-nintendo:not(.disabled) {
+        background: #fff !important;
+        color: #000;
+    }
+
     :root {
         --width: 1440px;
         --bezel-colors: #e62427;
