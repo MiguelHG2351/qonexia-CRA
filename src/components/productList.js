@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import styled from 'styled-components'
-import huawei from 'static/images/icon-huawei.svg'
-import xiaomi from 'static/images/icon-xiaomi.svg'
-import apple from 'static/images/icon-apple.svg'
-import gopro from 'static/images/icon-gopro.svg'
-import amazfit from 'static/images/icon-amazfit.svg'
-import realme from 'static/images/icon-realme.svg'
-import nintendo from 'static/images/icon-nintendo.svg'
+import huawei from 'static/images/icon-huawei.png'
+import xiaomi from 'static/images/icon-xiaomi.png'
+import apple from 'static/images/icon-apple.png'
+import gopro from 'static/images/icon-gopro.png'
+import amazfit from 'static/images/icon-amazfit.png'
+import realme from 'static/images/icon-realme.png'
+import nintendo from 'static/images/icon-nintendo.png'
 import { opacityAnimation, backExpand } from 'GlobalStyle'
 import DescriptionPhone from 'components/descriptionPhone'
 import DescriptionData from 'context/descriptionContext'
@@ -80,7 +80,17 @@ const ProductSection = styled.section`
             & .recomendationDevice {
                 display: grid;
                 grid-template-columns: 1fr;
+                vertical-align: middle;
+                font-weight: 400;
+                font-size: 14px;
                 & a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none;
+                    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
+                    padding: 8px;
+                    margin: 20px;
                     background: #051838;
                     color: rgba(255,255,255,0.7);
                     border-radius: 16px;
@@ -93,17 +103,8 @@ const ProductSection = styled.section`
                         color: #fff;
                         animation-fill-mode: forwards;
                     }
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    text-decoration: none;
-                    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
-                    padding: 8px;
-                    margin: 20px;
                 }
-                vertical-align: middle;
-                font-weight: 700;
-                font-size: 18px;
+                
                 & img {
                     width: 20%;
                 }
@@ -119,10 +120,9 @@ const ProductSection = styled.section`
         & h3 {
             color: #fff;
             margin-left: 4px;
-            border-left: 4px solid red;
         }
 
-        & .category {
+        & .container-card {
             margin: 20px 0;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -130,29 +130,66 @@ const ProductSection = styled.section`
             justify-content: center;
             align-items: center;
             font-size: 18px;
+
+            & a {
+                border: 1px solid #fff;
+            }
+
+            & .header-card {
+                border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+                & img {
+                        width: 100%;
+                    }
+            }
+
+            & .description-card {
+                color: var(--color-text);
+                padding: 36px;
+                text-align: left;
+                span {
+                    margin: 8px 0;
+                }
+                p {
+                margin: 15px 0;
+                }
+            }
+
         }
     }
 
+    @media screen and (max-width: 1200px) {
+        & .catalogo {
+            & .container-card {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+
+
     @media screen and (max-width: 411px) {
         & .catalogo {
-            & .category {
-                a {
-                    width: 50%;
-                }
+            & .container-card {
+                grid-template-columns: 1fr;
             }
         }
     }
 
     @media screen and (max-width: 595px) {
         & .catalogo {
-            & .category {
+            & .container-card {
                 width: 95%;
                 margin: auto;
+                grid-template-columns: 1fr;
                 a {
+                    overflow: hidden;
+                    border-radius: 12px;
+                    width: 85%;
                     display: inline-block;
-                    margin: 25px 0;
+                    margin: 25px auto;
                     text-align: center;
-                    width: 100%;
+                    & .description {
+                        padding: 8px;
+                    }
                 }
             }
         }
@@ -164,6 +201,13 @@ const ProductSection = styled.section`
                 font-size: 15px;
             }
         }
+        /* & .catalogo {
+            & .container-card {
+                .header-card {
+                    
+                }
+            }
+        } */
     }
 
     @media screen and (min-width: 768px) {
@@ -175,9 +219,18 @@ const ProductSection = styled.section`
                                   "name Menu";
 
             align-items: start;
+            width: 85%;
+            margin: auto;
             & .card-image {
                 grid-area: images;
                 height: 100%;
+                
+                & .header-title {
+                    & h3 {
+                        border-left: none !important;
+                    }
+                }
+
                 & img {
                     max-width: 100%;
                     height: auto;
@@ -198,28 +251,25 @@ const ProductSection = styled.section`
                 height: 100%;
             }
             & .recommendations {
+                width: 85%;
+                margin: 30px auto;
                 .recomendationDevice {
                     grid-template-columns: 1fr 1fr 1fr;
+                    vertical-align: middle;
+                    font-size: 18px;
                     & a {
-                        font-size: 14px;
+                        font-size: 18px;
                     }
                 }
             }
         }
     }
 
-    @media screen and (min-width: 768px) {
-        .container {
-            width: 85%;
-            margin: auto;
-            & .recommendations {
-                width: 85%;
-                margin: 30px auto;
-                .recomendationDevice {
-                    & a {
-                        font-size: 18px;
-                    }
-                }
+    
+    @media screen and (min-width: 1200px) {
+        & .catalogo {
+            & .container-card {
+            grid-template-columns: repeat(4, 1fr);
             }
         }
     }
@@ -289,14 +339,111 @@ function ProductList() {
             </div>
             <div className="catalogo">
                 <h3>Catalogo</h3>
-                <div className="category">
-                    <Link to="/catalogo#xiaomi" className="btn-xiaomi"><img src={xiaomi}  alt="huawei"/>Xiaomi</Link>
-                    <Link to="/catalogo#huawei" className="btn-huawei"><img src={huawei} alt="huawei"/>Huawei</Link>
-                    <Link to="/catalogo#realem" className="btn-realme"><img src={realme}  alt="huawei"/>Realme</Link>
-                    <Link to="/catalogo#appple" className="btn-apple"><img src={apple}  alt="huawei"/>Apple</Link>
-                    <Link to="/catalogo#nintendo" className="btn-nintendo"><img src={nintendo} width="12%" alt="huawei"/>Nintendo</Link>
-                    <Link to="/catalogo#gopro" className="btn-apple"><img src={gopro} width="12%" alt="huawei"/>gopro</Link>
-                    <Link to="/catalogo#amazfit" className="btn-apple"><img src={amazfit} width="12%" alt="huawei"/>amazfit</Link>
+                <div className="container-card">
+                    <Link to="/catalogo#xiaomi" className="card">
+                        <div className="header-card">
+                            <img src={xiaomi} alt="Descripción del producto Xiaomi" title="Xiaomi"/>
+                        </div>
+                        <div className="description-card">
+                            <span className="description-title">
+                                <h3>Xioami</h3>
+                            </span>
+                            <p>Cantidad: 23</p>
+                            <p>Submarcas: Redmi, Mi, Note, K</p>
+                            <p>Precios: 150$, 650$</p>
+                        </div>
+                    </Link>
+                    <Link to="/catalogo#huawei" className="card">
+                        <div className="header-card">
+                            <img src={huawei} alt="Descripción del producto Huawei" title="Huawei"/>
+                        </div>
+                        <div className="description-card">
+                            <span className="description-title">
+                                <h3>Huawei</h3>
+                            </span>
+                            <p>Cantidad: 23</p>
+                            <p>Submarcas: P, Y, Mate</p>
+                            <p>Precios: 150$ - 650$</p>
+                        </div>
+                    </Link>
+                    <Link to="/catalogo#realem" className="card">
+                        <div className="header-card">
+                            <img src={realme} alt="Descriptción de los productos Realem" title="Realme" />
+                        </div>
+                        <div className="description-card">
+                            <span className="description-title">
+                                <h3>Realme</h3>
+                            </span>
+                            <p>Cantidad: 23</p>
+                            <p>Submarcas: P, Y, Mate</p>
+                            <p>Precios: 150$ - 650$</p>
+                        </div>
+                    </Link>
+                    <Link to="/catalogo#appple" className="card">
+                        <div className="header-card">
+                            <img src={apple}  alt="Descriptción de los productos" title="Realem" />
+                        </div>
+                        <div className="description-card">
+                            <span className="description-title">
+                                <h3>Apple</h3>
+                            </span>
+                            <p>Cantidad: 23</p>
+                            <p>Submarcas: P, Y, Mate</p>
+                            <p>Precios: 150$ - 650$</p>
+                        </div>
+                    </Link>
+                    <Link to="/catalogo#nintendo" className="card">
+                        <div className="header-card">
+                            <img src={nintendo}  alt="nintendo"/>
+                        </div>
+                        <div className="description-card">
+                            <span className="description-title">
+                                <h3>Nintendo</h3>
+                            </span>
+                            <p>Cantidad: 23</p>
+                            <p>Submarcas: P, Y, Mate</p>
+                            <p>Precios: 150$ - 650$</p>
+                        </div>
+                    </Link>
+                    <Link to="/catalogo#appple" className="card">
+                        <div className="header-card">
+                            <img src={apple}  alt="huawei"/>
+                        </div>
+                        <div className="description-card">
+                            <span className="description-title">
+                                <h3>Apple</h3>
+                            </span>
+                            <p>Cantidad: 23</p>
+                            <p>Submarcas: P, Y, Mate</p>
+                            <p>Precios: 150$ - 650$</p>
+                        </div>
+                    </Link>
+                    <Link to="/catalogo#gopro" className="card">
+                    <div className="header-card">
+                            <img src={gopro}  alt="gopro"/>
+                        </div>
+                        <div className="description-card">
+                            <span className="description-title">
+                                <h3>gopro</h3>
+                            </span>
+                            <p>Cantidad: 23</p>
+                            <p>Submarcas: P, Y, Mate</p>
+                            <p>Precios: 150$ - 650$</p>
+                        </div>
+                    </Link>
+                    <Link to="/catalogo#amazfit" className="card">
+                        <div className="header-card">
+                            <img src={amazfit}  alt="amazfit"/>
+                        </div>
+                        <div className="description-card">
+                            <span className="header-title">
+                                <h3>amazfit</h3>
+                            </span>
+                            <p>Cantidad: 13</p>
+                            <p>Submarcas: P, Y, Mate</p>
+                            <p>Precios: 150$ - 650$</p>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div>

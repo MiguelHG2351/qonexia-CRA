@@ -47,7 +47,7 @@ const FooterSite = styled.footer`
     & .form-footer {
       --padding: 12px;
       --font: 14px;
-        margin: 30px 0;
+        margin: 30px 0 !important;
         width: 100%;
         & .form-footer-container {
           box-shadow: 0 0 5px 5px #09f;
@@ -94,7 +94,6 @@ const FooterSite = styled.footer`
         grid-area: navigation;
       }
       & .form-footer {
-        --padding: 16px 12px;
         grid-area: form;
         width: calc(100% - (var(--padding) * 4));
         & .form-footer-container {

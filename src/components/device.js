@@ -17,9 +17,9 @@ const ContainerDescription = styled.div`
     grid-template-rows: repeat(2, 1fr);
     align-items: center;
     color: var(--color-text);
-    font-weight: 700;
+    font-weight: 400;
     & div p {
-      margin-left: 50%;
+      margin-left: 15% !important;
     }
     & div:not(.colors) {
       padding: 8px;
@@ -35,13 +35,21 @@ const ContainerDescription = styled.div`
       }
     }
   }
+
   @media screen and (min-width: 992px) {
     .nameProduct {
-      font-size: 20px;
+      font-size: 19px;
       /* #00558f */
     }
-    .info {
+
+    & .info {
       font-size: 20px;
+      & div {
+        p {
+          margin-left: 50%;
+
+        }
+      } 
     }
   }
 `;

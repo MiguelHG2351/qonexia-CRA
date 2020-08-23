@@ -32,11 +32,12 @@ export const Header = styled.header`
         justify-content: flex-start;
         flex-wrap: nowrap;
         flex-direction: row-reverse;
-        & button {
+        & label {
             border: none;
             background: transparent;
             color: #fff;
             width: auto;
+            cursor: pointer;
             & i {
                 font-size: 30px;
                 user-select: none;
@@ -92,8 +93,7 @@ export const Sidenav = styled.div`
     transform: translateX(-3000px);
 
     &::-webkit-scrollbar {
-        width: 8px;
-        background: red;
+        width: 0;
     }
 
     &.active {

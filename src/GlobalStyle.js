@@ -103,7 +103,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .btn-apple:not(.disabled) {
-        background: #1cc7da !important;
+        background: #0791e6 !important;
     }
 
     .btn-nintendo:not(.disabled) {

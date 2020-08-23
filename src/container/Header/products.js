@@ -73,6 +73,18 @@ function Head() {
         if (formActive === "search active") setFormActive("search");
         else setFormActive("search active");
     }
+    
+    function blurInput() {
+        console.log("blur active")
+        if (formActive === "search active") setFormActive("search");
+        else setFormActive("search active");
+    }
+    
+    function onkeyDown(e) {
+        if(e.keyCode === 27) {
+            setFormActive("search")
+        }
+    }
 
     return <Fragment>
         <Header>
@@ -118,12 +130,12 @@ function Head() {
                 </ul>
             </Sidenav>
             <form className="form" onSubmit={searchDevices}>
-                <button type="button" onClick={toggleMenu}><i className="material-icons">search</i></button>
+                <label onClick={toggleMenu} htmlFor="search"><i className="material-icons">search</i></label>
                 <div className={formActive}>
                     <div className="close-attachment" onClick={toggleMenu}>
                         <i className="material-icons">west</i>
                     </div>
-                    <input name="search" type="text" placeholder="Buscar"/>
+                    <input id="search" name="search" onKeyDown={onkeyDown} onBlur={blurInput} type="text" placeholder="Buscar"/>
                 </div>
             </form>
         </Header>
