@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 // import { Route } from 'react-router-dom'
 import { Chart } from 'chart.js'
-import { Charts } from '../container/Header/trends'
+import { Charts } from 'container/Header/trends'
 
 function Trends() {
     const ref = useRef(null)

@@ -75,6 +75,10 @@ export const Header = styled.header`
         
     }
 
+    @media screen and (max-width: 768px) {
+        height: 60px;
+    }
+
 
 `
 

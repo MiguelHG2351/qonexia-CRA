@@ -2,8 +2,8 @@ import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Header, Card, HeaderNav, Background, HeaderTitle, HeaderListCard } from './style'
-import useCarrousel from "../../hooks/useCarrousel";
-import gif from '../../static/images/loading.gif'
+import useCarrousel from "hooks/useCarrousel";
+import gif from 'static/images/loading.gif'
 
 function Headers() {
 
@@ -23,7 +23,9 @@ function Headers() {
                 ?
                 <img src="https://miguelhg2351.github.io/API/imagenes/backgroundMobile.webp" alt="Bienvenidos a qonexia" />
                 :
-                <video src="https://miguelhg2351.github.io/API/videos/video.webm" muted autoPlay={true} loop={true}></video>
+                <video src="https://miguelhg2351.github.io/API/videos/video.webm" muted autoPlay={true} loop={true}>
+                    {/* <track default kind="subtitles" srcLang="es" src={subtitle} /> */}
+                </video>
 
             }
         </Background>

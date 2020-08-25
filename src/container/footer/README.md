@@ -1,0 +1,1 @@
+# index.js: Estilos del footer general

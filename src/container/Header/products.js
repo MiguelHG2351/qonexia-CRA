@@ -1,7 +1,8 @@
-import React, { Fragment, useState, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { Header, Sidenav, Overlay } from 'container/Header/productsStyle'
 import { Link, useHistory } from 'react-router-dom'
 import baseContext from 'context/descriptionContext'
+
 
 function Head() {
 
@@ -25,6 +26,7 @@ function Head() {
 
     function getData(formData) {
     const search = formData.get("search");
+
     //console.log(search);
     //console.log(context);
 
@@ -86,14 +88,8 @@ function Head() {
         }
     }
 
-    return <Fragment>
+    return <>
         <Header>
-            <div className="header-title">
-                <button onClick={openMenu}>
-                    <i className="material-icons">menu</i>
-                </button>
-                <h2>Productos</h2>
-            </div>
             <Sidenav className={active}>
                 <div className="profile">
                     <div className="background">
@@ -129,6 +125,12 @@ function Head() {
                     <li><i className="material-icons">laptop</i><Link to="/catalogo#laptop">Mac MacOS Catalina</Link></li>
                 </ul>
             </Sidenav>
+            <div className="header-title">
+                <button onClick={openMenu}>
+                    <i className="material-icons">menu</i>
+                </button>
+                <h2>{document.title}</h2>
+            </div>
             <form className="form" onSubmit={searchDevices}>
                 <label onClick={toggleMenu} htmlFor="search"><i className="material-icons">search</i></label>
                 <div className={formActive}>
@@ -140,7 +142,7 @@ function Head() {
             </form>
         </Header>
         <Overlay className={active} onClick={loadSideNav} />
-    </Fragment>
+    </>
 }
 
 export default React.memo(Head);

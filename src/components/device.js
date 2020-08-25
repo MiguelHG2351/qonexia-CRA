@@ -49,7 +49,7 @@ const ContainerDescription = styled.div`
           margin-left: 50%;
 
         }
-      } 
+      }
     }
   }
 `;

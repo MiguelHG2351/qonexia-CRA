@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-helmet": "^6.1.0",
     "jest": "^26.2.2",
     "nodemon": "^2.0.4"
   }

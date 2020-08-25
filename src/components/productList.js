@@ -11,6 +11,7 @@ import nintendo from 'static/images/icon-nintendo.png'
 import { opacityAnimation, backExpand } from 'GlobalStyle'
 import DescriptionPhone from 'components/descriptionPhone'
 import DescriptionData from 'context/descriptionContext'
+import useSEO from 'hooks/useSEO'
 import processData from 'data/'
 
 const ProductSection = styled.section`
@@ -131,30 +132,32 @@ const ProductSection = styled.section`
             align-items: center;
             font-size: 18px;
 
-            & a {
+            & .card {
                 border: 1px solid #fff;
-            }
-
-            & .header-card {
-                border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-                & img {
-                        width: 100%;
+                display: flex;
+                align-items: center;
+                & .header-card {
+                    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+                    & img {
+                            width: 100%;
                     }
+                }
+
+                & .description-card {
+                    color: var(--color-text);
+                    padding: 8px;
+                    text-align: left;
+                    span {
+                        margin: 8px 0;
+                    }
+                    p {
+                    margin: 15px 0;
+                    }
+                }
+
+            }
             }
 
-            & .description-card {
-                color: var(--color-text);
-                padding: 36px;
-                text-align: left;
-                span {
-                    margin: 8px 0;
-                }
-                p {
-                margin: 15px 0;
-                }
-            }
-
-        }
     }
 
     @media screen and (max-width: 1200px) {
@@ -180,14 +183,14 @@ const ProductSection = styled.section`
                 width: 95%;
                 margin: auto;
                 grid-template-columns: 1fr;
-                a {
+                .card {
                     overflow: hidden;
                     border-radius: 12px;
                     width: 85%;
                     display: inline-block;
                     margin: 25px auto;
                     text-align: center;
-                    & .description {
+                    & .description-card {
                         padding: 8px;
                     }
                 }
@@ -297,7 +300,7 @@ function ProductList() {
 
     const data = processData(context, params)
 
-    let similars = [];
+    let similars = []; // Busca las coincidencias de productos, Especificamente de la submarca
     console.log(data.img)
     context.all.forEach((e) => {
                      if (e.name.indexOf(params.devices.slice(0, 8)) <= 8 && e.name.indexOf(params.devices.slice(0, 8)) >= 0) {
@@ -307,6 +310,9 @@ function ProductList() {
                    if(typeof similars !== "object") {
                      similars = ""
                    }
+
+    useSEO({description:"Productos y servicios", title: data.name})
+    
 
     return <ProductSection className="productList">
         <div className="container">
@@ -347,10 +353,8 @@ function ProductList() {
                         <div className="description-card">
                             <span className="description-title">
                                 <h3>Xioami</h3>
+                                <p>Cantidad: 23</p>
                             </span>
-                            <p>Cantidad: 23</p>
-                            <p>Submarcas: Redmi, Mi, Note, K</p>
-                            <p>Precios: 150$, 650$</p>
                         </div>
                     </Link>
                     <Link to="/catalogo#huawei" className="card">
@@ -360,10 +364,8 @@ function ProductList() {
                         <div className="description-card">
                             <span className="description-title">
                                 <h3>Huawei</h3>
+                                <p>Cantidad: 23</p>
                             </span>
-                            <p>Cantidad: 23</p>
-                            <p>Submarcas: P, Y, Mate</p>
-                            <p>Precios: 150$ - 650$</p>
                         </div>
                     </Link>
                     <Link to="/catalogo#realem" className="card">
@@ -373,10 +375,8 @@ function ProductList() {
                         <div className="description-card">
                             <span className="description-title">
                                 <h3>Realme</h3>
+                                <p>Cantidad: 23</p>
                             </span>
-                            <p>Cantidad: 23</p>
-                            <p>Submarcas: P, Y, Mate</p>
-                            <p>Precios: 150$ - 650$</p>
                         </div>
                     </Link>
                     <Link to="/catalogo#appple" className="card">
@@ -386,10 +386,8 @@ function ProductList() {
                         <div className="description-card">
                             <span className="description-title">
                                 <h3>Apple</h3>
+                                <p>Cantidad: 23</p>
                             </span>
-                            <p>Cantidad: 23</p>
-                            <p>Submarcas: P, Y, Mate</p>
-                            <p>Precios: 150$ - 650$</p>
                         </div>
                     </Link>
                     <Link to="/catalogo#nintendo" className="card">
@@ -399,23 +397,8 @@ function ProductList() {
                         <div className="description-card">
                             <span className="description-title">
                                 <h3>Nintendo</h3>
+                                <p>Cantidad: 23</p>
                             </span>
-                            <p>Cantidad: 23</p>
-                            <p>Submarcas: P, Y, Mate</p>
-                            <p>Precios: 150$ - 650$</p>
-                        </div>
-                    </Link>
-                    <Link to="/catalogo#appple" className="card">
-                        <div className="header-card">
-                            <img src={apple}  alt="huawei"/>
-                        </div>
-                        <div className="description-card">
-                            <span className="description-title">
-                                <h3>Apple</h3>
-                            </span>
-                            <p>Cantidad: 23</p>
-                            <p>Submarcas: P, Y, Mate</p>
-                            <p>Precios: 150$ - 650$</p>
                         </div>
                     </Link>
                     <Link to="/catalogo#gopro" className="card">
@@ -424,11 +407,9 @@ function ProductList() {
                         </div>
                         <div className="description-card">
                             <span className="description-title">
-                                <h3>gopro</h3>
+                                <h3>Gopro</h3>
+                                <p>Cantidad: 23</p>
                             </span>
-                            <p>Cantidad: 23</p>
-                            <p>Submarcas: P, Y, Mate</p>
-                            <p>Precios: 150$ - 650$</p>
                         </div>
                     </Link>
                     <Link to="/catalogo#amazfit" className="card">
@@ -438,10 +419,8 @@ function ProductList() {
                         <div className="description-card">
                             <span className="header-title">
                                 <h3>amazfit</h3>
+                                <p>Cantidad: 13</p>
                             </span>
-                            <p>Cantidad: 13</p>
-                            <p>Submarcas: P, Y, Mate</p>
-                            <p>Precios: 150$ - 650$</p>
                         </div>
                     </Link>
                 </div>

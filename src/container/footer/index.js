@@ -63,7 +63,7 @@ const FooterSite = styled.footer`
           }
           & button {
             width: 20%;
-            padding: var(--padding);
+            padding: calc(var(--padding) + 1.7px);
             text-align: center;
             outline: none;
             margin: 0;
@@ -148,7 +148,7 @@ const FooterSite = styled.footer`
       }
       & .form-footer {
         --padding: 10px;
-        --font: 18px;
+        --font: 16px;
 
         /* width: fit-content; */
 

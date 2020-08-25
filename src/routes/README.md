@@ -1,0 +1,1 @@
+# App.js: Configura las rutas
