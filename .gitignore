@@ -27,3 +27,7 @@ yarn-error.log*
 data.txt
 
 desktop.ini
+
+# photoshop files
+
+/src/static/photoshop

@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import styled from 'styled-components'
-import huawei from 'static/images/icon-huawei.png'
+import huawei from 'static/images/huawei.png'
 import xiaomi from 'static/images/icon-xiaomi.png'
 import apple from 'static/images/icon-apple.png'
 import gopro from 'static/images/icon-gopro.png'
-import amazfit from 'static/images/icon-amazfit.png'
+import amazfit from 'static/images/amazfit.png'
 import realme from 'static/images/icon-realme.png'
 import nintendo from 'static/images/icon-nintendo.png'
 import { opacityAnimation, backExpand } from 'GlobalStyle'
@@ -134,12 +134,14 @@ const ProductSection = styled.section`
 
             & .card {
                 border: 1px solid #fff;
-                display: flex;
+                display: grid;
+                grid-template-columns: 64px auto;
                 align-items: center;
+                overflow: hidden;
+                font-size: 14px;
                 & .header-card {
-                    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
                     & img {
-                            width: 100%;
+                        width: 100%;
                     }
                 }
 
@@ -149,14 +151,19 @@ const ProductSection = styled.section`
                     text-align: left;
                     span {
                         margin: 8px 0;
-                    }
-                    p {
-                    margin: 15px 0;
+                        & h3 {
+                            font-size: 1.1rem;
+                        }
+                        p {
+                            color: rgba(0, 0, 0, 0.65);
+                            font-size: 0.75rem;
+                            color:rgba(250, 250, 250, 0.65)
+                        }
                     }
                 }
 
             }
-            }
+        }
 
     }
 
@@ -184,11 +191,9 @@ const ProductSection = styled.section`
                 margin: auto;
                 grid-template-columns: 1fr;
                 .card {
-                    overflow: hidden;
                     border-radius: 12px;
                     width: 85%;
-                    display: inline-block;
-                    margin: 25px auto;
+                    margin: 8px auto;
                     text-align: center;
                     & .description-card {
                         padding: 8px;
@@ -228,12 +233,6 @@ const ProductSection = styled.section`
                 grid-area: images;
                 height: 100%;
                 
-                & .header-title {
-                    & h3 {
-                        border-left: none !important;
-                    }
-                }
-
                 & img {
                     max-width: 100%;
                     height: auto;
