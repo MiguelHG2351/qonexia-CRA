@@ -2,12 +2,12 @@ import React, { useContext } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import styled from 'styled-components'
 import huawei from 'static/images/huawei.png'
-import xiaomi from 'static/images/icon-xiaomi.png'
-import apple from 'static/images/icon-apple.png'
-import gopro from 'static/images/icon-gopro.png'
+import xiaomi from 'static/images/xiaomi.png'
+import apple from 'static/images/apple.png'
+import gopro from 'static/images/gopro.png'
 import amazfit from 'static/images/amazfit.png'
-import realme from 'static/images/icon-realme.png'
-import nintendo from 'static/images/icon-nintendo.png'
+import realme from 'static/images/realme.png'
+import nintendo from 'static/images/nintendo.png'
 import { opacityAnimation, backExpand } from 'GlobalStyle'
 import DescriptionPhone from 'components/descriptionPhone'
 import DescriptionData from 'context/descriptionContext'
@@ -139,6 +139,7 @@ const ProductSection = styled.section`
                 align-items: center;
                 overflow: hidden;
                 font-size: 14px;
+                /* animation: ; */
                 & .header-card {
                     & img {
                         width: 100%;
@@ -209,13 +210,6 @@ const ProductSection = styled.section`
                 font-size: 15px;
             }
         }
-        /* & .catalogo {
-            & .container-card {
-                .header-card {
-                    
-                }
-            }
-        } */
     }
 
     @media screen and (min-width: 768px) {
@@ -346,18 +340,18 @@ function ProductList() {
                 <h3>Catalogo</h3>
                 <div className="container-card">
                     <Link to="/catalogo#xiaomi" className="card">
-                        <div className="header-card">
+                        <div className="header-card xiaomi">
                             <img src={xiaomi} alt="Descripción del producto Xiaomi" title="Xiaomi"/>
                         </div>
                         <div className="description-card">
                             <span className="description-title">
                                 <h3>Xioami</h3>
-                                <p>Cantidad: 23</p>
+                                <p>Cantidad: {context.category.brand[params.brand].length}</p>
                             </span>
                         </div>
                     </Link>
                     <Link to="/catalogo#huawei" className="card">
-                        <div className="header-card">
+                        <div className="header-card huawei">
                             <img src={huawei} alt="Descripción del producto Huawei" title="Huawei"/>
                         </div>
                         <div className="description-card">
@@ -368,7 +362,7 @@ function ProductList() {
                         </div>
                     </Link>
                     <Link to="/catalogo#realem" className="card">
-                        <div className="header-card">
+                        <div className="header-card realme">
                             <img src={realme} alt="Descriptción de los productos Realem" title="Realme" />
                         </div>
                         <div className="description-card">
@@ -379,8 +373,8 @@ function ProductList() {
                         </div>
                     </Link>
                     <Link to="/catalogo#appple" className="card">
-                        <div className="header-card">
-                            <img src={apple}  alt="Descriptción de los productos" title="Realem" />
+                        <div className="header-card apple">
+                            <img src={apple}  alt="Descriptción de los productos Apple" title="Apple" />
                         </div>
                         <div className="description-card">
                             <span className="description-title">
@@ -390,8 +384,8 @@ function ProductList() {
                         </div>
                     </Link>
                     <Link to="/catalogo#nintendo" className="card">
-                        <div className="header-card">
-                            <img src={nintendo}  alt="nintendo"/>
+                        <div className="header-card nintendo">
+                            <img src={nintendo}  alt="descripciòn de los productos de nintendo" title="nintendo"/>
                         </div>
                         <div className="description-card">
                             <span className="description-title">
@@ -401,8 +395,8 @@ function ProductList() {
                         </div>
                     </Link>
                     <Link to="/catalogo#gopro" className="card">
-                    <div className="header-card">
-                            <img src={gopro}  alt="gopro"/>
+                    <div className="header-card gopro">
+                            <img src={gopro}  alt="gopro" title="gopro"/>
                         </div>
                         <div className="description-card">
                             <span className="description-title">
@@ -412,8 +406,8 @@ function ProductList() {
                         </div>
                     </Link>
                     <Link to="/catalogo#amazfit" className="card">
-                        <div className="header-card">
-                            <img src={amazfit}  alt="amazfit"/>
+                        <div className="header-card amazfit">
+                            <img src={amazfit}  alt="amazfit" title="amazfit"/>
                         </div>
                         <div className="description-card">
                             <span className="header-title">

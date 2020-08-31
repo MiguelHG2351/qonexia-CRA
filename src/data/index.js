@@ -35,3 +35,4 @@ export default function(getRoute, getData) {
 // Algorítmo para calcular según el precio y la potencia del dispositivo que tipo de telefonos le gusta a una perosona
 // Los productos con venta flash tendran un background rojizo
 // Utilizar slice para tener un string más corto para dar las sugerencias
+// Crear un componente para las recomedaciones al buscar y sea el mismo que el de las marcas

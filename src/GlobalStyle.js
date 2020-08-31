@@ -1,16 +1,16 @@
 import {createGlobalStyle, keyframes} from 'styled-components';
 
-export const borderAnimation = keyframes`
-    from {
-        width: 0;
-    }
+// export const borderAnimation = keyframes`
+//     from {
+//         width: 0;
+//     }
 
-    to {
-        width: 100%;
-        transform: translate(45deg);
-        left: 0;
-    }
-`
+//     to {
+//         width: 100%;
+//         transform: translate(45deg);
+//         left: 0;
+//     }
+// `
 
 export const inputForm = keyframes`
     from {
@@ -90,25 +90,33 @@ export const GlobalStyles = createGlobalStyle`
         }
     }
 
-    .btn-xiaomi:not(.disabled) {
-        background: #f57921 !important;
+    .xiaomi {
+        background: var(--orange) !important;
     }
 
-    .btn-huawei:not(.disabled) {
-        background: #c9191c !important;
+    .huawei {
+        background-color: var(--red-special) !important;
     }
 
-    .btn-realme:not(.disabled) {
-        background: #ffc107 !important;
+    .realme {
+        background-color: var(--orange) !important;
     }
 
-    .btn-apple:not(.disabled) {
-        background: #0791e6 !important;
+    .apple {
+        background-color: var(--white-special) !important;
     }
 
-    .btn-nintendo:not(.disabled) {
-        background: #fff !important;
+    .nintendo {
+        background-color: var(--white) !important;
         color: #000;
+    }
+
+    .gopro {
+        background-color: var(--white-special);
+    }
+
+    .amazfit {
+        background-color: var(--white);
     }
 
     :root {
@@ -118,6 +126,10 @@ export const GlobalStyles = createGlobalStyle`
         --bezel-width: 2;
         --shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
         --background-header: #6200ee;
+        --orange: #ff7b00;
+        --white-special: #eae0e0;
+        --red-special: #db2525;
+        --white: #fff;
     }
 
 `

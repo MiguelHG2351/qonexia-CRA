@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { Header, Sidenav, Overlay } from 'container/Header/productsStyle'
 import { Link, useHistory } from 'react-router-dom'
 import baseContext from 'context/descriptionContext'
@@ -8,12 +8,17 @@ function Head() {
 
     const [active, setActive] = useState(null)
     const [formActive, setFormActive] = useState("search");
+    const [title, setTitle] = useState('productos')
 
 
     const history = useHistory()
 
     const context = useContext(baseContext)
 
+    useEffect(() => {
+        setTitle(document.title)
+        // eslint-disable-next-line
+    }, [document.title]) 
     function loadSideNav() {
         setActive(null)
     }
@@ -25,44 +30,39 @@ function Head() {
     }
 
     function getData(formData) {
-    const search = formData.get("search");
-
-    //console.log(search);
-    //console.log(context);
-
-    // Que use un custom hooks le envie los datos y devulva un objeto con la url
-    //let coincide =
-    let brand;
-    let name;
-    context.all.forEach((e, index) => {
-      if (e.name.indexOf(search) <= 8 && e.name.indexOf(search) >= 0) {
-        brand =
-          index <= 23
-            ? "Xiaomi"
-            : index <= 46
-            ? "Samsung"
-            : index <= 57
-            ? "Apple"
-            : index <= 65
-            ? "Huawei"
-            : index <= 70
-            ? "Realme"
-            : index <= 74
-            ? "Nintendo"
-            : index <= 75
-            ? "GoPro"
-            : index <= 75
-            ? "Amazfit"
-            : "default";
-            name = e.name
+        const search = formData.get("search");
+        
+        let brand;
+        let name;
+        context.all.forEach((e, index) => {
+          if (e.name.indexOf(search) <= 8 && e.name.indexOf(search) >= 0) {
+            brand =
+              index <= 23
+                ? "Xiaomi"
+                : index <= 46
+                ? "Samsung"
+                : index <= 57
+                ? "Apple"
+                : index <= 65
+                ? "Huawei"
+                : index <= 70
+                ? "Realme"
+                : index <= 74
+                ? "Nintendo"
+                : index <= 75
+                ? "GoPro"
+                : index <= 75
+                ? "Amazfit"
+                : "default";
+                name = e.name
+            }
+        });
+        if(brand === undefined || name === undefined) {
+            history.push("/notFound");
+        } else {
+            history.push(`/Products/${brand}/${name}`);
         }
-    });
-    if(brand === undefined || name === undefined) {
-        history.push("/notFound");
-    } else {
-        history.push(`/Products/${brand}/${name}`);
-    }
-
+    
     }
 
     function searchDevices(e) {
@@ -129,7 +129,7 @@ function Head() {
                 <button onClick={openMenu}>
                     <i className="material-icons">menu</i>
                 </button>
-                <h2>{document.title}</h2>
+                <h2>{title}</h2>
             </div>
             <form className="form" onSubmit={searchDevices}>
                 <label onClick={toggleMenu} htmlFor="search"><i className="material-icons">search</i></label>
