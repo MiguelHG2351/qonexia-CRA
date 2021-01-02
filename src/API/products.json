@@ -524,24 +524,22 @@
             "name": "Xiaomi Mi Band 3 Charger",
             "carga": "18 watts",
             "type": "charger",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/mi-charger-3.webp",
             "colores": ["#0F0F0F"]
           },
           {
             "name": "Xiaomi Mi Car Charger Pro",
             "carga": "18 watts",
             "type": "charger",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/mi-car-charger.webp",
             "colores": ["#0F0F0F"]
           },
           {
             "name": "Xiaomi Mi Power Bank 3 Pro",
             "carga": "20,000 mAh",
             "type": "power_bank",
+            "img": "https://miguelhg2351.github.io/API/XIAOMI/power-bank.webp",
             "colores": ["#0F0F0F"]
-          },
-          {
-            "name": "Xiaomi USB C a USB C",
-            "type": "USB",
-            "colores": ["#fff"]
           }
         ]
       },
@@ -1154,7 +1152,7 @@
         "carga": "18 watts",
         "precio": 9,
         "type": "charger",
-        "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+        "img": "https://miguelhg2351.github.io/API/XIAOMI/mi-charger-3.webp",
         "colores": ["#0F0F0F"]
       },
       {
@@ -1162,7 +1160,7 @@
         "precio": 22,
         "type": "charger",
         "carga": "18 watts",
-        "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+        "img": "https://miguelhg2351.github.io/API/XIAOMI/mi-car-charger.webp",
         "colores": ["#0F0F0F"]
       },
       {
@@ -1170,15 +1168,7 @@
         "carga": "20,000 mAh",
         "precio": 60,
         "type": "power_bank",
-        "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
-        "colores": ["#0F0F0F"]
-      },
-      {
-        "name": "Xiaomi USB C a USB C",
-        "utilidad": "De USB C a USB C",
-        "precio": 25,
-        "type": "USB",
-        "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-10-lite/section01.jpg",
+        "img": "https://miguelhg2351.github.io/API/XIAOMI/power-bank.webp",
         "colores": ["#0F0F0F"]
       }
     ],

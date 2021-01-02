@@ -36,3 +36,8 @@ export default function(getRoute, getData) {
 // Los productos con venta flash tendran un background rojizo
 // Utilizar slice para tener un string más corto para dar las sugerencias
 // Crear un componente para las recomedaciones al buscar y sea el mismo que el de las marcas
+// Opiniones de los clientes
+// Carrousel de los mejores clientes
+// Generar un catálogo con productos especificos, que contenga el nombre del usuario
+// que la comparte y los dispositivos que añadio, para fomentar a los demas
+// <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet"></link>

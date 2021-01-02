@@ -31,3 +31,7 @@ desktop.ini
 # photoshop files
 
 /src/static/photoshop
+
+# vscode
+
+.vscode

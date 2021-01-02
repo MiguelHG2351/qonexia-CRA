@@ -139,6 +139,7 @@ const ProductSection = styled.section`
                 align-items: center;
                 overflow: hidden;
                 font-size: 14px;
+                border-radius: 12px;
                 /* animation: ; */
                 & .header-card {
                     & img {
@@ -304,7 +305,7 @@ function ProductList() {
                      similars = ""
                    }
 
-    useSEO({description:"Productos y servicios", title: data.name})
+    useSEO({description:"Productos y servicios del sitio de Qonexia.", title: data.name})
     
 
     return <ProductSection className="productList">

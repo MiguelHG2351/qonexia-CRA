@@ -12,21 +12,26 @@ export const Header = styled.header`
     align-items: center;
     position: relative;
     & .header-title {
+        --font-title: 12px;
         display: flex;
         align-items: center;
+        width: 50%;
         & button {
             margin-right: 20px;
+            display: flex;
+            align-items: center;
             border: none;
             background: transparent;
             color: #fff;
+            font-size: calc(var(--font-title) * 2);
             & i {
-                font-size: 35px;
+                font-size: calc(var(--font-title) * 2.91);
             }
         }
         
     }
     & .form {
-        width: 100%;
+        width: 50%;
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -70,13 +75,24 @@ export const Header = styled.header`
         }
 
         & .search.active {
-        display: flex;
+            display: flex;
         }
         
     }
 
     @media screen and (max-width: 768px) {
         height: 60px;
+        & .header-title {
+            width: 75%;
+            font-size: var(--font-title);
+            & button {
+                margin-right: 0;
+            }
+        }
+    }
+
+    & .form {
+        width: 25%;
     }
 
 
