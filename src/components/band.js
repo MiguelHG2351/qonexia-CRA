@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const ContainerDescription = styled.div`
   height: 80%;
@@ -46,10 +46,10 @@ const ContainerDescription = styled.div`
       font-size: 20px;
     }
   }
-`;
+`
 
-function Band({data}) {
-    return (
+function Band ({ data }) {
+  return (
       <ContainerDescription>
         <div className="nameProduct">
           <strong>{data.name}</strong>
@@ -90,7 +90,7 @@ function Band({data}) {
           ))}
       </div>
     </ContainerDescription>
-    )
+  )
 }
 
 export default Band

@@ -26,12 +26,11 @@ const Container = styled.div`
     }
 `
 
-export default function CatalogoSection() {
+export default function CatalogoSection () {
+  const context = useContext(contextData)
+  console.log(context)
 
-    const context = useContext(contextData)
-    console.log(context)
-
-    return <Container>
+  return <Container>
         <div>
             <h1>Catalago de productos</h1>
         </div>
@@ -45,7 +44,7 @@ export default function CatalogoSection() {
                     <div className="product-brand">
                         <div className="product-card">
                         {
-                            context.category.brand.Xiaomi.map((e, index) =>(
+                            context.category.brand.Xiaomi.map((e, index) => (
                                 <div className="container-card" key={ index }>
                                     <div className="product-card-image">
                                         <img src={ e.img } alt={e.name} title={`El ${e.name}`} />
@@ -62,31 +61,31 @@ export default function CatalogoSection() {
                 <article>
                     <div className="name-brand">Huawei</div>
                     <div className="product-brand">
-                        
+
                     </div>
                 </article>
                 <article>
                     <div className="name-brand">Realme</div>
                     <div className="product-brand">
-                        
+
                     </div>
                 </article>
                 <article>
                     <div className="name-brand">Nintendo</div>
                     <div className="product-brand">
-                        
+
                     </div>
                 </article>
                 <article>
                     <div className="name-brand">Go pro</div>
                     <div className="product-brand">
-                        
+
                     </div>
                 </article>
                 <article>
                     <div className="name-brand">Amazfit</div>
                     <div className="product-brand">
-                        
+
                     </div>
                 </article>
             </section>

@@ -41,8 +41,8 @@ const Container = styled.div`
     }
 `
 
-function NotFound() {
-    return <Container>
+function NotFound () {
+  return <Container>
         <h2>Dirección no encontrada 404 Not found</h2>
         <img src="https://media.giphy.com/media/6uGhT1O4sxpi8/giphy.gif" alt="No encontramos su sitio" title="No encontramos su sitio" />
         <p>Lista de rutas del sito: </p>

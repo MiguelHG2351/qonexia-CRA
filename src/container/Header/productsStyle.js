@@ -67,7 +67,7 @@ export const Header = styled.header`
             }
             & input {
             transition: all ease 0.3s;
-            animation: ${ inputForm } 0.4s forwards;
+            animation: ${inputForm} 0.4s forwards;
             outline: none;
             padding: 8px;
             border: none;

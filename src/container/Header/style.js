@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Header = styled.header`
     position: relative;
@@ -38,7 +38,6 @@ export const Header = styled.header`
         }
     }
 `
-
 
 export const Background = styled.div`
     position: absolute;

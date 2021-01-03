@@ -1,7 +1,7 @@
 import React from 'react'
 
-function PowerBank({data}) {
-    return <>
+function PowerBank ({ data }) {
+  return <>
     <table>
           <thead>
             <tr>

@@ -1,34 +1,32 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import context from 'context/descriptionContext'
+// import context from 'context/descriptionContext'
 
+function Form () {
+  const categories = ['money', 'quality', 'power', 'trending']
+  const keyword = {
+    money: 'money',
+    quality: 'quality',
+    power: 'power',
+    trending: 'trending'
+  }
 
-function Form() {
+  console.log(keyword, categories)
 
-    const categories = ["money", "quality", "power", "trending"]
-    const keyword = {
-        money,
-        quality,
-        power,
-        trending
-    }
+  const history = useHistory()
 
-    console.log(keyword, categories)
+  function getData (formData) {
+    const devices = formData.get('devices')
+    history.push(devices)
+  }
 
-    const history = useHistory()
+  function searchForm (e) {
+    e.preventDefault()
+    const formData = new FormData(e.currentTarget)
+    getData(formData)
+  }
 
-    function getData(formData) {
-        const devices = formData.get("devices");
-        history.push(devices)
-    }
-
-    function searchForm(e) {
-        e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-        getData(formData);
-    }
-
-    return <form onSubmit={searchForm}>
+  return <form onSubmit={searchForm}>
         <div className="input-container">
             <input name="devices" placeholder="Buscar dispositivos" />
             <button>Buscar</button>
@@ -42,4 +40,4 @@ function Form() {
     </form>
 }
 
-export default Form;
+export default Form

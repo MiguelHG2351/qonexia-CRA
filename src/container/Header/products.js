@@ -3,92 +3,88 @@ import { Header, Sidenav, Overlay } from 'container/Header/productsStyle'
 import { Link, useHistory } from 'react-router-dom'
 import baseContext from 'context/descriptionContext'
 
+function Head () {
+  const [active, setActive] = useState(null)
+  const [formActive, setFormActive] = useState('search')
+  const [title, setTitle] = useState('productos')
 
-function Head() {
+  const history = useHistory()
 
-    const [active, setActive] = useState(null)
-    const [formActive, setFormActive] = useState("search");
-    const [title, setTitle] = useState('productos')
+  const context = useContext(baseContext)
 
-
-    const history = useHistory()
-
-    const context = useContext(baseContext)
-
-    useEffect(() => {
-        setTitle(document.title)
-        // eslint-disable-next-line
+  useEffect(() => {
+    setTitle(document.title)
+    // eslint-disable-next-line
     }, [document.title]) 
-    function loadSideNav() {
-        setActive(null)
-    }
+  function loadSideNav () {
+    setActive(null)
+  }
 
-    // Ordenar por potencia, precio, camara, Más comprado, Marca en especifico, 
-    
-    function openMenu() {
-        setActive("active")
-    }
+  // Ordenar por potencia, precio, camara, Más comprado, Marca en especifico,
 
-    function getData(formData) {
-        const search = formData.get("search");
-        
-        let brand;
-        let name;
-        context.all.forEach((e, index) => {
-          if (e.name.indexOf(search) <= 8 && e.name.indexOf(search) >= 0) {
-            brand =
+  function openMenu () {
+    setActive('active')
+  }
+
+  function getData (formData) {
+    const search = formData.get('search')
+
+    let brand
+    let name
+    context.all.forEach((e, index) => {
+      if (e.name.indexOf(search) <= 8 && e.name.indexOf(search) >= 0) {
+        brand =
               index <= 23
-                ? "Xiaomi"
+                ? 'Xiaomi'
                 : index <= 46
-                ? "Samsung"
-                : index <= 57
-                ? "Apple"
-                : index <= 65
-                ? "Huawei"
-                : index <= 70
-                ? "Realme"
-                : index <= 74
-                ? "Nintendo"
-                : index <= 75
-                ? "GoPro"
-                : index <= 75
-                ? "Amazfit"
-                : "default";
-                name = e.name
-            }
-        });
-        if(brand === undefined || name === undefined) {
-            history.push("/notFound");
-        } else {
-            history.push(`/Products/${brand}/${name}`);
-        }
-    
+                  ? 'Samsung'
+                  : index <= 57
+                    ? 'Apple'
+                    : index <= 65
+                      ? 'Huawei'
+                      : index <= 70
+                        ? 'Realme'
+                        : index <= 74
+                          ? 'Nintendo'
+                          : index <= 75
+                            ? 'GoPro'
+                            : index <= 75
+                              ? 'Amazfit'
+                              : 'default'
+        name = e.name
+      }
+    })
+    if (brand === undefined || name === undefined) {
+      history.push('/notFound')
+    } else {
+      history.push(`/Products/${brand}/${name}`)
     }
+  }
 
-    function searchDevices(e) {
-        e.preventDefault()
-        const formData = new FormData(e.currentTarget)
-        getData(formData)
-    }
+  function searchDevices (e) {
+    e.preventDefault()
+    const formData = new FormData(e.currentTarget)
+    getData(formData)
+  }
 
-    function toggleMenu() {
-        if (formActive === "search active") setFormActive("search");
-        else setFormActive("search active");
-    }
-    
-    function blurInput() {
-        console.log("blur active")
-        if (formActive === "search active") setFormActive("search");
-        else setFormActive("search active");
-    }
-    
-    function onkeyDown(e) {
-        if(e.keyCode === 27) {
-            setFormActive("search")
-        }
-    }
+  function toggleMenu () {
+    if (formActive === 'search active') setFormActive('search')
+    else setFormActive('search active')
+  }
 
-    return <>
+  function blurInput () {
+    console.log('blur active')
+    if (formActive === 'search active') setFormActive('search')
+    else setFormActive('search active')
+  }
+
+  function onkeyDown (e) {
+    if (e.keyCode === 27) {
+      setFormActive('search')
+    }
+  }
+
+  return <>
         <Header>
             <Sidenav className={active}>
                 <div className="profile">
@@ -145,4 +141,4 @@ function Head() {
     </>
 }
 
-export default React.memo(Head);
+export default React.memo(Head)

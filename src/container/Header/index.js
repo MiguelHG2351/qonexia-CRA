@@ -2,34 +2,31 @@ import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Header, Card, HeaderNav, Background, HeaderTitle, HeaderListCard } from './style'
-import useCarrousel from "hooks/useCarrousel";
+import useCarrousel from 'hooks/useCarrousel'
 import gif from 'static/images/loading.gif'
 
-function Headers() {
+function Headers () {
+  // Hooks
+  const scrollCard = useRef(null)
 
-    // Hooks
-    const scrollCard = useRef(null)
+  // Custom Hooks
+  useCarrousel(scrollCard)
+  const mediaQuery = matchMedia('(max-width: 576px)').matches
+  const [menu, setMenu] = useState(undefined)
 
-    // Custom Hooks
-    useCarrousel(scrollCard);
-    let mediaQuery = matchMedia('(max-width: 576px)').matches
-    const [menu, setMenu] = useState(undefined)
-
-    // JSX
-    return <Header>
+  // JSX
+  return <Header>
         <Background>
             {
                 mediaQuery // Tamaño estandar de la imagen
-                ?
-                <img src="https://miguelhg2351.github.io/API/imagenes/backgroundMobile.webp" alt="Bienvenidos a qonexia" />
-                :
-                <video src="https://miguelhg2351.github.io/API/videos/video.webm" muted autoPlay={true} loop={true}>
+                  ? <img src="https://miguelhg2351.github.io/API/imagenes/backgroundMobile.webp" alt="Bienvenidos a qonexia" />
+                  : <video src="https://miguelhg2351.github.io/API/videos/video.webm" muted autoPlay={true} loop={true}>
                     {/* <track default kind="subtitles" srcLang="es" src={subtitle} /> */}
                 </video>
 
             }
         </Background>
-        <button className="toggle-menu" onClick={() => menu===undefined?setMenu("active"):setMenu(undefined)}><i className="material-icons">menu</i></button>
+        <button className="toggle-menu" onClick={() => menu === undefined ? setMenu('active') : setMenu(undefined)}><i className="material-icons">menu</i></button>
         <HeaderNav className={menu}>
             <ul className="list-nav">
                 <li><Link to="/">Home</Link></li>
@@ -51,7 +48,6 @@ function Headers() {
             </Card>
         </HeaderListCard>
     </Header>
-
 }
 
-export default React.memo(Headers);
+export default React.memo(Headers)

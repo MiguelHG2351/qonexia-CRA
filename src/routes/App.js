@@ -1,7 +1,7 @@
-import React, { Suspense, lazy} from 'react';
+import React, { Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { GlobalStyles } from 'GlobalStyle'
-import {ContextProducts} from 'context/descriptionContext'
+import { ContextProducts } from 'context/descriptionContext'
 
 // Component
 const Home = lazy(() => import('../pages/index'))
@@ -14,14 +14,13 @@ const Trends = lazy(() => import('../pages/trends'))
 const NotFound = lazy(() => import('../pages/notFound'))
 const Footer = lazy(() => import('../container/footer/'))
 
-
 const Preloader = () => {
-  return <div style={ { width:"100%", height: "100vh", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center"} }>
+  return <div style={ { width: '100%', height: '100vh', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' } }>
     <h2>Loading...</h2>
   </div>
 }
 
-function App() {
+function App () {
   return (
     <Suspense fallback={ <Preloader/> }>
     <ContextProducts>
@@ -29,7 +28,7 @@ function App() {
       <GlobalStyles />
         <Switch>
             <Route exact component={ Home } path="/" />
-            <Route exact component={ Trends } path="/trends"  />
+            <Route exact component={ Trends } path="/trends" />
             <Route exact component={ Agenda } path="/agenda" />
             <Route exact component={ RedirectToCatalogo } path="/products/" />
             <Route exact component={ RedirectToProducts } path="/products/:brand/" />
@@ -40,8 +39,8 @@ function App() {
           <Footer/>
         </Router>
       </ContextProducts>
-    </Suspense> 
-  );
+    </Suspense>
+  )
 }
 
-export default App;
+export default App

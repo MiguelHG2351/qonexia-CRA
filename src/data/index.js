@@ -1,26 +1,26 @@
-export default function(getRoute, getData) {
-    // console.log(getRoute, getData);
-    let data;
-    if (getRoute.category.brand[getData.brand] !== undefined) {
-      getRoute.category.brand[getData.brand].forEach(element => {
-        if (
-          element.name ===
+export default function (getRoute, getData) {
+  // console.log(getRoute, getData);
+  let data
+  if (getRoute.category.brand[getData.brand] !== undefined) {
+    getRoute.category.brand[getData.brand].forEach(element => {
+      if (
+        element.name ===
           `${getData.devices}`
-        ) {
-          data = element;
-        }
-        // data = getRoute.default[0];
-      });
-      if(data === undefined) {
-        data = getRoute.default[0]
+      ) {
+        data = element
       }
-    } else {
-      data = getRoute.default[0];
+      // data = getRoute.default[0];
+    })
+    if (data === undefined) {
+      data = getRoute.default[0]
     }
-
-    return data;
+  } else {
+    data = getRoute.default[0]
   }
-  
+
+  return data
+}
+
 //   console.log(context.all.sort((a, b) => {
 //     if(a.precio > b.precio) {
 //         return 1;

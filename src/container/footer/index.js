@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import logo from "static/images/logo.jpg";
-import instagram from "static/images/icon-instagram.svg";
-import facebook from "static/images/icon-facebook.svg";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+import logo from 'static/images/logo.jpg'
+import instagram from 'static/images/icon-instagram.svg'
+import facebook from 'static/images/icon-facebook.svg'
 
 const FooterSite = styled.footer`
   background: #1e252b;
@@ -156,9 +156,9 @@ const FooterSite = styled.footer`
     }
   }
 
-`;
+`
 
-function Footer() {
+function Footer () {
   return (
     <FooterSite>
       <div className="container">
@@ -212,7 +212,7 @@ function Footer() {
         </form>
       </div>
     </FooterSite>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

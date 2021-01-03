@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const ContainerDescription = styled.div`
   height: 80%;
@@ -52,9 +52,9 @@ const ContainerDescription = styled.div`
       }
     }
   }
-`;
+`
 
-export default function Device({ data }) {
+export default function Device ({ data }) {
   return (
     <ContainerDescription>
       <div className="nameProduct">
@@ -105,5 +105,5 @@ export default function Device({ data }) {
         </div>
       </div>
     </ContainerDescription>
-  );
+  )
 }

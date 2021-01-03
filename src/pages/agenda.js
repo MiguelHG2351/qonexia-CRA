@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-export default function Agenda() {
+export default function Agenda () {
   return (
     <div>
       <h2>Proximamente</h2>
@@ -8,5 +8,5 @@ export default function Agenda() {
         Esta sera un sección para ver los proximos lanzamientos de dispositvos
       </p>
     </div>
-  );
+  )
 }
