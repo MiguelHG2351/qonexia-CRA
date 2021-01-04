@@ -10,8 +10,42 @@ app.use(cors())
 // Setting
 app.set('port', 5000)
 
-app.get('/', (req, res, next) => {
+// // functions
+// function checkbrand (search) {
+//   /*eslint-disable */
+//   let brandInfo;
+//   let brands = [
+//     "Xiaomi",
+//     "Samsung",
+//     "Apple",
+//     "Huawei",
+//     "Realme",
+//     "Nintendo",
+//     "GoPro",
+//     "Amazfit",
+//     "default",
+//   ];
+//   let brand;
+//   let name;
+
+//   brandInfo =
+//     context.all.find(
+//       (brand) =>
+//         brand.name.indexOf(search) <= 8 && brand.name.indexOf(search) >= 0
+//     ) || undefined;
+//   name = brandInfo != undefined ? brandInfo.name : undefined;
+//   brand =
+//     name !== undefined
+//       ? brands.find((brand) => brandInfo.name.includes(brand))
+//       : undefined; // get brand
+
+//   /* eslint-enable */
+//   return [brand, name]
+// }
+
+app.get('/api/search/:name', (req, res) => {
   if (res.statusCode < 400) {
+    console.log(req.params)
     fs.readFile('./src/API/index.json', 'utf-8', (err, data) => {
       if (err) throw err
       res.json(JSON.parse(data))

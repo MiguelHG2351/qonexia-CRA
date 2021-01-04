@@ -25,23 +25,25 @@ function Head () {
     setActive('active')
   }
 
-  function Checkbrand (search) {
+  function checkbrand (search) {
     /*eslint-disable */
     let brandInfo;
-    let brand = ['Xiaomi', 'Samsung', 'Apple', 'Huawei', 'Realme', 'Nintendo', 'GoPro', 'Amazfit', 'default']
+    let brands = ['Xiaomi', 'Samsung', 'Apple', 'Huawei', 'Realme', 'Nintendo', 'GoPro', 'Amazfit', 'default']
+    let brand;
     let name;
 
-    brandInfo = context.all.find((brand) => brand.name.indexOf(search) <= 8 && brand.name.indexOf(search) >= 0)
-    name = brand.find((brand => brandInfo.name.includes(brand))) // get brand
+    brandInfo = context.all.find((brand) => brand.name.indexOf(search) <= 8 && brand.name.indexOf(search) >= 0) || undefined
+    name = brandInfo != undefined ? brandInfo.name : undefined 
+    brand = name !== undefined ? brands.find((brand => brandInfo.name.includes(brand))) : undefined // get brand
 
     /* eslint-enable */
-    return [name, brandInfo.name]
+    return [brand, name]
   }
 
   function getData (formData) {
     const search = formData.get('search')
 
-    const [brand, name] = Checkbrand(search)
+    const [brand, name] = checkbrand(search)
     if (brand === undefined || name === undefined) {
       history.push('/notFound')
     } else if (brand !== 'default') {
@@ -119,7 +121,7 @@ function Head () {
                     <div className="close-attachment" onClick={toggleInput}>
                         <i className="material-icons">west</i>
                     </div>
-                    <input id="search" name="search" onKeyDown={onkeyDown} onBlur={blurInput} type="text" placeholder="Buscar" required={true} />
+                    <input id="search" name="search" autoCorrect='true' onKeyDown={onkeyDown} onBlur={blurInput} type="text" placeholder="Buscar" required={true} />
                 </div>
             </form>
         </Header>
