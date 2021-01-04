@@ -54,6 +54,7 @@ export const Background = styled.div`
         object-fit: cover;
         max-width: 100%;
         background: #0b0b2a;
+        width: 100%;
     }
 
     & video {
