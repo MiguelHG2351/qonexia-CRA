@@ -6,7 +6,7 @@ export default function useTitle ({ description, title }) {
   useEffect(() => {
     const previousTitle = prevTitle.current
     if (title) {
-      document.title = `${title}`
+      document.title = `${title} | qonexia`
     }
 
     return () => {

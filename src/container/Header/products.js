@@ -1,7 +1,7 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Header, Sidenav, Overlay } from 'container/Header/productsStyle'
 import { Link, useHistory } from 'react-router-dom'
-import baseContext from 'context/descriptionContext'
+// import baseContext from 'context/descriptionContext'
 
 function Head () {
   const [active, setActive] = useState(null)
@@ -9,12 +9,10 @@ function Head () {
   const [title, setTitle] = useState('productos')
   const history = useHistory()
 
-  const context = useContext(baseContext)
-
   useEffect(() => {
-    setTitle(document.title)
     // eslint-disable-next-line
-    }, [document.title]) 
+      setTitle(document.title)
+  }, [document.title])
   function loadSideNav () {
     setActive(null)
   }
@@ -25,28 +23,30 @@ function Head () {
     setActive('active')
   }
 
-  function checkbrand (search) {
+  async function checkbrand (search) {
     /*eslint-disable */
-    let brandInfo;
+    // let brandInfo;
     let brands = ['Xiaomi', 'Samsung', 'Apple', 'Huawei', 'Realme', 'Nintendo', 'GoPro', 'Amazfit', 'default']
     let brand;
     let name;
 
-    brandInfo = context.all.find((brand) => brand.name.indexOf(search) <= 8 && brand.name.indexOf(search) >= 0) || undefined
-    name = brandInfo != undefined ? brandInfo.name : undefined 
-    brand = name !== undefined ? brands.find((brand => brandInfo.name.includes(brand))) : undefined // get brand
-
+    // brandInfo = context.all.find((brand) => brand.name.indexOf(search) <= 8 && brand.name.indexOf(search) >= 0) || undefined
+    const api = await fetch(`https://vercel-node-app-miguel23.miguelhg2351.vercel.app/api/${search}`, {mode: 'cors'})
+    const response = await api.json()
+    name = response != undefined ? response.name : undefined
+    brand = name !== undefined ? brands.find((brand => response.name.includes(brand))) : undefined // get brand
     /* eslint-enable */
     return [brand, name]
   }
 
-  function getData (formData) {
+  async function getData (formData) {
     const search = formData.get('search')
 
-    const [brand, name] = checkbrand(search)
+    const [brand, name] = await checkbrand(search)
     if (brand === undefined || name === undefined) {
       history.push('/notFound')
     } else if (brand !== 'default') {
+      setTitle(name)
       history.push(`/Products/${brand}/${name}`)
     }
   }
