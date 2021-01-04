@@ -6,9 +6,7 @@ const DescriptionData = React.createContext({})
 export function ContextProducts ({ children }) {
   /*eslint-disable */
   return(
-  <>
       <DescriptionData.Provider value={API}>{children}</DescriptionData.Provider>
-  </>
   )
 }
 

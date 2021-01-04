@@ -1,24 +1,27 @@
 export default function (getRoute, getData) {
   // console.log(getRoute, getData);
+  console.log(getRoute.length)
   let data
-  if (getRoute.category.brand[getData.brand] !== undefined) {
-    getRoute.category.brand[getData.brand].forEach(element => {
-      if (
-        element.name ===
+  if (getRoute.length !== 0) {
+    if (getRoute.category.brand[getData.brand] !== undefined) {
+      getRoute.category.brand[getData.brand].forEach(element => {
+        if (
+          element.name ===
           `${getData.devices}`
-      ) {
-        data = element
-      }
+        ) {
+          data = element
+        }
       // data = getRoute.default[0];
-    })
-    if (data === undefined) {
+      })
+      if (data === undefined) {
+        data = getRoute.default[0]
+      }
+    } else {
       data = getRoute.default[0]
     }
-  } else {
-    data = getRoute.default[0]
-  }
 
-  return data
+    return data
+  }
 }
 
 //   console.log(context.all.sort((a, b) => {

@@ -1,7 +1,8 @@
 import React, { Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
 import { GlobalStyles } from 'GlobalStyle'
-import { ContextProducts } from 'context/descriptionContext'
 
 // Component
 const Home = lazy(() => import('../pages/index'))
@@ -20,13 +21,31 @@ const Preloader = () => {
   </div>
 }
 
+function reducer (state, action) {
+  /* eslint-disable */
+  switch (action.type) {
+    case 'SET_DEVICE_INFO': {
+      return { ...state, data: action.payload }
+    }
+    default: {
+      return state
+    }
+  }
+}
+
+const initialState = {
+  data: []
+}
+
+const store = createStore(reducer, initialState)
+
 function App () {
   return (
     <Suspense fallback={ <Preloader/> }>
-    <ContextProducts>
-      <Router>
-      <GlobalStyles />
-        <Switch>
+      <Provider store={store}>
+        <Router>
+        <GlobalStyles />
+          <Switch>
             <Route exact component={ Home } path="/" />
             <Route exact component={ Trends } path="/trends" />
             <Route exact component={ Agenda } path="/agenda" />
@@ -38,7 +57,7 @@ function App () {
           </Switch>
           <Footer/>
         </Router>
-      </ContextProducts>
+      </Provider>
     </Suspense>
   )
 }
