@@ -10,45 +10,37 @@ app.use(cors())
 // Setting
 app.set('port', 5000)
 
-// // functions
-// function checkbrand (search) {
-//   /*eslint-disable */
-//   let brandInfo;
-//   let brands = [
-//     "Xiaomi",
-//     "Samsung",
-//     "Apple",
-//     "Huawei",
-//     "Realme",
-//     "Nintendo",
-//     "GoPro",
-//     "Amazfit",
-//     "default",
-//   ];
-//   let brand;
-//   let name;
+// functions
+function checkbrand (search, data) {
+  /*eslint-disable */
+  let brandInfo;
+  // let brands = [
+  //   "Xiaomi",
+  //   "Samsung",
+  //   "Apple",
+  //   "Huawei",
+  //   "Realme",
+  //   "Nintendo",
+  //   "GoPro",
+  //   "Amazfit",
+  //   "default",
+  // ];
+  brandInfo =
+    data.all.find(
+      (brand) =>
+        brand.name.indexOf(search) <= 8 && brand.name.indexOf(search) >= 0
+    ) || undefined;
 
-//   brandInfo =
-//     context.all.find(
-//       (brand) =>
-//         brand.name.indexOf(search) <= 8 && brand.name.indexOf(search) >= 0
-//     ) || undefined;
-//   name = brandInfo != undefined ? brandInfo.name : undefined;
-//   brand =
-//     name !== undefined
-//       ? brands.find((brand) => brandInfo.name.includes(brand))
-//       : undefined; // get brand
-
-//   /* eslint-enable */
-//   return [brand, name]
-// }
+  /* eslint-enable */
+  return brandInfo
+}
 
 app.get('/api/search/:name', (req, res) => {
   if (res.statusCode < 400) {
-    console.log(req.params)
-    fs.readFile('./src/API/index.json', 'utf-8', (err, data) => {
+    fs.readFile('./src/API/products.json', 'utf-8', (err, data) => {
+      const info = checkbrand(req.params.name, JSON.parse(data))
       if (err) throw err
-      res.json(JSON.parse(data))
+      res.json(info)
     })
     console.log(res.statusCode)
     res.status(200)
