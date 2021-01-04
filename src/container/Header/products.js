@@ -7,7 +7,6 @@ function Head () {
   const [active, setActive] = useState(null)
   const [formActive, setFormActive] = useState('search')
   const [title, setTitle] = useState('productos')
-
   const history = useHistory()
 
   const context = useContext(baseContext)
@@ -26,39 +25,33 @@ function Head () {
     setActive('active')
   }
 
+  function Checkbrand (search) {
+    /*eslint-disable */
+    let brandInfo;
+    let brand = ['Xiaomi', 'Samsung', 'Apple', 'Huawei', 'Realme', 'Nintendo', 'GoPro', 'Amazfit', 'default']
+    let name;
+
+    brandInfo = context.all.find((brand) => brand.name.indexOf(search) <= 8 && brand.name.indexOf(search) >= 0)
+    name = brand.find((brand => brandInfo.name.includes(brand))) // get brand
+
+    /* eslint-enable */
+    return [name, brandInfo.name]
+  }
+
   function getData (formData) {
     const search = formData.get('search')
 
-    let brand
-    let name
-    context.all.forEach((e, index) => {
-      if (e.name.indexOf(search) <= 8 && e.name.indexOf(search) >= 0) {
-        brand =
-              index <= 23
-                ? 'Xiaomi'
-                : index <= 46
-                  ? 'Samsung'
-                  : index <= 57
-                    ? 'Apple'
-                    : index <= 65
-                      ? 'Huawei'
-                      : index <= 70
-                        ? 'Realme'
-                        : index <= 74
-                          ? 'Nintendo'
-                          : index <= 75
-                            ? 'GoPro'
-                            : index <= 75
-                              ? 'Amazfit'
-                              : 'default'
-        name = e.name
-      }
-    })
+    const [brand, name] = Checkbrand(search)
     if (brand === undefined || name === undefined) {
       history.push('/notFound')
-    } else {
+    } else if (brand !== 'default') {
       history.push(`/Products/${brand}/${name}`)
     }
+  }
+
+  function toggleInput () {
+    console.log('click')
+    formActive === 'search' ? setFormActive('search active') : setFormActive('search')
   }
 
   function searchDevices (e) {
@@ -67,15 +60,8 @@ function Head () {
     getData(formData)
   }
 
-  function toggleMenu () {
-    if (formActive === 'search active') setFormActive('search')
-    else setFormActive('search active')
-  }
-
   function blurInput () {
-    console.log('blur active')
-    if (formActive === 'search active') setFormActive('search')
-    else setFormActive('search active')
+    setFormActive('search')
   }
 
   function onkeyDown (e) {
@@ -128,12 +114,12 @@ function Head () {
                 <h2>{title}</h2>
             </div>
             <form className="form" onSubmit={searchDevices}>
-                <label onClick={toggleMenu} htmlFor="search"><i className="material-icons">search</i></label>
+                <label htmlFor="search" onClick={toggleInput}><i className="material-icons">search</i></label>
                 <div className={formActive}>
-                    <div className="close-attachment" onClick={toggleMenu}>
+                    <div className="close-attachment" onClick={toggleInput}>
                         <i className="material-icons">west</i>
                     </div>
-                    <input id="search" name="search" onKeyDown={onkeyDown} onBlur={blurInput} type="text" placeholder="Buscar"/>
+                    <input id="search" name="search" onKeyDown={onkeyDown} onBlur={blurInput} type="text" placeholder="Buscar" required={true} />
                 </div>
             </form>
         </Header>

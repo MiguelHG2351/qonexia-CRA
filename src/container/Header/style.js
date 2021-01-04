@@ -60,6 +60,7 @@ export const Background = styled.div`
         object-fit: cover;
         background: #0b0b2a;
         max-width: 100%;
+        width: 100%;
     }
 `
 export const HeaderNav = styled.div`
@@ -79,7 +80,7 @@ export const HeaderNav = styled.div`
         font-size: 18px;
         display: flex;
         justify-content: flex-start;
-        width: 50%;
+        width: 100%;
         padding: 0.27em;
         & li {
             list-style: none;

@@ -105,7 +105,7 @@ background: linear-gradient(to right ,#002239,#002043,#10051f);
 & .catalogo {
     grid-column: 1 / span 2;
     margin: 30px 0;
-    & h3 {
+    & > h3 {
         color: #fff;
         margin-left: 4px;
     }

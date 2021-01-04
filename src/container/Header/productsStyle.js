@@ -37,6 +37,9 @@ export const Header = styled.header`
         justify-content: flex-start;
         flex-wrap: nowrap;
         flex-direction: row-reverse;
+        /* & input[type="checkbox"] {
+            display: none;
+        } */
         & label {
             border: none;
             background: transparent;
@@ -51,12 +54,15 @@ export const Header = styled.header`
         
         & .search {
             position: absolute;
-            width: 50%;
-            display: none;
             align-items: center;
             justify-content: center;
             z-index: 10;
+            width: 0;
+            display: flex;
+            overflow: hidden;
+            transition: width 0.3s ease;
             & .close-attachment {
+                width: 4%;
                 cursor: pointer;
                 user-select: none;
                 background: #fff;
@@ -65,17 +71,18 @@ export const Header = styled.header`
                     padding: 4px;
                 }
             }
-            & input {
-            transition: all ease 0.3s;
-            animation: ${inputForm} 0.4s forwards;
-            outline: none;
-            padding: 8px;
-            border: none;
+            & input[type="text"] {
+                transition: all ease 0.3s;
+                /* animation: ${inputForm} 0.4s forwards; */
+                outline: none;
+                padding: 8px;
+                border: none;
+                width: 96%;
             }
         }
 
         & .search.active {
-            display: flex;
+            width: 50%;
         }
         
     }
@@ -129,9 +136,11 @@ export const Sidenav = styled.div`
             left: 0;
             right: 0;
             bottom: 0;
+            overflow: hidden;
             & img {
                 width: 100%;
-                height: 100%;
+                height: auto;
+                object-fit: cover;
                 border-radius: 0;
                 padding: 0;
                 margin: 0;

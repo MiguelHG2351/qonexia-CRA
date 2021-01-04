@@ -18,7 +18,7 @@ export const inputForm = keyframes`
     }
 
     to {
-        width: 100%;
+        width: 80%;
     }
 
 `
