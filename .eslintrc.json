@@ -25,7 +25,9 @@
     ],
     "rules": {
         "react/prop-types": "off",
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+        "indent": ["error", 4],
+        "space-before-function-paren": "off"
     },
     "ignorePatterns": ["build/*"]
 }
