@@ -57,7 +57,7 @@ function NotFound () {
                 <p>Lista de rutas del sito: </p>
                 <ul>
                     <li>
-                        <Link href="/"><a>Inicio</a></Link>
+                        <Link href="/"><a>Home</a></Link>
                     </li>
                     <li>
                         <Link href="/products"><a>Productos</a></Link>
