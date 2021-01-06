@@ -32,7 +32,6 @@ const styles = css`
 
 export default function CatalogoSection () {
     const context = useSelector(state => state.deviceList)
-    console.log(context)
 
     return (
         <>

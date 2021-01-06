@@ -16,7 +16,6 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     /* eslint-disable */
-    console.log(action)
     switch (action.type) {
         case 'TICK':
             return {
