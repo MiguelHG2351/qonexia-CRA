@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import styles from './styles/productsStyle'
@@ -48,6 +49,13 @@ function Producthead() {
 
     return (
         <>
+            <Head>
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <link
+                    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                    rel="stylesheet"
+                />
+            </Head>
             <header className="header">
                 <div className={`sidenav ${active}`}>
                     <div className="profile">

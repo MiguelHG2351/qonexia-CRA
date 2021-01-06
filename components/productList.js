@@ -8,33 +8,6 @@ import styles from './styles/productList'
 import DescriptionPhone from 'components/descriptionPhone'
 
 function ProductList({ data }) {
-    // const data = {
-    //     name: 'Xiaomi Redmi K30 128GB',
-    //     procesador: 'Snapdragon 730G overclockeado!',
-    //     GPU: ' Adreno 618',
-    //     storage: '128GB de interna',
-    //     RAM: 6,
-    //     expandible: 'Expandible',
-    //     bateria: '4500mAh',
-    //     carga: 'Carga Rápida 27W',
-    //     screen: 6.67,
-    //     quality: 'FullHD+ 1080x2400px',
-    //     camara1: 2,
-    //     camara2: 4,
-    //     camara1_quality: '20 + 2MP',
-    //     camara2_quality: '64 + 8 + 2 + 2 MP',
-    //     notch_type: 'Circular',
-    //     huella: 'Si',
-    //     huella_position: 'acostado',
-    //     USB: 'tipo C',
-    //     OS: 'Android 10',
-    //     capa: 'MIUI 11',
-    //     precio: 340,
-    //     NFC: 'Efectivamente',
-    //     type: 'device',
-    //     img: 'https://miguelhg2351.github.io/API/XIAOMI/Redmik30.webp',
-    //     colores: ['#146dbd', '#c3258a'],
-    // }
     const similars = [
         {
             name: 'Xiaomi Redmi K30',

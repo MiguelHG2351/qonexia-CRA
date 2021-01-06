@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
-import img from 'static/images/image-representacion.png'
-import contextData from 'context/descriptionContext'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import css from 'styled-jsx/css'
 
 const styles = css`
@@ -32,7 +31,7 @@ const styles = css`
 `
 
 export default function CatalogoSection () {
-    const context = useContext(contextData)
+    const context = useSelector(state => state.deviceList)
     console.log(context)
 
     return (
@@ -42,7 +41,7 @@ export default function CatalogoSection () {
                     <h1>Catalago de productos</h1>
                 </div>
                 <div>
-                    <img src={img} alt="catalogo" />
+                    <img src="/static/images/image-representacion.png" alt="catalogo" />
                 </div>
                 <section className="product-list">
                     <section className="section-brand">

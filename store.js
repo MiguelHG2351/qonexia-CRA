@@ -49,7 +49,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 device: state.deviceList.category.brand[
                     action.payload.brand
-                ].find(element => element.name === action.payload.device),
+                ].find(element => element.name === action.payload.device) || {status: null}
             }
         default:
             return state

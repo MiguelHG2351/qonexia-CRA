@@ -4,17 +4,28 @@ import { withRouter } from 'next/router'
 import { useSelector, useDispatch } from 'react-redux'
 import Head from 'next/head'
 import Header from 'components/container/Header/products'
-// import ProductList from
+const ContentLoaded = dynamic(import('react-content-loader'), { ssr: false })
 
 const ProductList = dynamic(() => import('components/productList'), {
     // eslint-disable-next-line react/display-name
-    loading: () => <p>...</p>,
+    loading: () => <Preloader />,
 })
+
+function Preloader() {
+    return (
+        <ContentLoaded width="1200px" height="1200px">
+            <rect x="229" y="78" rx="2" ry="2" width="140" height="10" />
+            <rect x="230" y="122" rx="2" ry="2" width="140" height="10" />
+            <rect x="5" y="57" rx="2" ry="2" width="202" height="400" />
+            <rect x="233" y="164" rx="0" ry="0" width="146" height="9" />
+            <rect x="232" y="210" rx="0" ry="0" width="153" height="19" />
+        </ContentLoaded>
+    )
+}
 
 function Product({ router }) {
     const deviceList = useSelector((state) => state.device)
     const dispatch = useDispatch()
-    console.log(deviceList)
 
     useEffect(() => {
         const parameters = router.query
@@ -30,10 +41,16 @@ function Product({ router }) {
         }
     }, [router])
 
+    useEffect(() => {
+        if (Object.keys(deviceList).length === 1 && deviceList.status === null) {
+            router.push('/')
+        }
+    }, [deviceList])
+
     return (
         <>
             <Head>
-                <title>{router.query.device} | Qonexia</title>
+                <title>{router.query.device || 'Loading'} | Qonexia</title>
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link
                     href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -45,10 +62,9 @@ function Product({ router }) {
                 />
             </Head>
             <Header />
-            {
-                Object.keys(deviceList).length &&
-                <ProductList data={deviceList}/>
-            }
+            {Object.keys(deviceList).length > 1 && (
+                <ProductList data={deviceList} />
+            )}
         </>
     )
 }
