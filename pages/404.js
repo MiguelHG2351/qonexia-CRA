@@ -57,19 +57,19 @@ function NotFound () {
                 <p>Lista de rutas del sito: </p>
                 <ul>
                     <li>
-                        <Link to="/">Inicio</Link>
+                        <Link href="/"><a>Inicio</a></Link>
                     </li>
                     <li>
-                        <Link to="/products">Productos</Link>
+                        <Link href="/products"><a>Productos</a></Link>
                     </li>
                     <li>
-                        <Link to="/trends">Tendencias</Link>
+                        <Link href="/trends"><a>Tendencias</a></Link>
                     </li>
                     <li>
-                        <Link to="/catalogo">Catalogo</Link>
+                        <Link href="/catalogo"><a>Catalogo</a></Link>
                     </li>
                     <li>
-                        <Link to="/social">Social Media</Link>
+                        <Link href="/social"><a>Social Media</a></Link>
                     </li>
                 </ul>
             </div>

@@ -134,6 +134,21 @@ export default css`
         position: relative;
     }
 
+    .profile img {
+        border-radius: 50%;
+        padding: 11px;
+        width: 30%;
+    }
+
+    .profile strong {
+        font-size: 25px;
+        color: #fff;
+    }
+    .profile span {
+        font-size: 14px;
+        color: #fff;
+    }
+
     .background {
         position: absolute;
         z-index: -1;
@@ -150,21 +165,6 @@ export default css`
         border-radius: 0;
         padding: 0;
         margin: 0;
-    }
-
-    .profile img {
-        border-radius: 50%;
-        padding: 11px;
-        width: 30%;
-    }
-
-    .profile strong {
-        font-size: 25px;
-        color: #fff;
-    }
-    .profile span {
-        font-size: 14px;
-        color: #fff;
     }
 
     .header-nav {
@@ -187,6 +187,10 @@ export default css`
     }
 
     .header-nav li:hover a {
+        color: #fff;
+    }
+
+    .header-nav li:hover i {
         color: #fff;
     }
 

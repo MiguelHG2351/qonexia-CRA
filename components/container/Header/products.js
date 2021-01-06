@@ -1,44 +1,46 @@
 import React, { useState } from 'react'
-import styles from './productsStyle'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
+import styles from './styles/productsStyle'
 // import baseContext from 'context/descriptionContext'
 
-function Producthead () {
+function Producthead() {
     const [active, setActive] = useState(null)
     const [formActive, setFormActive] = useState('search')
+    const { device } = useRouter().query
 
-    function loadSideNav () {
+    function loadSideNav() {
         setActive(null)
     }
 
     // Ordenar por potencia, precio, camara, Más comprado, Marca en especifico,
 
-    function openMenu () {
+    function openMenu() {
         setActive('active')
     }
 
-    function getData () {
+    function getData() {
         console.log('xd')
     }
 
-    function toggleInput () {
+    function toggleInput() {
         console.log('click')
         formActive === 'search'
             ? setFormActive('search active')
             : setFormActive('search')
     }
 
-    function searchDevices (e) {
+    function searchDevices(e) {
         e.preventDefault()
         const formData = new FormData(e.currentTarget)
         getData(formData)
     }
 
-    function blurInput () {
+    function blurInput() {
         setFormActive('search')
     }
 
-    function onkeyDown (e) {
+    function onkeyDown(e) {
         if (e.keyCode === 27) {
             setFormActive('search')
         }
@@ -71,61 +73,87 @@ function Producthead () {
                     <ul className="header-nav">
                         <li>
                             <i className="material-icons">home</i>
-                            <Link to="/">Inicio</Link>
+                            <Link href="/">
+                                <a>Inicio</a>
+                            </Link>
                         </li>
                         <li>
                             <i className="material-icons">smartphone</i>
-                            <Link to="/products">Productos</Link>
+                            <Link href="/products">
+                                <a>Productos</a>
+                            </Link>
                         </li>
                         <li>
                             <i className="material-icons">trending_up</i>
-                            <Link to="/trends">Tendencias</Link>
+                            <Link href="/trends">
+                                <a>Tendencias</a>
+                            </Link>
                         </li>
                         <li>
                             <i className="material-icons">shopping_cart</i>
-                            <Link to="/catalogo">Catalogo</Link>
+                            <Link href="/catalogo">
+                                <a>Catalogo</a>
+                            </Link>
                         </li>
                         <li>
                             <i className="material-icons">contact_phone</i>
-                            <Link to="/contact">Contactanos</Link>
+                            <Link href="/contact">
+                                <a>Contactanos</a>
+                            </Link>
                         </li>
                         <li>
                             <i className="material-icons">support_agent</i>
-                            <Link to="/support">Soporte Técnico</Link>
+                            <Link href="/support">
+                                <a>Soporte Técnico</a>
+                            </Link>
                         </li>
                         <hr />
                         <li>
                             <i className="material-icons">smartphone</i>
-                            <Link to="/catalogo#phone">Telefonos</Link>
+                            <Link href="/catalogo#phone">
+                                <a>Telefonos</a>
+                            </Link>
                         </li>
                         <hr />
                         <li>
-                            <Link to="/catalogo#samsung">Samsung</Link>
+                            <Link href="/catalogo#samsung">
+                                <a>Samsung</a>
+                            </Link>
                         </li>
                         <li>
-                            <Link to="/catalogo#xiaomi">Xiaomi</Link>
+                            <Link href="/catalogo#xiaomi">
+                                <a>Xiaomi</a>
+                            </Link>
                         </li>
                         <li>
-                            <Link to="/catalogo#huawei">Huawei</Link>
+                            <Link href="/catalogo#huawei">
+                                <a>Huawei</a>
+                            </Link>
                         </li>
                         <li>
-                            <Link to="/catalogo#apple">Apple</Link>
+                            <Link href="/catalogo#apple">
+                                <a>Apple</a>
+                            </Link>
                         </li>
                         <hr />
                         <li>
                             <i className="material-icons">coronavirus</i>
-                            <Link to="/support">Coronavirus</Link>
+                            <Link href="/support">
+                                <a>Coronavirus</a>
+                            </Link>
                         </li>
                         <hr />
                         <li>
                             <i className="material-icons">laptop</i>
-                            <Link to="/catalogo#laptop">Laptop</Link>
+                            <Link href="/catalogo#laptop">
+                                <a>Laptop</a>
+                            </Link>
                         </li>
                         <hr />
                         <li>
                             <i className="material-icons">laptop</i>
-                            <Link to="/catalogo#laptop">
-                                Mac MacOS Catalina
+                            <Link href="/catalogo#laptop">
+                                <a>Mac MacOS Catalina</a>
                             </Link>
                         </li>
                     </ul>
@@ -134,7 +162,7 @@ function Producthead () {
                     <button onClick={openMenu}>
                         <i className="material-icons">menu</i>
                     </button>
-                    <h2>Agua xd</h2>
+                    <h2>{device}</h2>
                 </div>
                 <form className="form" onSubmit={searchDevices}>
                     <label htmlFor="search" onClick={toggleInput}>

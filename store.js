@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
+import data from './public/data/products.json'
 
 let store
 
@@ -8,11 +9,14 @@ const initialState = {
     lastUpdate: 0,
     light: false,
     count: 0,
-    theme: null
+    theme: null,
+    deviceList: data,
+    device: [],
 }
 
 const reducer = (state = initialState, action) => {
     /* eslint-disable */
+    console.log(action)
     switch (action.type) {
         case 'TICK':
             return {
@@ -39,6 +43,13 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 theme: action.theme,
+            }
+        case 'GET_DEVICE':
+            return {
+                ...state,
+                device: state.deviceList.category.brand[
+                    action.payload.brand
+                ].find(element => element.name === action.payload.device),
             }
         default:
             return state
@@ -75,7 +86,7 @@ export const initializeStore = (preloadedState) => {
     return _store
 }
 
-export function useStore (initialState) {
+export function useStore(initialState) {
     const store = useMemo(() => initializeStore(initialState), [initialState])
     return store
 }

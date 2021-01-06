@@ -30,6 +30,9 @@ const styles = css`
     }
     .info .colors {
         grid-column: 1 / 3;
+        display: flex;
+        margin-top: 20px;
+        justify-content: center;
     }
     .info .colors button {
         border-radius: 12px;
@@ -106,7 +109,7 @@ export default function Device ({ data }) {
                     </div>
                 </div>
             </section>
-            <style jxs>{styles}</style>
+            <style jsx>{styles}</style>
         </>
     )
 }

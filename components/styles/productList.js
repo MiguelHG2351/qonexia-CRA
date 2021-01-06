@@ -4,13 +4,13 @@ export default css`
     :root {
         /* background: linear-gradient(to right ,#11b5e1, #1bd6d2, rgba(36, 100, 179, 0.7)); */
         /* --color-text: #00558f; */
-        --color-text: rgba(255, 255, 255, 0.85);
         /* background: linear-gradient(to right ,#1cd0b3,#54ddd5,#29c7ca); */
         /* background: linear-gradient(to right ,#190009,#020104,#10051f); */
     }
 
     .productList {
         background: linear-gradient(to right, #002239, #002043, #10051f);
+        --color-text: rgba(255, 255, 255, 0.85);
     }
 
     @keyframes opacityAnimation {
@@ -66,12 +66,6 @@ export default css`
         display: flex;
         justify-content: center;
         flex-direction: column;
-    }
-
-    .colors {
-        display: flex;
-        margin-top: 20px;
-        justify-content: center;
     }
 
     .precios {

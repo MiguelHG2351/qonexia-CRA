@@ -5,46 +5,39 @@ import Link from 'next/link'
 import styles from './styles/productList'
 
 // assets
-import huawei from 'static/images/huawei.png'
-import xiaomi from 'static/images/xiaomi.png'
-import apple from 'static/images/apple.png'
-import gopro from 'static/images/gopro.png'
-import amazfit from 'static/images/amazfit.png'
-import realme from 'static/images/realme.png'
-import nintendo from 'static/images/nintendo.png'
 import DescriptionPhone from 'components/descriptionPhone'
 
-function ProductList () {
-    const data = {
-        name: 'Xiaomi Redmi K30 128GB',
-        procesador: 'Snapdragon 730G overclockeado!',
-        GPU: ' Adreno 618',
-        storage: '128GB de interna',
-        RAM: 6,
-        expandible: 'Expandible',
-        bateria: '4500mAh',
-        carga: 'Carga Rápida 27W',
-        screen: 6.67,
-        quality: 'FullHD+ 1080x2400px',
-        camara1: 2,
-        camara2: 4,
-        camara1_quality: '20 + 2MP',
-        camara2_quality: '64 + 8 + 2 + 2 MP',
-        notch_type: 'Circular',
-        huella: 'Si',
-        huella_position: 'costado',
-        USB: 'tipo C',
-        OS: 'Android 10',
-        capa: 'MIUI 11',
-        precio: 340,
-        NFC: 'Efectivamente',
-        type: 'device',
-        img: 'https://miguelhg2351.github.io/API/XIAOMI/Redmik30.webp',
-        colores: ['#146dbd', '#c3258a']
-    }
+function ProductList({ data }) {
+    // const data = {
+    //     name: 'Xiaomi Redmi K30 128GB',
+    //     procesador: 'Snapdragon 730G overclockeado!',
+    //     GPU: ' Adreno 618',
+    //     storage: '128GB de interna',
+    //     RAM: 6,
+    //     expandible: 'Expandible',
+    //     bateria: '4500mAh',
+    //     carga: 'Carga Rápida 27W',
+    //     screen: 6.67,
+    //     quality: 'FullHD+ 1080x2400px',
+    //     camara1: 2,
+    //     camara2: 4,
+    //     camara1_quality: '20 + 2MP',
+    //     camara2_quality: '64 + 8 + 2 + 2 MP',
+    //     notch_type: 'Circular',
+    //     huella: 'Si',
+    //     huella_position: 'acostado',
+    //     USB: 'tipo C',
+    //     OS: 'Android 10',
+    //     capa: 'MIUI 11',
+    //     precio: 340,
+    //     NFC: 'Efectivamente',
+    //     type: 'device',
+    //     img: 'https://miguelhg2351.github.io/API/XIAOMI/Redmik30.webp',
+    //     colores: ['#146dbd', '#c3258a'],
+    // }
     const similars = [
         {
-            name: 'Xiaomi Redmi K30 128GB',
+            name: 'Xiaomi Redmi K30',
             procesador: 'Snapdragon 730G overclockeado!',
             GPU: ' Adreno 618',
             storage: '128GB de interna',
@@ -68,10 +61,10 @@ function ProductList () {
             NFC: 'Efectivamente',
             type: 'device',
             img: 'https://miguelhg2351.github.io/API/XIAOMI/Redmik30.webp',
-            colores: ['#146dbd', '#c3258a']
+            colores: ['#146dbd', '#c3258a'],
         },
         {
-            name: 'Xiaomi Redmi K30 128GB',
+            name: 'Xiaomi Redmi 128GB',
             procesador: 'Snapdragon 730G overclockeado!',
             GPU: ' Adreno 618',
             storage: '128GB de interna',
@@ -95,9 +88,10 @@ function ProductList () {
             NFC: 'Efectivamente',
             type: 'device',
             img: 'https://miguelhg2351.github.io/API/XIAOMI/Redmik30.webp',
-            colores: ['#146dbd', '#c3258a']
-        }
+            colores: ['#146dbd', '#c3258a'],
+        },
     ]
+
     return (
         <>
             <div className="productList">
@@ -123,13 +117,18 @@ function ProductList () {
                             {similars.map(
                                 (id, index) =>
                                     id.name !== data.name && (
-                                        <Link to={`${id.name}`} key={index}>
-                                            <img
-                                                loading="lazy"
-                                                src={id.img}
-                                                alt={id.name}
-                                            />
-                                            <p>{id.name}</p>
+                                        <Link
+                                            href={`/products${id.name}`}
+                                            key={index}
+                                        >
+                                            <a>
+                                                <img
+                                                    loading="lazy"
+                                                    src={id.img}
+                                                    alt={id.name}
+                                                />
+                                                <p>{id.name}</p>
+                                            </a>
                                         </Link>
                                     )
                             )}
@@ -138,115 +137,124 @@ function ProductList () {
                     <div className="catalogo">
                         <h3>Catalogo</h3>
                         <div className="container-card">
-                            <Link to="/catalogo#xiaomi" className="card">
-                                <div className="header-card xiaomi">
-                                    <img
-                                        src={xiaomi}
-                                        alt="Descripción del producto Xiaomi"
-                                        title="Xiaomi"
-                                    />
-                                </div>
-                                <div className="description-card">
-                                    <span className="description-title">
-                                        <h3>Xioami</h3>
-                                        <p>
-                                            Cantidad:{' '}
-                                            {
-                                                12
-                                            }
-                                        </p>
-                                    </span>
-                                </div>
+                            <Link href="/catalogo#xiaomi" className="card">
+                                <a>
+                                    <div className="header-card xiaomi">
+                                        <img
+                                            src="/static/images/xiaomi.png"
+                                            alt="Descripción del producto Xiaomi"
+                                            title="Xiaomi"
+                                        />
+                                    </div>
+                                    <div className="description-card">
+                                        <span className="description-title">
+                                            <h3>Xioami</h3>
+                                            <p>Cantidad: {12}</p>
+                                        </span>
+                                    </div>
+                                </a>
                             </Link>
-                            <Link to="/catalogo#huawei" className="card">
-                                <div className="header-card huawei">
-                                    <img
-                                        src={huawei}
-                                        alt="Descripción del producto Huawei"
-                                        title="Huawei"
-                                    />
-                                </div>
-                                <div className="description-card">
-                                    <span className="description-title">
-                                        <h3>Huawei</h3>
-                                        <p>Cantidad: 23</p>
-                                    </span>
-                                </div>
+                            <Link href="/catalogo#huawei" className="card">
+                                <a>
+                                    <div className="header-card huawei">
+                                        <img
+                                            src="/static/images/huawei.png"
+                                            alt="Descripción del producto Huawei"
+                                            title="Huawei"
+                                        />
+                                    </div>
+                                    <div className="description-card">
+                                        <span className="description-title">
+                                            <h3>Huawei</h3>
+                                            <p>Cantidad: 23</p>
+                                        </span>
+                                    </div>
+                                </a>
                             </Link>
-                            <Link to="/catalogo#realem" className="card">
-                                <div className="header-card realme">
-                                    <img
-                                        src={realme}
-                                        alt="Descriptción de los productos Realem"
-                                        title="Realme"
-                                    />
-                                </div>
-                                <div className="description-card">
-                                    <span className="description-title">
-                                        <h3>Realme</h3>
-                                        <p>Cantidad: 23</p>
-                                    </span>
-                                </div>
+                            <Link href="/catalogo#realem" className="card">
+                                <a>
+                                    <div className="header-card realme">
+                                        <img
+                                            src="/static/images/realme.png"
+                                            alt="Descriptción de los productos Realem"
+                                            title="Realme"
+                                        />
+                                    </div>
+                                    <div className="description-card">
+                                        <span className="description-title">
+                                            <h3>Realme</h3>
+                                            <p>Cantidad: 23</p>
+                                        </span>
+                                    </div>
+                                </a>
                             </Link>
-                            <Link to="/catalogo#appple" className="card">
-                                <div className="header-card apple">
-                                    <img
-                                        src={apple}
-                                        alt="Descriptción de los productos Apple"
-                                        title="Apple"
-                                    />
-                                </div>
-                                <div className="description-card">
-                                    <span className="description-title">
-                                        <h3>Apple</h3>
-                                        <p>Cantidad: 23</p>
-                                    </span>
-                                </div>
+                            <Link href="/catalogo#appple" className="card">
+                                <a>
+                                    <div className="header-card apple">
+                                        <img
+                                            src="/static/images/apple.png"
+                                            alt="Descriptción de los productos Apple"
+                                            title="Apple"
+                                        />
+                                    </div>
+                                    <div className="description-card">
+                                        <span className="description-title">
+                                            <h3>Apple</h3>
+                                            <p>Cantidad: 23</p>
+                                        </span>
+                                    </div>
+                                </a>
                             </Link>
-                            <Link to="/catalogo#nintendo" className="card">
-                                <div className="header-card nintendo">
-                                    <img
-                                        src={nintendo}
-                                        alt="descripciòn de los productos de nintendo"
-                                        title="nintendo"
-                                    />
-                                </div>
-                                <div className="description-card">
-                                    <span className="description-title">
-                                        <h3>Nintendo</h3>
-                                        <p>Cantidad: 23</p>
-                                    </span>
-                                </div>
+                            <Link href="/catalogo#nintendo" className="card">
+                                <a>
+                                    <div className="header-card nintendo">
+                                        <img
+                                            src="/static/images/nintendo.png"
+                                            alt="descripciòn de los productos de nintendo"
+                                            title="nintendo"
+                                        />
+                                    </div>
+                                    <div className="description-card">
+                                        <span className="description-title">
+                                            <h3>Nintendo</h3>
+                                            <p>Cantidad: 23</p>
+                                        </span>
+                                    </div>
+                                </a>
                             </Link>
-                            <Link to="/catalogo#gopro" className="card">
-                                <div className="header-card gopro">
-                                    <img
-                                        src={gopro}
-                                        alt="gopro"
-                                        title="gopro"
-                                    />
-                                </div>
-                                <div className="description-card">
-                                    <span className="description-title">
-                                        <h3>Gopro</h3>
-                                        <p>Cantidad: 23</p>
-                                    </span>
-                                </div>
+                            <Link href="/catalogo#gopro" className="card">
+                                <a>
+                                    <div className="header-card gopro">
+                                        <img
+                                            src="/static/images/gopro.png"
+                                            alt="gopro"
+                                            title="gopro"
+                                        />
+                                    </div>
+                                    <div className="description-card">
+                                        <span className="description-title">
+                                            <h3>Gopro</h3>
+                                            <p>Cantidad: 23</p>
+                                        </span>
+                                    </div>
+                                </a>
                             </Link>
-                            <Link to="/catalogo#amazfit" className="card">
-                                <div className="header-card amazfit">
-                                    <img
-                                        src={amazfit}
-                                        alt="amazfit"
-                                        title="amazfit"
-                                    />
-                                </div>
-                                <div className="description-card">
-                                    <span className="header-title">
-                                        <h3>amazfit</h3>
-                                        <p>Cantidad: 13</p>
-                                    </span>
-                                </div>
+                            <Link href="/catalogo#amazfit" className="card">
+                                <a>
+                                    <div className="header-card amazfit">
+                                        <img
+                                            src="/static/images/amazfit.png"
+                                            alt="amazfit"
+                                            title="amazfit"
+                                        />
+                                    </div>
+                                    <div className="description-card">
+                                        <span className="header-title">
+                                            <h3>amazfit</h3>
+                                            <p>Cantidad: 13</p>
+                                        </span>
+                                    </div>
+                                </a>
                             </Link>
                         </div>
                     </div>

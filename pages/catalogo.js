@@ -1,8 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
-import Header from 'container/Header/products'
+import Header from '../components/container/Header/products'
 
-import ProductCatalogo from 'container/section/catalogo'
+import ProductCatalogo from '../components/container/section/catalogo'
 
 function Catalogo () {
     return (

@@ -10,7 +10,7 @@ const styles = css`
         grid-template-columns: 35% 65%;
     }
 
-    .comtainer div img {
+    .container div img {
         width: 100%;
         height: auto;
     }
