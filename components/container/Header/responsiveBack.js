@@ -27,7 +27,7 @@ export default function ResponsiveBackground() {
         <>
             <div className="background">
                 <img
-                    src="/static/images/qonexia.png"
+                    src="/static/images/qonexia.webp"
                     alt="Bienvenidos a qonexia"
                 />
             </div>
