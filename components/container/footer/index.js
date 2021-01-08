@@ -166,7 +166,7 @@ function Footer () {
             <footer className="footer-site">
                 <div className="container">
                     <div className="logo">
-                        <img src="/static/images/logo.jpg" alt="Logo de nuestra empresa" />
+                        <img src="/static/images/logo.jpg" loading="lazy" alt="Logo de nuestra empresa" />
                     </div>
                     <div className="social-media">
                         <a
@@ -174,14 +174,14 @@ function Footer () {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <img src="/static/images/icon-facebook.svg" alt="Visitanos en Facebook" />
+                            <img src="/static/images/icon-facebook.svg" loading="lazy" alt="Visitanos en Facebook" />
                         </a>
                         <a
                             href="https://instagram.com/Qonexia"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <img src="/static/images/icon-instagram.svg" alt="Visitanos en Instagram" />
+                            <img src="/static/images/icon-instagram.svg" loading="lazy" alt="Visitanos en Instagram" />
                         </a>
                     </div>
                     <ul className="section-site">

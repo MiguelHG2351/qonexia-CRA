@@ -42,26 +42,6 @@ export default css`
         }
     }
 
-    .background {
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        justify-content: center;
-        box-sizing: content-box;
-    }
-
-    .background img,
-    .background video {
-        object-fit: cover;
-        max-width: 100%;
-        background: #0b0b2a;
-        width: 100%;
-    }
-
     /* HEADER NAV */
 
     .header-nav {
@@ -115,7 +95,7 @@ export default css`
     /* De +Infinity a tablet large */
 
     @media screen and (max-width: 992px) {
-        .header {
+        .header-nav {
             position: fixed;
             z-index: 5;
             margin-top: 0;
@@ -151,7 +131,7 @@ export default css`
     }
 
     @media screen and (max-width: 405px) {
-        .header {
+        .header-nav {
             width: 60%;
         }
     }

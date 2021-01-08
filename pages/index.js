@@ -12,6 +12,10 @@ function Index () {
                 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@400;700&display=swap" rel="stylesheet" />
                 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
                 <meta name="description" content="Página web principal de Qonexia, test"/>
+                <link
+                    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                    rel="stylesheet"
+                />
             </Head>
             <HeaderIndex />
         </>

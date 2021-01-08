@@ -1,8 +1,10 @@
 import React, { useRef, useState } from 'react'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 
 import styles from './styles/style'
 import useCarrousel from '../../../hooks/useCarrousel'
+const ResponsiveBackground = dynamic(import('./responsiveBack'), { ssr: false })
 
 function HeaderIndex() {
     // Hooks
@@ -15,9 +17,7 @@ function HeaderIndex() {
     // JSX
     return <>
         <header className="header">
-            <div className="background">
-                <video src="https://miguelhg2351.github.io/API/videos/video.webm" muted autoPlay={true} loop={true} />
-            </div>
+            <ResponsiveBackground />
             <button className="toggle-menu" onClick={() => menu === undefined ? setMenu('active') : setMenu(undefined)}><i className="material-icons">menu</i></button>
             <div className={`header-nav ${menu}`}>
                 <ul className="list-nav">
