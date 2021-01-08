@@ -1,10 +1,8 @@
 import React, { useRef, useState } from 'react'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
-
 import styles from './styles/style'
 import useCarrousel from '../../../hooks/useCarrousel'
-const ResponsiveBackground = dynamic(import('./responsiveBack'), { ssr: false })
+import ResponsiveBackground from './responsiveBack'
 
 function HeaderIndex() {
     // Hooks

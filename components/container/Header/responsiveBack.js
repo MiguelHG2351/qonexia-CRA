@@ -23,22 +23,13 @@ const styles = css`
 `
 
 export default function ResponsiveBackground() {
-    const responsive = matchMedia('(max-width: 576px)').matches
     return (
         <>
             <div className="background">
-                { responsive
-                    ? <img
-                        src="https://miguelhg2351.github.io/API/imagenes/backgroundMobile.webp"
-                        alt="Bienvenidos a qonexia"
-                    />
-                    : <video
-                        src="https://miguelhg2351.github.io/API/videos/video.webm"
-                        muted
-                        autoPlay={true}
-                        loop={true}
-                    ></video>
-                }
+                <img
+                    src="/static/images/qonexia.png"
+                    alt="Bienvenidos a qonexia"
+                />
             </div>
             <style jsx>
                 {styles}
