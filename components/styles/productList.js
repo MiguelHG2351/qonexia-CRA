@@ -25,10 +25,10 @@ export default css`
 
     @keyframes backExpand {
         25% {
-            background-image: linear-gradient(to right, blue 25%, transparent);
+            background-color: rgba(0, 0, 255, 0.65);
         }
         100% {
-            background-image: linear-gradient(to right, blue 30%, blue 70%);
+            background-color: rgba(0, 0, 255, 1);
         }
 
         /* 100% {
@@ -113,8 +113,8 @@ export default css`
     }
 
     .recomendationDevice a:hover {
-        animation: backExpand 0.3s ease-in;
         transition: all ease 0.3s;
+        animation: backExpand 0.3s ease-in;
         color: #fff;
         animation-fill-mode: forwards;
     }
