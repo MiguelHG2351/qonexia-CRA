@@ -1,14 +1,24 @@
 import { gql } from 'apollo-server-micro'
 
 export default gql`
-    type User {
-        id: ID
-        login: String
-        avatar_url: String
+    type Phone {
+        name: String!
+        price: Int!
+        image: String!
+        brand: String!
+        nfc: Boolean
+        camera: [Int]!
+        cpu: String!
+        ram: Int!
+        storage: Int!
+        battery: Int!
+        so: String!
+        ui: String!
     }
 
     type Query {
-        getUsers: [User]
-        getUser(name: String!): User!
+        getProducts: [Phone]
+        getProduct(name: String!): Phone
+        findProducts(name: String!): [Phone]
     }
 `

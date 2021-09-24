@@ -1,34 +1,30 @@
-import axios from 'axios'
+import MongoLib from 'libs/mongo'
 
 export default {
     Query: {
-        getUsers: async () => {
-            // eslint-disable-next-line no-useless-catch
-            try {
-                const users = await axios.get('https://api.github.com/users')
-                return users.data.map(({ id, login, avatarUrl }) => ({
-                    id,
-                    login,
-                    avatarUrl,
-                }))
-            } catch (error) {
-                throw error
-            }
+        getProducts: async () => {
+            // eslint-disable-next-line no-new
+            const lib = new MongoLib()
+            const getPhones = await lib.getAll('phone', {})
+            return getPhones
         },
-        getUser: async (_, args) => {
-            // eslint-disable-next-line no-useless-catch
-            try {
-                const user = await axios.get(
-                    `https://api.github.com/users/${args.name}`
-                )
-                return {
-                    id: user.data.id,
-                    login: user.data.login,
-                    avatar_url: user.data.avatar_url,
-                }
-            } catch (error) {
-                throw error
-            }
+        getProduct: async (_, { name }) => {
+            // eslint-disable-next-line no-new
+            const lib = new MongoLib()
+            const getPhones = await lib.get('phone', {
+                name,
+            })
+            return getPhones
+        },
+        findProducts: async (_, { name }) => {
+            // eslint-disable-next-line no-new
+            const lib = new MongoLib()
+            const findPhones = await lib.getAll('phone', {})
+            const phones = findPhones.filter((phone) =>
+                phone.name.toLowerCase().includes(name.toLowerCase())
+            )
+
+            return phones
         },
     },
 }

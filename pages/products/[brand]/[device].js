@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import client from '../../../apollo-client'
+import { gql } from '@apollo/client'
 import dynamic from 'next/dynamic'
 import { withRouter } from 'next/router'
-import { useSelector, useDispatch } from 'react-redux'
 import Head from 'next/head'
 import Header from 'components/container/Header/products'
 const ContentLoaded = dynamic(import('react-content-loader'), { ssr: false })
@@ -23,30 +23,7 @@ function Preloader() {
     )
 }
 
-function Product({ router }) {
-    const deviceList = useSelector((state) => state.device)
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        const parameters = router.query
-        console.log(router.query)
-        const lengthParams = Object.keys(parameters).length
-        // eslint-disable-next-line no-trailing-spaces
-
-        if (lengthParams > 1) {
-            dispatch({
-                type: 'GET_DEVICE',
-                payload: parameters,
-            })
-        }
-    }, [router])
-
-    useEffect(() => {
-        if (Object.keys(deviceList).length === 1 && deviceList.status === null) {
-            router.push('/')
-        }
-    }, [deviceList])
-
+function Product({ router, device }) {
     return (
         <>
             <Head>
@@ -62,12 +39,29 @@ function Product({ router }) {
                 />
             </Head>
             <Header />
-            {Object.keys(deviceList).length > 1 && (
-                <ProductList data={deviceList} />
-            )}
+            <ProductList data={device} />
         </>
     )
 }
 
 /* Que el Header almacene todo el sitio y que */
 export default withRouter(Product)
+export async function getServerSideProps(context) {
+    const { device } = context.params
+
+    const { data } = await client.query({
+        query: gql`
+            query {
+                getProduct {
+                    name: ${device}
+                }
+            }
+        `,
+    })
+
+    return {
+        props: {
+            device: data,
+        },
+    }
+}

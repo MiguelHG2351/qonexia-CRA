@@ -20,7 +20,7 @@ function HeaderIndex() {
             <div className={`header-nav ${menu}`}>
                 <ul className="list-nav">
                     <li><Link href="/"><a> Home</a></Link></li>
-                    <li><Link href="/products/Xiaomi/Xiaomi Redmi Note 8 Pro 64GB"><a>Products</a></Link></li>
+                    <li><Link href="/products/Xiaomi/Poco X3 NFC"><a>Products</a></Link></li>
                     <li><a target="_blank" rel="noopener noreferrer" href="https://facebook.com/QONEXIA">Social Media</a></li>
                     <li><Link href="/trends"><a>Tendencias</a></Link></li>
                 </ul>
