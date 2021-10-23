@@ -1,3 +1,4 @@
+import styles from 'styles/devices'
 import client from '../../../apollo-client'
 import { gql } from '@apollo/client'
 import dynamic from 'next/dynamic'
@@ -39,7 +40,18 @@ function Product({ router, device }) {
                 />
             </Head>
             <Header />
-            <ProductList data={device} />
+            <div className="container-devices">
+                <ProductList data={device} />
+                <section className="similarities w-11/12 mx-auto text-white">
+                    <h3>Similares</h3>
+                    <div className="product-list">
+                        <div className="product"></div>
+                    </div>
+                </section>
+            </div>
+            <style jsx>
+                {styles}
+            </style>
         </>
     )
 }
@@ -52,16 +64,31 @@ export async function getServerSideProps(context) {
     const { data } = await client.query({
         query: gql`
             query {
-                getProduct {
-                    name: ${device}
+                getProduct(name: "${device}") {
+                    name
+                    screen
+                    price
+                    image
+                    brand
+                    nfc
+                    camera_back
+                    camera_front
+                    cpu
+                    ram
+                    storage
+                    battery
+                    so
+                    ui
+                    colors
                 }
             }
         `,
     })
+    console.log(data)
 
     return {
         props: {
-            device: data,
+            device: data.getProduct,
         },
     }
 }

@@ -5,13 +5,13 @@ export default {
         getProducts: async () => {
             // eslint-disable-next-line no-new
             const lib = new MongoLib()
-            const getPhones = await lib.getAll('phone', {})
+            const getPhones = await lib.getAll('phones', {})
             return getPhones
         },
         getProduct: async (_, { name }) => {
             // eslint-disable-next-line no-new
             const lib = new MongoLib()
-            const getPhones = await lib.get('phone', {
+            const getPhones = await lib.get('phones', {
                 name,
             })
             return getPhones
@@ -19,7 +19,7 @@ export default {
         findProducts: async (_, { name }) => {
             // eslint-disable-next-line no-new
             const lib = new MongoLib()
-            const findPhones = await lib.getAll('phone', {})
+            const findPhones = await lib.getAll('phones', {})
             const phones = findPhones.filter((phone) =>
                 phone.name.toLowerCase().includes(name.toLowerCase())
             )
