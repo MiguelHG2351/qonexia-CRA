@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './styles/devices'
 
 export default function Device ({ data }) {
-    console.log(data.camera_back)
     return (
         <>
             <section className="container-description text-white flex flex-col gap-y-10">

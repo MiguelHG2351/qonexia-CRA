@@ -36,7 +36,9 @@ class MongoLib {
 
     getAll(collection, query) {
         return this.connect().then((db) => {
-            return db.collection(collection).find(query).toArray()
+            const data = db.collection(collection).find(query).toArray()
+            // console.log(`La query is:  ${data}`)
+            return data
         })
     }
 

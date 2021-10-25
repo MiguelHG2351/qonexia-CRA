@@ -1,10 +1,11 @@
 import styles from 'styles/devices'
 import client from '../../../apollo-client'
-import { gql } from '@apollo/client'
+import { gql, useQuery } from '@apollo/client'
 import dynamic from 'next/dynamic'
 import { withRouter } from 'next/router'
 import Head from 'next/head'
 import Header from 'components/container/Header/products'
+import Image from 'next/image'
 const ContentLoaded = dynamic(import('react-content-loader'), { ssr: false })
 
 const ProductList = dynamic(() => import('components/productList'), {
@@ -25,6 +26,14 @@ function Preloader() {
 }
 
 function Product({ router, device }) {
+    const data = useQuery(gql`
+        query Phone($name: String!) {
+            getProducts{
+                name
+            }
+        }
+    `)
+
     return (
         <>
             <Head>
@@ -40,12 +49,14 @@ function Product({ router, device }) {
                 />
             </Head>
             <Header />
-            <div className="container-devices">
+            <div className="container-devices py-12 flex flex-col gap-y-10">
                 <ProductList data={device} />
-                <section className="similarities w-11/12 mx-auto text-white">
-                    <h3>Similares</h3>
-                    <div className="product-list">
-                        <div className="product"></div>
+                <section className="similarities overflow-hidden w-11/12 mx-auto text-white">
+                    <h3 className="text-xl font-bold">Similares</h3>
+                    <div className="similarities-list flex flex-grow flex-shrink overflow-x-auto whitespace-nowrap gap-2 rounded-xl">
+                        <div className="product cursor-pointer" title="redmi note 8">
+                            <Image src="/static/images/product/xiaomi/pocox3nfc.png" id="poco" width={80} height={80}/>
+                        </div>
                     </div>
                 </section>
             </div>

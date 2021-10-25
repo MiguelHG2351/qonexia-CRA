@@ -6,15 +6,17 @@ import DescriptionPhone from 'components/descriptionPhone'
 function ProductList({ data }) {
     return (
         <>
-            <div className="productList py-12">
+            <div className="productList">
                 <div className="w-11/12 mx-auto">
                     <div className="hero-product md:grid md:grid-cols-2">
                         <div className="device text-center mb-16">
-                            <div className="card-image" align="center">
-                                <img src={data.image} alt={data.name} draggable={false} />
-                            </div>
-                            <div className="name-product text-xl p-5 text-white rounded-xl cursor-pointer transform hover:scale-95">
-                                <h3>{data.name}</h3>
+                            <div className="card-image flex justify-center md:justify-start">
+                                <div className="image" align="center">
+                                    <img src={data.image} alt={data.name} draggable={false} />
+                                    <div className="name-product text-xl p-5 text-white rounded-xl cursor-pointer transform hover:scale-95">
+                                        <h3>{data.name}</h3>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div className="description p-5 rounded-3xl">

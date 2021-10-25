@@ -18,7 +18,6 @@ export default css`
     .name-product {
         background-color: rgba(255, 255, 255, 0.29);
         width: fit-content;
-        margin: 0 auto;
     }
 
 `
