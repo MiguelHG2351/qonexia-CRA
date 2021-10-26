@@ -1,32 +1,26 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import client from '../../../apollo-client'
-import { gql } from '@apollo/client'
+import context from '../../../context/productContext'
 import styles from './styles/productsStyle'
 // import baseContext from 'context/descriptionContext'
 
+// https://github.com/vercel/next.js/blob/canary/examples/with-apollo/lib/apolloClient.js
+// https://www.youtube.com/watch?v=RJpevpbC4YY
 function Producthead() {
     const [active, setActive] = useState(null)
     const [formActive, setFormActive] = useState('search')
     const { device } = useRouter().query
+    const { products } = useContext(context)
+
+    useEffect(() => {
+        console.log('products', products)
+    }, [])
+
     function loadSideNav() {
         setActive(null)
     }
-
-    useEffect(async () => {
-        const data = await client.query({
-            query: gql`
-                query {
-                    products {
-                        name
-                    }
-                }
-            `
-        })
-        console.log(data)
-    }, [])
 
     // Ordenar por potencia, precio, camara, Más comprado, Marca en especifico,
 

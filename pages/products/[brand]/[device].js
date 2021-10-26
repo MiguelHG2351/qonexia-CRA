@@ -6,6 +6,7 @@ import { withRouter } from 'next/router'
 import Head from 'next/head'
 import Header from 'components/container/Header/products'
 import Image from 'next/image'
+import { ProductContextProvider } from '../../../context/productContext'
 const ContentLoaded = dynamic(import('react-content-loader'), { ssr: false })
 
 const ProductList = dynamic(() => import('components/productList'), {
@@ -25,7 +26,7 @@ function Preloader() {
     )
 }
 
-function Product({ router, device }) {
+function Product({ router, device, products }) {
     return (
         <>
             <Head>
@@ -40,18 +41,20 @@ function Product({ router, device }) {
                     rel="stylesheet"
                 />
             </Head>
-            <Header />
-            <div className="container-devices py-12 flex flex-col gap-y-10">
-                <ProductList data={device} />
-                <section className="similarities overflow-hidden w-11/12 mx-auto text-white">
-                    <h3 className="text-xl font-bold">Similares</h3>
-                    <div className="similarities-list flex flex-grow flex-shrink overflow-x-auto whitespace-nowrap gap-2 rounded-xl">
-                        <div className="product cursor-pointer" title="redmi note 8">
-                            <Image src="/static/images/product/xiaomi/pocox3nfc.png" id="poco" width={80} height={80}/>
+            <ProductContextProvider initialState={products}>
+                <Header />
+                <div className="container-devices py-12 flex flex-col gap-y-10">
+                    <ProductList data={device} />
+                    <section className="similarities overflow-hidden w-11/12 mx-auto text-white">
+                        <h3 className="text-xl font-bold">Similares</h3>
+                        <div className="similarities-list flex flex-grow flex-shrink overflow-x-auto whitespace-nowrap gap-2 rounded-xl">
+                            <div className="product cursor-pointer" title="redmi note 8">
+                                <Image src="/static/images/product/xiaomi/pocox3nfc.png" id="poco" width={80} height={80}/>
+                            </div>
                         </div>
-                    </div>
-                </section>
-            </div>
+                    </section>
+                </div>
+            </ProductContextProvider>
             <style jsx>
                 {styles}
             </style>
