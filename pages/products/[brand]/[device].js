@@ -6,7 +6,7 @@ import { withRouter } from 'next/router'
 import Head from 'next/head'
 import Header from 'components/container/Header/products'
 import Image from 'next/image'
-import { ProductContextProvider } from '../../../context/productContext'
+import { ProductContextProvider } from '../../../components/context/productContext'
 const ContentLoaded = dynamic(import('react-content-loader'), { ssr: false })
 
 const ProductList = dynamic(() => import('components/productList'), {
