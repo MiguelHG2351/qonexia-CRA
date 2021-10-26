@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import context from 'components/context/productContext'
+import context from 'components/context/ProductContext'
 import styles from './styles/productsStyle'
 // import baseContext from 'context/descriptionContext'
 
