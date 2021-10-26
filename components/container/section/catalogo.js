@@ -1,5 +1,4 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import css from 'styled-jsx/css'
 
 const styles = css`
@@ -31,8 +30,6 @@ const styles = css`
 `
 
 export default function CatalogoSection () {
-    const context = useSelector(state => state.deviceList)
-
     return (
         <>
             <div className="container">
@@ -48,22 +45,19 @@ export default function CatalogoSection () {
                             <div className="name-brand">Xiaomi</div>
                             <div className="product-brand">
                                 <div className="product-card">
-                                    {context.category.brand.Xiaomi.map(
-                                        (e, index) => (
-                                            <div
-                                                className="container-card"
-                                                key={index}
-                                            >
-                                                <div className="product-card-image">
-                                                    <img
-                                                        src={e.img}
-                                                        alt={e.name}
-                                                        title={`El ${e.name}`}
-                                                    />
-                                                </div>
-                                            </div>
-                                        )
-                                    )}
+                                    <div
+                                        className="container-card"
+                                        key={0}
+                                    >
+                                        <div className="product-card-image">
+                                            <img
+                                                src={0}
+                                                alt={0}
+                                                title={`El ${0}`}
+                                            />
+                                        </div>
+                                    </div>
+                                )
                                 </div>
                             </div>
                         </article>
