@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './styles/productList'
+import styles from './productList'
 // assets
 import DescriptionPhone from 'components/descriptionPhone'
 

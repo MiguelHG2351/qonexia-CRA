@@ -1,6 +1,6 @@
 import styles from 'styles/devices'
 import client from '../../../apollo-client'
-import { gql, useQuery } from '@apollo/client'
+import { gql } from '@apollo/client'
 import dynamic from 'next/dynamic'
 import { withRouter } from 'next/router'
 import Head from 'next/head'
@@ -26,14 +26,6 @@ function Preloader() {
 }
 
 function Product({ router, device }) {
-    const data = useQuery(gql`
-        query Phone($name: String!) {
-            getProducts{
-                name
-            }
-        }
-    `)
-
     return (
         <>
             <Head>
@@ -91,6 +83,10 @@ export async function getServerSideProps(context) {
                     so
                     ui
                     colors
+                    
+                }
+                getProducts {
+                    name
                 }
             }
         `,
@@ -100,6 +96,7 @@ export async function getServerSideProps(context) {
     return {
         props: {
             device: data.getProduct,
+            products: data.getProducts,
         },
     }
 }

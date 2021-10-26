@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import client from '../../../apollo-client'
-import { gql, useQuery } from '@apollo/client'
+import { gql } from '@apollo/client'
 import styles from './styles/productsStyle'
 // import baseContext from 'context/descriptionContext'
 
@@ -14,13 +14,19 @@ function Producthead() {
     function loadSideNav() {
         setActive(null)
     }
-    const data = useQuery(gql`
-            query {
-            getProduct(name: "Poco X3 NFC") {
-                    name
+
+    useEffect(async () => {
+        const data = await client.query({
+            query: gql`
+                query {
+                    products {
+                        name
+                    }
                 }
-            }
-        `)
+            `
+        })
+        console.log(data)
+    }, [])
 
     // Ordenar por potencia, precio, camara, Más comprado, Marca en especifico,
 
@@ -52,7 +58,6 @@ function Producthead() {
     async function onkeyDown(e) {
         console.log(e.keyCode)
         console.log(e.target.value)
-        console.log(data)
         if (e.keyCode === 27) {
             setFormActive('search')
         }

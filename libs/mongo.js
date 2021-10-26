@@ -6,7 +6,6 @@ const PASSWORD = encodeURIComponent(config.db.passwordDB)
 const DB_NAME = config.db.dbName
 
 const MONGO_URI = `mongodb+srv://${USER}:${PASSWORD}@${config.db.host}/${DB_NAME}?retryWrites=true&w=majority`
-console.log(MONGO_URI)
 
 class MongoLib {
     constructor() {

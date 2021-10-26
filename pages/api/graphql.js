@@ -9,8 +9,8 @@ import resolvers from 'src/services/graphql/resolvers'
 const apolloServer = new ApolloServer({
     typeDefs,
     resolvers,
-    introspection: true,
     playground: true,
+    introspection: true,
     plugins: [
         process.env.NODE_ENV === 'production'
             ? ApolloServerPluginLandingPageDisabled()
