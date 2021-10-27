@@ -1,5 +1,5 @@
 import styles from 'styles/devices'
-import client from '../../../apollo-client'
+import { initializeApollo } from '../../../apollo-client'
 import { gql } from '@apollo/client'
 import dynamic from 'next/dynamic'
 import { withRouter } from 'next/router'
@@ -7,6 +7,7 @@ import Head from 'next/head'
 import Header from 'components/container/Header/products'
 import Image from 'next/image'
 import { ProductContextProvider } from 'components/context/ProductContext'
+import ClientOnly from 'components/ClientOnly'
 const ContentLoaded = dynamic(import('react-content-loader'), { ssr: false })
 
 const ProductList = dynamic(() => import('components/productList'), {
@@ -41,20 +42,22 @@ function Product({ router, device, products }) {
                     rel="stylesheet"
                 />
             </Head>
-            <ProductContextProvider initialState={products}>
-                <Header />
-                <div className="container-devices py-12 flex flex-col gap-y-10">
-                    <ProductList data={device} />
-                    <section className="similarities overflow-hidden w-11/12 mx-auto text-white">
-                        <h3 className="text-xl font-bold">Similares</h3>
-                        <div className="similarities-list flex flex-grow flex-shrink overflow-x-auto whitespace-nowrap gap-2 rounded-xl">
-                            <div className="product cursor-pointer" title="redmi note 8">
-                                <Image src="/static/images/product/xiaomi/pocox3nfc.png" id="poco" width={80} height={80}/>
+            <ClientOnly>
+                <ProductContextProvider initialState={products}>
+                    <Header />
+                    <div className="container-devices py-12 flex flex-col gap-y-10">
+                        <ProductList data={device} />
+                        <section className="similarities overflow-hidden w-11/12 mx-auto text-white">
+                            <h3 className="text-xl font-bold">Similares</h3>
+                            <div className="similarities-list flex flex-grow flex-shrink overflow-x-auto whitespace-nowrap gap-2 rounded-xl">
+                                <div className="product cursor-pointer" title="redmi note 8">
+                                    <Image src="/static/images/product/xiaomi/pocox3nfc.png" id="poco" width={80} height={80}/>
+                                </div>
                             </div>
-                        </div>
-                    </section>
-                </div>
-            </ProductContextProvider>
+                        </section>
+                    </div>
+                </ProductContextProvider>
+            </ClientOnly>
             <style jsx>
                 {styles}
             </style>
@@ -66,8 +69,9 @@ function Product({ router, device, products }) {
 export default withRouter(Product)
 export async function getServerSideProps(context) {
     const { device } = context.params
+    const apolloClient = initializeApollo()
 
-    const { data } = await client.query({
+    const { data } = await apolloClient.query({
         query: gql`
             query {
                 getProduct(name: "${device}") {
@@ -89,12 +93,12 @@ export async function getServerSideProps(context) {
                     
                 }
                 getProducts {
-                    name
+                    name,
+                    cpu
                 }
             }
         `,
     })
-    console.log(data)
 
     return {
         props: {

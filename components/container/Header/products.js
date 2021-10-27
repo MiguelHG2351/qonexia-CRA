@@ -45,9 +45,9 @@ function Producthead() {
         getData(formData)
     }
 
-    function blurInput() {
-        setFormActive('search')
-    }
+    // function blurInput() {
+    //     setFormActive('search')
+    // }
 
     async function onkeyDown(e) {
         console.log(e.keyCode)
@@ -66,7 +66,7 @@ function Producthead() {
                     rel="stylesheet"
                 />
             </Head>
-            <header className="header">
+            <header className="header p-4 flex justify-center items-center">
                 <div className={`sidenav ${active}`}>
                     <div className="profile">
                         <div className="background">
@@ -177,7 +177,10 @@ function Producthead() {
                     </ul>
                 </div>
                 <div className="header-title">
-                    <button onClick={openMenu}>
+                    <button
+                        onClick={openMenu}
+                        className="flex items-center border-none text-white"
+                    >
                         <i className="material-icons">menu</i>
                     </button>
                     <h2>{device}</h2>
@@ -186,8 +189,11 @@ function Producthead() {
                     <label htmlFor="search" onClick={toggleInput}>
                         <i className="material-icons">search</i>
                     </label>
-                    <div className={formActive}>
-                        <div className="close-attachment" onClick={toggleInput}>
+                    <div className={`${formActive} h-10`}>
+                        <div
+                            className="close-attachment bg-blue-900 h-full cursor-pointer flex items-center p-3"
+                            onClick={toggleInput}
+                        >
                             <i className="material-icons">west</i>
                         </div>
                         <input
@@ -195,8 +201,9 @@ function Producthead() {
                             name="search"
                             autoCorrect="true"
                             className="text-black"
+                            autoComplete="off"
                             onChange={onkeyDown}
-                            onBlur={blurInput}
+                            // onBlur={blurInput}
                             type="text"
                             placeholder="Buscar"
                             required={true}

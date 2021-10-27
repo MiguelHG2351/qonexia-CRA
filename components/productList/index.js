@@ -1,9 +1,21 @@
 import React from 'react'
 import styles from './productList'
+import { gql, useQuery } from '@apollo/client'
 // assets
 import DescriptionPhone from 'components/descriptionPhone'
 
+export const ALL_PLAYERS_QUERY = gql`
+    query {
+        getProducts {
+            name
+        }
+    }
+`
+
 function ProductList({ data }) {
+    const { data: xD, loading } = useQuery(ALL_PLAYERS_QUERY)
+    console.log(xD, loading)
+
     return (
         <>
             <div className="productList">

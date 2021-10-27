@@ -4,12 +4,8 @@ export default css`
     .header {
         background: var(--background-header);
         color: #fff;
-        padding: 15px;
         height: 73px;
-        display: flex;
-        justify-content: space-between;
         box-shadow: var(--shadow);
-        align-items: center;
         position: relative;
     }
     .header-title {
@@ -19,12 +15,8 @@ export default css`
         width: 50%;
     }
     .header-title button {
-        margin-right: 20px;
-        display: flex;
-        align-items: center;
-        border: none;
+        margin-right: 1.25rem;
         background: transparent;
-        color: #fff;
         font-size: calc(var(--font-title) * 2);
     }
 
@@ -45,8 +37,8 @@ export default css`
     }
     .search {
         position: absolute;
-        align-items: center;
         justify-content: center;
+        align-items: stretch;
         z-index: 10;
         width: 0;
         display: flex;
@@ -58,22 +50,9 @@ export default css`
         width: 50%;
     }
 
-    .close-attachment {
-        width: 4%;
-        cursor: pointer;
-        user-select: none;
-        background: #fff;
-    }
-
-    .close-attachment i {
-        color: #000;
-        padding: 4px;
-    }
-
     .search input[type='text'] {
         transition: all ease 0.3s;
         outline: none;
-        padding: 8px;
         border: none;
         width: 96%;
     }

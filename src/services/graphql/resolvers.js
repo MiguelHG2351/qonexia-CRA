@@ -11,7 +11,6 @@ export default {
         getProduct: async (_, { name }) => {
             // eslint-disable-next-line no-new
             const lib = new MongoLib()
-            console.log(name)
             const getPhones = await lib.get('phones', {
                 name,
             })
@@ -20,8 +19,6 @@ export default {
         findProducts: async (_, { name }) => {
             // eslint-disable-next-line no-new
             const lib = new MongoLib()
-            console.log(name)
-            console.log('xd')
             const findPhones = await lib.getAll('phones', {})
             const phones = findPhones.filter((phone) =>
                 phone.name.toLowerCase().includes(name.toLowerCase())
