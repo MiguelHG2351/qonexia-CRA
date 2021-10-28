@@ -11,6 +11,7 @@ import styles from './styles/productsStyle'
 function Producthead() {
     const [active, setActive] = useState(null)
     const [formActive, setFormActive] = useState('search')
+    const [result, setResult] = useState([])
     const { device } = useRouter().query
     const { products } = useContext(context)
 
@@ -50,8 +51,8 @@ function Producthead() {
     // }
 
     async function onkeyDown(e) {
-        console.log(e.keyCode)
-        console.log(e.target.value)
+        const device = e.target.value
+        setResult(await products.filter(product => product.name.toLowerCase().includes(device.toLowerCase())))
         if (e.keyCode === 27) {
             setFormActive('search')
         }
@@ -189,25 +190,45 @@ function Producthead() {
                     <label htmlFor="search" onClick={toggleInput}>
                         <i className="material-icons">search</i>
                     </label>
-                    <div className={`${formActive} h-10`}>
-                        <div
-                            className="close-attachment bg-blue-900 h-full cursor-pointer flex items-center p-3"
-                            onClick={toggleInput}
-                        >
-                            <i className="material-icons">west</i>
+                    <div className={`${formActive} relative h-10 rounded-md`}>
+                        <div className="search-container overflow-hidden w-full flex justify-center items-stretch h-full">
+                            <div
+                                className="close-attachment bg-blue-900 h-full cursor-pointer flex items-center p-3"
+                                onClick={toggleInput}
+                            >
+                                <i className="material-icons">west</i>
+                            </div>
+                            <input
+                                id="search"
+                                name="search"
+                                autoCorrect="true"
+                                className="text-black rounded-none"
+                                autoComplete="off"
+                                onChange={onkeyDown}
+                                // onBlur={blurInput}
+                                type="text"
+                                placeholder="Buscar"
+                                required={true}
+                            />
                         </div>
-                        <input
-                            id="search"
-                            name="search"
-                            autoCorrect="true"
-                            className="text-black"
-                            autoComplete="off"
-                            onChange={onkeyDown}
-                            // onBlur={blurInput}
-                            type="text"
-                            placeholder="Buscar"
-                            required={true}
-                        />
+                        <div className="results bg-black absolute w-full overflow-hidden left-0 top-0 transform translate-y-14">
+                            <ul>
+                                {
+                                    result.map((item, index) => (
+                                        <li
+                                            key={index}
+                                            className="flex items-center p-3"
+                                        >
+                                            <Link href={`/catalogo#${item.id}`}>
+                                                <a>
+                                                    {item.name}
+                                                </a>
+                                            </Link>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
                     </div>
                 </form>
             </header>

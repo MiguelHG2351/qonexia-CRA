@@ -1,6 +1,5 @@
 import styles from 'styles/devices'
-import { initializeApollo } from '../../../apollo-client'
-import { gql } from '@apollo/client'
+import { gql, useQuery } from '@apollo/client'
 import dynamic from 'next/dynamic'
 import { withRouter } from 'next/router'
 import Head from 'next/head'
@@ -17,7 +16,7 @@ const ProductList = dynamic(() => import('components/productList'), {
 
 function Preloader() {
     return (
-        <ContentLoaded width="1200px" height="1200px">
+        <ContentLoaded className="w-full h-screen">
             <rect x="229" y="78" rx="2" ry="2" width="140" height="10" />
             <rect x="230" y="122" rx="2" ry="2" width="140" height="10" />
             <rect x="5" y="57" rx="2" ry="2" width="202" height="400" />
@@ -27,52 +26,7 @@ function Preloader() {
     )
 }
 
-function Product({ router, device, products }) {
-    return (
-        <>
-            <Head>
-                <title>{router.query.device || 'Loading'} | Qonexia</title>
-                <link rel="preconnect" href="https://fonts.gstatic.com" />
-                <link
-                    href="https://fonts.googleapis.com/icon?family=Material+Icons"
-                    rel="stylesheet"
-                />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
-                    rel="stylesheet"
-                />
-            </Head>
-            <ClientOnly>
-                <ProductContextProvider initialState={products}>
-                    <Header />
-                    <div className="container-devices py-12 flex flex-col gap-y-10">
-                        <ProductList data={device} />
-                        <section className="similarities overflow-hidden w-11/12 mx-auto text-white">
-                            <h3 className="text-xl font-bold">Similares</h3>
-                            <div className="similarities-list flex flex-grow flex-shrink overflow-x-auto whitespace-nowrap gap-2 rounded-xl">
-                                <div className="product cursor-pointer" title="redmi note 8">
-                                    <Image src="/static/images/product/xiaomi/pocox3nfc.png" id="poco" width={80} height={80}/>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </ProductContextProvider>
-            </ClientOnly>
-            <style jsx>
-                {styles}
-            </style>
-        </>
-    )
-}
-
-/* Que el Header almacene todo el sitio y que */
-export default withRouter(Product)
-export async function getServerSideProps(context) {
-    const { device } = context.params
-    const apolloClient = initializeApollo()
-
-    const { data } = await apolloClient.query({
-        query: gql`
+const query = (device) => gql`
             query {
                 getProduct(name: "${device}") {
                     name
@@ -94,16 +48,70 @@ export async function getServerSideProps(context) {
                 }
                 getProducts {
                     name,
-                    cpu
+                    brand
                 }
             }
-        `,
-    })
+`
 
-    return {
-        props: {
-            device: data.getProduct,
-            products: data.getProducts,
-        },
+function Product({ router }) {
+    const { loading, error, data } = useQuery(query(router.query.device))
+
+    let device, products
+    if (!loading) {
+        device = data.getProduct
+        products = data.getProducts
     }
+
+    if (error) return <p>Error</p>
+
+    return (
+        <>
+            <Head>
+                <title>{router.query.device || 'Loading'} | Qonexia</title>
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <link
+                    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                    rel="stylesheet"
+                />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
+                    rel="stylesheet"
+                />
+            </Head>
+            {!loading
+                ? (
+                    <ClientOnly>
+                        <ProductContextProvider initialState={products}>
+                            <Header />
+                            <div className="container-devices py-12 flex flex-col gap-y-10">
+                                <ProductList data={device} />
+                                <section className="similarities overflow-hidden w-11/12 mx-auto text-white">
+                                    <h3 className="text-xl font-bold">Similares</h3>
+                                    <div className="similarities-list flex flex-grow flex-shrink overflow-x-auto whitespace-nowrap gap-2 rounded-xl">
+                                        <div
+                                            className="product cursor-pointer"
+                                            title="redmi note 8"
+                                        >
+                                            <Image
+                                                src="/static/images/product/xiaomi/pocox3nfc.png"
+                                                id="poco"
+                                                width={80}
+                                                height={80}
+                                            />
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </ProductContextProvider>
+                    </ClientOnly>
+                )
+                : (
+                    <div className="w-full h-screen"></div>
+                )}
+            <style jsx>{styles}</style>
+        </>
+    )
 }
+
+/* Que el Header almacene todo el sitio y que */
+export default withRouter(Product)

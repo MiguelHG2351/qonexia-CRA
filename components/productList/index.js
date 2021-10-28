@@ -4,9 +4,9 @@ import { gql, useQuery } from '@apollo/client'
 // assets
 import DescriptionPhone from 'components/descriptionPhone'
 
-export const ALL_PLAYERS_QUERY = gql`
+const ALL_PLAYERS_QUERY = gql`
     query {
-        getProducts {
+        findProducts(name: "Poco x3") {
             name
         }
     }

@@ -37,12 +37,8 @@ export default css`
     }
     .search {
         position: absolute;
-        justify-content: center;
-        align-items: stretch;
         z-index: 10;
         width: 0;
-        display: flex;
-        overflow: hidden;
         transition: width 0.3s ease;
     }
 
@@ -55,6 +51,7 @@ export default css`
         outline: none;
         border: none;
         width: 96%;
+        padding-left: 0.5rem;
     }
 
     .form label {
