@@ -46,9 +46,9 @@ function Producthead() {
         getData(formData)
     }
 
-    // function blurInput() {
-    //     setFormActive('search')
-    // }
+    function blurInput() {
+        setFormActive('search')
+    }
 
     async function onkeyDown(e) {
         const device = e.target.value
@@ -205,7 +205,7 @@ function Producthead() {
                                 className="text-black rounded-none"
                                 autoComplete="off"
                                 onChange={onkeyDown}
-                                // onBlur={blurInput}
+                                onBlur={blurInput}
                                 type="text"
                                 placeholder="Buscar"
                                 required={true}
@@ -219,8 +219,8 @@ function Producthead() {
                                             key={index}
                                             className="flex items-center p-3"
                                         >
-                                            <Link href={`/catalogo#${item.id}`}>
-                                                <a>
+                                            <Link href={`/products/${item.brand}/${item.name}`}>
+                                                <a className="w-full">
                                                     {item.name}
                                                 </a>
                                             </Link>
