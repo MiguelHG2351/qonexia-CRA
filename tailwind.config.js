@@ -1,11 +1,11 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-    purge: [
+    content: [
         './pages/**/*.{js,ts,jsx,tsx}',
         './components/**/*.{js,ts,jsx,tsx}',
     ],
-    darkMode: false, // or 'media' or 'class'
+    darkMode: 'media', // or 'media' or 'class'
     theme: {
         extend: {},
         colors: {
@@ -13,15 +13,12 @@ module.exports = {
             current: 'currentColor',
             black: colors.black,
             white: colors.white,
-            gray: colors.coolGray,
+            gray: colors.gray,
             red: colors.red,
             yellow: colors.amber,
             blue: colors.blue,
             'qonexia-blue': '#00b0ff',
         },
-    },
-    variants: {
-        extend: {},
     },
     plugins: [],
 }

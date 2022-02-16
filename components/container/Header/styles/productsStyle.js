@@ -1,6 +1,24 @@
 import css from 'styled-jsx/css'
 
 export default css`
+    /* Override styles of algolia */
+    .ais-SearchBox-input, .ais-SearchBox-form {
+        height: 100%;
+    }
+
+
+    .form-container {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        flex-direction: row-reverse;
+        /* & input[type="checkbox"] {
+            display: none;
+        } */
+    }
+
     .header {
         background: var(--background-header);
         color: #fff;
@@ -24,17 +42,6 @@ export default css`
         font-size: calc(var(--font-title) * 2.91);
     }
 
-    .form {
-        width: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        flex-direction: row-reverse;
-        /* & input[type="checkbox"] {
-            display: none;
-        } */
-    }
     .search {
         position: absolute;
         z-index: 10;

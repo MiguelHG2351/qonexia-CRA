@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["mongoDb"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model phones {
+  objectID    String @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  name        String
+  price       Float
+  image       String
+  brand       String
+  cpu         String
+  ram         Int
+  storage     Int
+  so          String
+  ui        String
+  battery    Int
+  colors    String[]
+  screen  String
+  resolution Int[]
+  quality_screen String
+  camera_back Int[]
+  camera_front Int[]
+}
