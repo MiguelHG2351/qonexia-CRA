@@ -23,7 +23,7 @@
     "react-dom": "^17.0.1",
     "react-instantsearch-dom": "^6.19.0",
     "redux-devtools-extension": "^2.13.8",
-    "styled-jsx": "^3.3.2"
+    "styled-jsx": "^5.0.0"
   },
   "scripts": {
     "start": "next start",
@@ -55,7 +55,7 @@
     "eslint-plugin-react": "^7.22.0",
     "jest": "^27.3.1",
     "nodemon": "^2.0.4",
-    "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.13"
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.23"
   }
 }

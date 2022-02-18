@@ -11,31 +11,31 @@ export default function Device ({ data }) {
                 <div className="info flex flex-col gap-y-5">
                     <div className="flex align-center gap-x-5">
                         <i>
-                            <img src="/static/images/icons/screen-icon.svg" alt="icono de telefono" />
+                            <img src="/static/icons/screen-icon.svg" alt="icono de telefono" />
                         </i>
                         <p>{data.screen} pulgadas</p>
                     </div>
                     <div className="flex align-center gap-x-5">
                         <i>
-                            <img src="/static/images/icons/camera-icon.svg" alt="icono de camara" />
+                            <img src="/static/icons/camera-icon.svg" alt="icono de camara" />
                         </i>
                         <p>{data.camera_back.map(quality => `${quality}MP`).join(' + ')}</p>
                     </div>
                     <div className="flex align-center gap-x-5">
                         <i>
-                            <img src="/static/images/icons/camera-icon.svg" alt="icono de camara" />
+                            <img src="/static/icons/camera-icon.svg" alt="icono de camara" />
                         </i>
                         <p>{data.camera_front.map(quality => `${quality}MP`).join(' + ')}</p>
                     </div>
                     <div className="flex align-center gap-x-5">
                         <i>
-                            <img src="/static/images/icons/microchip-icon.svg" alt="icono de procesador" />
+                            <img src="/static/icons/microchip-icon.svg" alt="icono de procesador" />
                         </i>
                         <p>{data.cpu}</p>
                     </div>
                     <div className="flex align-center gap-x-5">
                         <i>
-                            <img src="/static/images/icons/battery-full-icon.svg" alt="icono de bateria" />
+                            <img src="/static/icons/battery-full-icon.svg" alt="icono de bateria" />
                         </i>
                         <p>{data.battery}mAh</p>
                     </div>

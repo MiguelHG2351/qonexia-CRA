@@ -1,9 +1,6 @@
 import { connectRefinementList } from 'react-instantsearch-dom'
 
 function CustomRefinementList({ items, refine, createURL, className, style, onBlur }) {
-    console.log('createURL: ', createURL)
-    console.log(items)
-
     return (
         <div className={className} style={style}>
             {items.map(item => (

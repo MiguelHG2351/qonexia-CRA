@@ -1,12 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
 import context from 'components/context/ProductContext'
 import styles from './styles/productsStyle'
 
 import algoliasearch from 'algoliasearch/lite'
-import { InstantSearch, Hits } from 'react-instantsearch-dom'
+import { InstantSearch } from 'react-instantsearch-dom'
+import CustomHits from 'components/customs/Hits'
 import CustomSearchBox from 'components/customs/SearchBox'
 // import CustomRefinementList from 'components/customs/RefinementList'
 // import baseContext from 'context/descriptionContext'
@@ -33,16 +33,18 @@ const searchClient = {
                 })),
             })
         }
+        const datas = algoliaClient.search(requests)
+        datas.then((res) => {
+            console.log(res)
+        })
 
-        return algoliaClient.search(requests)
+        return datas
     },
 }
 
 function Producthead() {
     // hooks
     const [active, setActive] = useState(null)
-    const [formActive, setFormActive] = useState('search')
-    const { device } = useRouter().query
     const { products } = useContext(context)
 
     // algolia
@@ -59,17 +61,6 @@ function Producthead() {
 
     function openMenu() {
         setActive('active')
-    }
-
-    function toggleInput() {
-        console.log('click')
-        formActive === 'search'
-            ? setFormActive('search active')
-            : setFormActive('search')
-    }
-
-    function blurInput() {
-        setFormActive('search')
     }
 
     return (
@@ -91,7 +82,7 @@ function Producthead() {
                             <div className="background">
                                 <img
                                     loading="lazy"
-                                    src="https://miguelhg2351.github.io/API/logos/fondo.webp"
+                                    src="https://api.miguel2351.me/logos/fondo.webp"
                                     alt="Fondo del usuario"
                                 />
                             </div>
@@ -202,18 +193,11 @@ function Producthead() {
                         >
                             <i className="material-icons">menu</i>
                         </button>
-                        <h2>{device}</h2>
+                        <h2>Qonexia</h2>
                     </div>
                     <div className="form-container">
-                        <label
-                            htmlFor="search"
-                            className="cursor-pointer"
-                            onClick={toggleInput}
-                        >
-                            <i className="material-icons">search</i>
-                        </label>
                         <div
-                            className={`${formActive} relative h-10 rounded-md`}
+                            className="search h-10 rounded-md"
                         >
                             {/* <CustomRefinementList attribute="brand" /> */}
 
@@ -221,21 +205,18 @@ function Producthead() {
                                 <CustomSearchBox
                                     name="search"
                                     styleForm="flex flex-1"
-                                    className="text-black h-full w-full rounded-l-sm flex-1 p-3 outline-transparent"
-                                    onBlur={blurInput}
+                                    styleInput="text-white text-sm bg-dark-blue h-full w-full rounded-l-sm flex-1 p-3 shadow-inner"
                                     placeholder="Buscar"
                                 >
                                     <div
                                         className="close-attachment rounded-r-sm bg-blue-900 h-full cursor-pointer flex items-center p-3"
-                                        onClick={toggleInput}
                                     >
-                                        <i className="material-icons">west</i>
+                                        <i className="material-icons">search</i>
                                     </div>
                                 </CustomSearchBox>
                             </div>
-                            <div className="absolute left-0 w-full">
-                                Telefonos:
-                                <Hits hitComponent={HitComponents} />
+                            <div className="absolute bg-dark-blue left-0 w-full">
+                                <CustomHits hitComponent={HitComponents} />
                             </div>
                         </div>
                     </div>
@@ -248,12 +229,12 @@ function Producthead() {
 }
 
 function HitComponents({ hit }) {
-    // console.log(props)
+    console.log(hit.type)
 
     return (
-        <div className="results bg-black w-full overflow-hidden">
+        <div className="results w-full overflow-hidden">
             <Link href={`/products/${hit.brand}/${hit.name}`}>
-                <a className="w-full inline-block p-2">{hit.name}</a>
+                <a className="w-full text-sm overflow-hidden truncate inline-block p-2">{hit.name}</a>
             </Link>
         </div>
     )

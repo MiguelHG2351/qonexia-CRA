@@ -43,14 +43,10 @@ export default css`
     }
 
     .search {
-        position: absolute;
-        z-index: 10;
+        position: relative;
         width: 0;
         transition: width 0.3s ease;
-    }
-
-    .search.active {
-        width: 50%;
+        width: 15rem;
     }
 
     .search input[type='text'] {
