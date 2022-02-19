@@ -1,3 +1,4 @@
+/* eslint-disable multiline-ternary */
 import styles from 'styles/devices'
 import { gql, useQuery } from '@apollo/client'
 import dynamic from 'next/dynamic'
@@ -78,15 +79,17 @@ function Product({ router }) {
                     rel="stylesheet"
                 />
             </Head>
-            {!loading
-                ? (
+            {!loading ? (
+                <>
+                    <Header />
                     <ClientOnly>
                         <ProductContextProvider initialState={products}>
-                            <Header />
                             <div className="container-devices py-12 flex flex-col gap-y-10">
                                 <ProductList data={device} />
                                 <section className="similarities overflow-hidden w-11/12 mx-auto text-white">
-                                    <h3 className="text-xl font-bold">Similares</h3>
+                                    <h3 className="text-xl font-bold">
+                                        Similares
+                                    </h3>
                                     <div className="similarities-list flex flex-grow flex-shrink overflow-x-auto whitespace-nowrap gap-2 rounded-xl">
                                         <div
                                             className="product cursor-pointer"
@@ -104,10 +107,10 @@ function Product({ router }) {
                             </div>
                         </ProductContextProvider>
                     </ClientOnly>
-                )
-                : (
-                    <div className="w-full h-screen"></div>
-                )}
+                </>
+            ) : (
+                <div className="w-full h-screen"></div>
+            )}
             <style jsx>{styles}</style>
         </>
     )

@@ -25,7 +25,7 @@ function ProductList({ data }) {
                             <div className="card-image flex justify-center md:justify-start">
                                 <div className="image" align="center">
                                     <img src={data.image} alt={data.name} draggable={false} />
-                                    <div className="name-product text-xl p-5 text-white rounded-xl cursor-pointer transform hover:scale-95">
+                                    <div className="name-product text-white text-xl p-5 rounded-xl cursor-pointer transform hover:scale-95">
                                         <h3>{data.name}</h3>
                                     </div>
                                 </div>
@@ -54,3 +54,4 @@ por los que paso el ciclo añadiendolos con Array.prototype.push(element)  */
 /*         type, description */
 
 /* utilizar rem para determinar el tamaño de los botones, cambio el font-size atravez de la clase */
+// https://cdn.dribbble.com/users/8962318/screenshots/16899377/media/07da6aab54198b6450440f8050e3034f.png?compress=1&resize=1200x900&vertical=top

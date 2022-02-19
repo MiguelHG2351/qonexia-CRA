@@ -20,10 +20,10 @@ export default css`
     }
 
     .header {
-        background: var(--background-header);
+        /* background: var(--background-header); */
         color: #fff;
         height: 73px;
-        box-shadow: var(--shadow);
+        /* box-shadow: var(--shadow); */
         position: relative;
     }
     .header-title {

@@ -17,6 +17,8 @@ module.exports = {
             red: colors.red,
             yellow: colors.amber,
             blue: colors.blue,
+            sky: colors.sky,
+            slate: colors.slate,
             // 'dark-blue': '#050d5c',
             'dark-blue': '#020010',
             'qonexia-blue': '#00b0ff',

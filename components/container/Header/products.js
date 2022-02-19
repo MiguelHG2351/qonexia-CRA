@@ -76,7 +76,7 @@ function Producthead() {
                 indexName="qonexia-products-index"
                 searchClient={searchClient}
             >
-                <header className="header p-4 flex justify-between items-center">
+                <header className="header border-b dark:border-slate-50/[0.06] bg-slate-900 p-4 flex justify-between items-center">
                     <div className={`sidenav ${active}`}>
                         <div className="profile">
                             <div className="background">
@@ -189,11 +189,15 @@ function Producthead() {
                     <div className="header-title">
                         <button
                             onClick={openMenu}
-                            className="flex items-center border-none text-white"
+                            className="lg:hidden flex items-center border-none text-white"
                         >
                             <i className="material-icons">menu</i>
                         </button>
-                        <h2>Qonexia</h2>
+                        <Link href="/">
+                            <a className="logo hidden lg:inline-block cursor-pointer">
+                                <img src="/static/images/logo-hd.png" alt="Logo" />
+                            </a>
+                        </Link>
                     </div>
                     <div className="form-container">
                         <div
@@ -215,7 +219,7 @@ function Producthead() {
                                     </div>
                                 </CustomSearchBox>
                             </div>
-                            <div className="absolute bg-dark-blue left-0 w-full">
+                            <div className="absolute bg-dark-blue/50 left-0 w-full">
                                 <CustomHits hitComponent={HitComponents} />
                             </div>
                         </div>
@@ -234,7 +238,7 @@ function HitComponents({ hit }) {
     return (
         <div className="results w-full overflow-hidden">
             <Link href={`/products/${hit.brand}/${hit.name}`}>
-                <a className="w-full text-sm overflow-hidden truncate inline-block p-2">{hit.name}</a>
+                <a className="w-full text-sm overflow-hidden truncate inline-block p-2 hover:text-gray-400">{hit.name}</a>
             </Link>
         </div>
     )
