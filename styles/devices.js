@@ -1,10 +1,6 @@
 import css from 'styled-jsx/css'
 
 export default css`
-.container-devices {
-    /* background: #0B021E; */
-    background: #0B021E;
-}
 
 .similarities-list {
     background-color: rgba(196, 196, 196, 0.33);

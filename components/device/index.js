@@ -40,16 +40,6 @@ export default function Device ({ data }) {
                         <p>{data.battery}mAh</p>
                     </div>
                 </div>
-                <div className="colors flex justify-center gap-x-3 p-3 rounded-xl">
-                    {data.colors.map((colors, index) => (
-                        <button
-                            aria-hidden="true"
-                            style={{ background: colors }}
-                            className="p-3 border border-white border-solid rounded-full"
-                            key={colors}
-                        ></button>
-                    ))}
-                </div>
             </section>
             <style jsx>
                 {styles}

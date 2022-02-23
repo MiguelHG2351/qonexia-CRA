@@ -16,7 +16,6 @@ export default css.global`
     * {
         margin: 0;
         box-sizing: border-box;
-        font-family: 'Roboto', sans-serif, Arial;
     }
 
     body {

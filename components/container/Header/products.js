@@ -1,7 +1,5 @@
-import React, { useState, useContext, useEffect } from 'react'
-import Head from 'next/head'
+import React, { useState } from 'react'
 import Link from 'next/link'
-import context from 'components/context/ProductContext'
 import styles from './styles/productsStyle'
 
 import algoliasearch from 'algoliasearch/lite'
@@ -45,13 +43,8 @@ const searchClient = {
 function Producthead() {
     // hooks
     const [active, setActive] = useState(null)
-    const { products } = useContext(context)
 
     // algolia
-
-    useEffect(() => {
-        console.log('products', products)
-    }, [])
 
     function loadSideNav() {
         setActive(null)
@@ -65,13 +58,6 @@ function Producthead() {
 
     return (
         <>
-            <Head>
-                <link rel="preconnect" href="https://fonts.gstatic.com" />
-                <link
-                    href="https://fonts.googleapis.com/icon?family=Material+Icons"
-                    rel="stylesheet"
-                />
-            </Head>
             <InstantSearch
                 indexName="qonexia-products-index"
                 searchClient={searchClient}
@@ -219,7 +205,7 @@ function Producthead() {
                                     </div>
                                 </CustomSearchBox>
                             </div>
-                            <div className="absolute bg-dark-blue/50 left-0 w-full">
+                            <div className="absolute z-10 bg-dark-blue/50 left-0 w-full">
                                 <CustomHits hitComponent={HitComponents} />
                             </div>
                         </div>

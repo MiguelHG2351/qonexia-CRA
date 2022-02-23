@@ -1,8 +1,11 @@
 import React from 'react'
 import styles from './productList'
 import { gql, useQuery } from '@apollo/client'
-// assets
-import DescriptionPhone from 'components/descriptionPhone'
+
+// components
+import ProductHero from 'components/product/ProductHero'
+import DescriptionPhone from 'components/product/ProductFeatures'
+import ProductAction from 'components/product/ProductAction'
 
 const ALL_PLAYERS_QUERY = gql`
     query {
@@ -13,27 +16,14 @@ const ALL_PLAYERS_QUERY = gql`
 `
 
 function ProductList({ data }) {
-    const { data: xD, loading } = useQuery(ALL_PLAYERS_QUERY)
-    console.log(xD, loading)
-
     return (
         <>
             <div className="productList">
                 <div className="w-11/12 mx-auto">
-                    <div className="hero-product md:grid md:grid-cols-2">
-                        <div className="device text-center mb-16">
-                            <div className="card-image flex justify-center md:justify-start">
-                                <div className="image" align="center">
-                                    <img src={data.image} alt={data.name} draggable={false} />
-                                    <div className="name-product text-white text-xl p-5 rounded-xl cursor-pointer transform hover:scale-95">
-                                        <h3>{data.name}</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="description p-5 rounded-3xl">
-                            <DescriptionPhone data={data} />
-                        </div>
+                    <div className="hero-product flex flex-col gap-y-4 md:grid md:grid-cols-3 md:place-items-center">
+                        <ProductHero image={data.image} name={data.name} />
+                        <DescriptionPhone data={data} />
+                        <ProductAction price={data.price} colors={data.colors} />
                     </div>
                 </div>
             </div>

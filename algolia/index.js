@@ -10,6 +10,6 @@ const prisma = new PrismaClient();
     try {
         await index.saveObjects([...data])
     } catch (err) {
-        console.log(err)
+        console.error(err)
     }
 })()

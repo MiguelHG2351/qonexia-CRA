@@ -1,10 +1,7 @@
 import css from 'styled-jsx/css'
 
 export default css`
-    .header {
-        position: relative;
-        background: rgba(0, 0, 0, 0.7);
-        height: 100vh;
+    .hero {
         display: grid;
         grid-template-columns: 50% 50%;
         grid-template-rows: 10% 30% 60%;
@@ -32,7 +29,7 @@ export default css`
     }
 
     @media screen and (min-width: 992px) {
-        .header {
+        .hero {
             grid-template-columns: 50% 50%;
             grid-template-rows: auto 1fr;
             grid-template-areas: 'menu menu' 'title list';
