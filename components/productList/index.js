@@ -1,20 +1,10 @@
 import React from 'react'
 import styles from './productList'
-import { gql, useQuery } from '@apollo/client'
 
 // components
 import ProductHero from 'components/product/ProductHero'
 import DescriptionPhone from 'components/product/ProductFeatures'
 import ProductAction from 'components/product/ProductAction'
-
-const ALL_PLAYERS_QUERY = gql`
-    query {
-        findProducts(name: "Poco x3") {
-            name
-        }
-    }
-`
-
 function ProductList({ data }) {
     return (
         <>

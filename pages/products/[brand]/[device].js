@@ -46,6 +46,7 @@ function Product() {
         loading: false
     })
 
+    // eslint-disable-next-line no-unused-vars
     const [loadingProduct, { called, loading, data }] = useLazyQuery(
         query(router.query.device),
         {
