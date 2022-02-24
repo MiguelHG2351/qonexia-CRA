@@ -1,5 +1,6 @@
 /* eslint-disable multiline-ternary */
 import { useEffect, useState } from 'react'
+import { useIsomorphicLayoutEffect } from 'hooks/useIsomorphicLayoutEffect'
 import styles from 'styles/devices'
 import { gql, useLazyQuery } from '@apollo/client'
 import { useRouter } from 'next/router'
@@ -54,7 +55,7 @@ function Product() {
         }
     )
 
-    useEffect(() => {
+    useIsomorphicLayoutEffect(() => {
         if (router.query?.device && !device.loading) {
             loadingProduct()
         }

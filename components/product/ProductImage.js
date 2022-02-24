@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import Image from 'next/image'
 import { useIsMounted } from 'hooks/useIsMounted'
 
-export default function ProductImage({ src, alt = '', className, ...delegated }) {
+export default function ProductImage({ src, alt = '', className, draggable }) {
     const [loaded, setLoaded] = useState(false)
     const isMounted = useIsMounted()
 
@@ -19,7 +19,6 @@ export default function ProductImage({ src, alt = '', className, ...delegated })
                 src={src}
                 width={290}
                 height={311}
-                layout="fixed"
                 className={classNames(
                     'transition-all duration-2000 ease-out-expo can-hover:group-hover:scale-110',
                     {
@@ -27,7 +26,7 @@ export default function ProductImage({ src, alt = '', className, ...delegated })
                     }
                 )}
                 onLoadingComplete={handleComplete}
-                {...delegated}
+                draggable={draggable}
             />
         </div>
     )
