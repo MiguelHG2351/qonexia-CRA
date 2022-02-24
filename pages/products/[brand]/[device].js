@@ -76,8 +76,6 @@ function Product() {
             <Head>
                 <title>{router.query.device || 'Loading'} | Qonexia</title>
             </Head>
-            {!loading ? (
-                <>
                     <div className="container-devices py-12 flex flex-col gap-y-10">
                         {/* Información de cada producto */}
                         <ProductList data={device.device} />
@@ -98,10 +96,6 @@ function Product() {
                             </div>
                         </section>
                     </div>
-                </>
-            ) : (
-                <div className="w-full h-screen"></div>
-            )}
             <style jsx>{styles}</style>
         </>
     )
