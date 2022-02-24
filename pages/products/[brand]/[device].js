@@ -43,7 +43,7 @@ function Product() {
             ...mockDevice,
         },
         products: [],
-        loading: false
+        loading: false,
     })
 
     // eslint-disable-next-line no-unused-vars
@@ -66,7 +66,7 @@ function Product() {
             setDevice({
                 device: data.getProduct,
                 products: data.getProducts,
-                loading: true
+                loading: true,
             })
         }
     }, [loading])
@@ -76,26 +76,26 @@ function Product() {
             <Head>
                 <title>{router.query.device || 'Loading'} | Qonexia</title>
             </Head>
-                    <div className="container-devices py-12 flex flex-col gap-y-10">
-                        {/* Información de cada producto */}
-                        <ProductList data={device.device} />
-                        <section className="similarities overflow-hidden w-11/12 mx-auto text-white">
-                            <h3 className="text-xl font-bold">Similares</h3>
-                            <div className="similarities-list flex flex-grow flex-shrink overflow-x-auto whitespace-nowrap gap-2 rounded-xl">
-                                <div
-                                    className="product cursor-pointer"
-                                    title="redmi note 8"
-                                >
-                                    <Image
-                                        src="/static/images/product/xiaomi/pocox3nfc.png"
-                                        id="poco"
-                                        width={80}
-                                        height={80}
-                                    />
-                                </div>
-                            </div>
-                        </section>
+            <div className="container-devices py-12 flex flex-col gap-y-10">
+                {/* Información de cada producto */}
+                <ProductList data={device.device} />
+                <section className="similarities overflow-hidden w-11/12 mx-auto text-white">
+                    <h3 className="text-xl font-bold">Similares</h3>
+                    <div className="similarities-list flex flex-grow flex-shrink overflow-x-auto whitespace-nowrap gap-2 rounded-xl">
+                        <div
+                            className="product cursor-pointer"
+                            title="redmi note 8"
+                        >
+                            <Image
+                                src="/static/images/product/xiaomi/pocox3nfc.png"
+                                id="poco"
+                                width={80}
+                                height={80}
+                            />
+                        </div>
                     </div>
+                </section>
+            </div>
             <style jsx>{styles}</style>
         </>
     )
