@@ -19,6 +19,7 @@ export default function ProductImage({ src, alt = '', className, draggable }) {
                 src={src}
                 width={290}
                 height={311}
+                alt={alt}
                 className={classNames(
                     'transition-all duration-2000 ease-out-expo can-hover:group-hover:scale-110',
                     {

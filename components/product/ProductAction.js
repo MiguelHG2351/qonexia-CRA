@@ -31,7 +31,7 @@ export default function ProductAction({ colors = [], price }) {
                 <button className="pricing rounded-md flex-1 bg-white/[.29]">
                     {price}$
                 </button>
-                <button className='flex-1 rounded-md py-4 bg-sky-500 font-medium'>Reservar</button>
+                <button className='flex-1 text-black rounded-md py-4 bg-sky-500 font-medium'>Reservar</button>
             </article>
         </section>
     )
