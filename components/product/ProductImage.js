@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import Image from 'next/image'
 import { useIsMounted } from 'hooks/useIsMounted'
 
-export default function ProductImage({ src, alt = '', className, draggable }) {
+export default function ProductImage({ src, alt = 'Cargando imagen', className, draggable }) {
     const [loaded, setLoaded] = useState(false)
     const isMounted = useIsMounted()
 

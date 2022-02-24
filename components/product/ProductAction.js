@@ -2,11 +2,10 @@ import classNames from 'classnames'
 
 export default function ProductAction({ colors = [], price }) {
     return (
-        <section className='md:order-3 w-full flex flex-col justify-center'>
+        <section className="md:order-3 w-full flex flex-col justify-center">
             <article className="colors dark:bg-very-dark-blue flex justify-center gap-x-3 p-3 rounded-xl">
                 {colors.map((color, index) => (
                     <button
-                        aria-hidden="true"
                         // style={{ border: '2px solid red' }}
                         className={classNames(
                             'relative p-4 z-10 overflow-hidden mix-blend-normal rounded-full'
@@ -27,11 +26,13 @@ export default function ProductAction({ colors = [], price }) {
                     </button>
                 ))}
             </article>
-            <article className='flex gap-x-4 py-4 text-white justify-between'>
+            <article className="flex gap-x-4 py-4 text-white justify-between">
                 <button className="pricing rounded-md flex-1 bg-white/[.29]">
                     {price}$
                 </button>
-                <button className='flex-1 text-black rounded-md py-4 bg-sky-500 font-medium'>Reservar</button>
+                <button className="flex-1 text-black rounded-md py-4 bg-sky-500 font-medium">
+                    Reservar
+                </button>
             </article>
         </section>
     )
