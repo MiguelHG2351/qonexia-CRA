@@ -38,6 +38,7 @@ const query = (device) => gql`
 `
 
 function Product() {
+    const suggestions = mockDevice.suggestions
     const router = useRouter()
     const [device, setDevice] = useState({
         device: {
@@ -77,10 +78,10 @@ function Product() {
             <Head>
                 <title>{router.query.device || 'Loading'} | Qonexia</title>
             </Head>
-            <div className="container-devices py-12 flex flex-col gap-y-10">
+            <div className="container-devices w-11/12 mx-auto py-12 flex flex-col gap-y-10">
                 {/* Información de cada producto */}
                 <ProductList data={device.device} />
-                <Similarities />
+                <Similarities data={suggestions} />
             </div>
             <style jsx>{styles}</style>
         </>

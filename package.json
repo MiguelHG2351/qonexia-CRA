@@ -23,7 +23,6 @@
     "react-content-loader": "^5.1.4",
     "react-dom": "^17.0.1",
     "react-instantsearch-dom": "^6.19.0",
-    "redux-devtools-extension": "^2.13.8",
     "styled-jsx": "^5.0.0"
   },
   "scripts": {

@@ -22,16 +22,6 @@ export default css.global`
         -webkit-appearance: none;
     }
 
-    body::-webkit-progress-bar {
-        background: red;
-    }
-
-    button {
-        outline: none;
-        border: none;
-        cursor: pointer;
-    }
-
     a {
         text-decoration: none !important;
     }
