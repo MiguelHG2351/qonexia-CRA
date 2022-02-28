@@ -20,6 +20,7 @@ export default function ProductImage({ src, alt = 'Cargando imagen', className, 
                 width={290}
                 height={311}
                 alt={alt}
+                priority={true}
                 className={classNames(
                     'transition-all duration-2000 ease-out-expo can-hover:group-hover:scale-110',
                     {

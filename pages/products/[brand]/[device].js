@@ -62,7 +62,7 @@ function Product() {
     }, [router.query.device])
 
     useEffect(() => {
-        if (typeof data !== 'undefined') {
+        if (typeof data !== 'undefined' && !device.loading) {
             console.log(data)
             setDevice({
                 device: data.getProduct,
