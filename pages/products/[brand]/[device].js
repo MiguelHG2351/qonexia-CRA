@@ -76,7 +76,7 @@ function Product() {
     return (
         <>
             <Head>
-                <title>{router.query.device || 'Loading'} | Qonexia</title>
+                <title>{router.query.device || 'Cargando...'} | Qonexia</title>
             </Head>
             <div className="container-devices w-11/12 mx-auto py-12 flex flex-col gap-y-10">
                 {/* Información de cada producto */}
