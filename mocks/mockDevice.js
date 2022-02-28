@@ -19,4 +19,5 @@ export default {
         'linear-gradient(45deg, #495362, #707886)',
         'linear-gradient(90deg, #3f8570 5%, #1fe7e7 95%)',
     ],
+    suggestions: [1, 2, 3, 4, 5, 6, 7],
 }

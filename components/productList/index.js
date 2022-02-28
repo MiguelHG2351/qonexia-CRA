@@ -8,18 +8,14 @@ import ProductAction from 'components/product/ProductAction'
 function ProductList({ data }) {
     return (
         <>
-            <div className="productList">
-                <div className="w-11/12 mx-auto">
-                    <div className="hero-product flex flex-col gap-y-4 md:grid md:grid-cols-3 md:place-items-center">
-                        <ProductHero image={data.image} name={data.name} />
-                        <DescriptionPhone data={data} />
-                        <ProductAction price={data.price} colors={data.colors} />
-                    </div>
+            <section className="productList">
+                <div className="hero-product flex flex-col gap-y-4 md:grid md:grid-cols-3 md:place-items-center">
+                    <ProductHero image={data.image} name={data.name} />
+                    <DescriptionPhone data={data} />
+                    <ProductAction price={data.price} colors={data.colors} />
                 </div>
-            </div>
-            <style jsx>
-                {styles}
-            </style>
+            </section>
+            <style jsx>{styles}</style>
         </>
     )
 }
