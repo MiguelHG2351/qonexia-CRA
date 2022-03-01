@@ -52,6 +52,7 @@ function Product() {
         {
             ssr: false,
             onError: (error) => console.log(error),
+            // Estas dos lineas GOD evitan que aparezca con los valores del mock el componente de Similarities
             fetchPolicy: 'cache-and-network',
             nextFetchPolicy: 'cache-first',
             onCompleted: (data) => {
