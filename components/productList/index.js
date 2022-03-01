@@ -20,7 +20,7 @@ function ProductList({ data }) {
     )
 }
 
-export default React.memo(ProductList)
+export default ProductList
 
 /* Idea: Añadir recomendaciones los dispositivos
 por los que paso el ciclo añadiendolos con Array.prototype.push(element)  */

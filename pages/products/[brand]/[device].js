@@ -1,6 +1,5 @@
 /* eslint-disable multiline-ternary */
-import { useEffect, useState } from 'react'
-import { useIsomorphicLayoutEffect } from 'hooks/useIsomorphicLayoutEffect'
+import { useState, useEffect } from 'react'
 import styles from 'styles/devices'
 import { gql, useLazyQuery } from '@apollo/client'
 import { useRouter } from 'next/router'
@@ -45,7 +44,6 @@ function Product() {
             ...mockDevice,
         },
         products: [],
-        loading: false,
     })
 
     // eslint-disable-next-line no-unused-vars
@@ -53,25 +51,31 @@ function Product() {
         query(router.query.device),
         {
             ssr: false,
+            onError: (error) => console.log(error),
+            fetchPolicy: 'cache-and-network',
+            nextFetchPolicy: 'cache-first',
+            onCompleted: (data) => {
+                console.log('siuuu', data)
+                setProducts()
+            }
         }
     )
 
-    useIsomorphicLayoutEffect(() => {
-        if (router.query?.device && !device.loading) {
-            loadingProduct()
+    useEffect(() => {
+        console.log('called', called)
+        console.log('device', router.query)
+        if (router.query?.device && !called) {
+            console.log('here');
+            (() => loadingProduct())()
         }
     }, [router.query.device])
 
-    useEffect(() => {
-        if (typeof data !== 'undefined' && !device.loading) {
-            console.log(data)
-            setDevice({
-                device: data.getProduct,
-                products: data.getProducts,
-                loading: true,
-            })
-        }
-    }, [loading, device])
+    function setProducts() {
+        setDevice({
+            device: data.getProduct,
+            products: data.getProducts,
+        })
+    }
 
     return (
         <>
