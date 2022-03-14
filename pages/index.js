@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 
-import HeaderIndex from '../components/container/Header/'
+import HomeHero from 'components/Hero/HomeHero'
 
 function Index() {
     return (
@@ -13,7 +13,7 @@ function Index() {
                     content="Página web principal de Qonexia, test"
                 />
             </Head>
-            <HeaderIndex />
+            <HomeHero />
             <br />
             <br />
             <br />

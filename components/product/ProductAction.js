@@ -1,6 +1,24 @@
+import { useState, useCallback } from 'react'
 import classNames from 'classnames'
+import ProductModal from './ProductModal'
+import Modal from 'components/portals/modal'
 
 export default function ProductAction({ colors = [], price }) {
+    const [isShowQRcode, setIsShowQRcode] = useState(false)
+    const [token, setToken] = useState(null)
+    console.log(token)
+    const showQR = useCallback(function () {
+        if (!token) {
+            console.log('showQR')
+            fetch('/api/genHash')
+                .then((res) => res.json())
+                .then((res) => {
+                    setToken(res.token)
+                })
+        }
+        setIsShowQRcode(true)
+    })
+
     return (
         <section className="md:order-3 w-full flex flex-col justify-center">
             <article className="colors dark:bg-very-dark-blue flex justify-center gap-x-3 p-3 rounded-xl">
@@ -30,10 +48,16 @@ export default function ProductAction({ colors = [], price }) {
                 <button className="pricing rounded-md flex-1 bg-white/[.29]">
                     {price}$
                 </button>
-                <button className="flex-1 text-black rounded-md py-4 bg-sky-500 font-medium">
+                <button
+                    onClick={showQR}
+                    className="flex-1 text-black rounded-md py-4 bg-sky-500 font-medium"
+                >
                     Reservar
                 </button>
             </article>
+            <Modal>
+                <ProductModal isShowQRcode={isShowQRcode} changeState={setIsShowQRcode} token={token} />
+            </Modal>
         </section>
     )
 }

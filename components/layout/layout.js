@@ -6,7 +6,7 @@ export default function Layout(props) {
     return (
         <>
             <Header />
-            <main className='max-w-screen-2xl mx-auto'>
+            <main className='bg-dark-bg max-w-screen-2xl mx-auto'>
                 { props.children }
             </main>
             <Footer />

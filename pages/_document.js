@@ -5,8 +5,9 @@ class MyDocument extends Document {
         return (
             <Html lang="es">
                 <Head />
-                <body className='bg-dark-bg'>
+                <body>
                     <Main />
+                    <div id="modal"></div>
                     <NextScript />
                 </body>
             </Html>

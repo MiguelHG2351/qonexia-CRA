@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import Link from 'next/link'
-import styles from './styles/style'
-import useCarrousel from '../../../hooks/useCarrousel'
+import styles from '../../Hero/styles/style'
+import useCarrousel from 'hooks/useCarrousel'
 import ResponsiveBackground from './responsiveBack'
 
 function HeaderIndex() {
