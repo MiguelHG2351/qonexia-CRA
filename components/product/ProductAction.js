@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
 import classNames from 'classnames'
 import ProductModal from './ProductModal'
-import Modal from 'components/portals/modal'
+import Modal from 'components/portals/Modal'
 
 export default function ProductAction({ colors = [], price }) {
     const [isShowQRcode, setIsShowQRcode] = useState(false)
