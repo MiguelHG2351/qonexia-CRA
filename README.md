@@ -18,6 +18,6 @@
 
 # Linter
 
-**npm run lint**
+**npm run lint (Next lint)**
 
 # El sitio acaba de pasar de CRA a Nextjs, se continua solucionando bugs
