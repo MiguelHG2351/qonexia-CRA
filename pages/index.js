@@ -19,6 +19,8 @@ function Index() {
             </div>
             <section className="explorer">
                 <h2 className='dark:text-white text-center font-medium text-3xl'>Explora nuestro catálogo de productos</h2>
+                <div className="info-explorer">
+                </div>
             </section>
             <section className="choose-preferences">
                 <div className="preference-title text-center">
