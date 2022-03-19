@@ -9,7 +9,6 @@ export default css`
 
     .form-container {
         width: 50%;
-        display: flex;
         align-items: center;
         justify-content: flex-start;
         flex-wrap: nowrap;

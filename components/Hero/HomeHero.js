@@ -1,15 +1,15 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import styles from './styles/style'
-import useCarrousel from 'hooks/useCarrousel'
+// import useCarrousel from 'hooks/useCarrousel'
 
 function HomeHero() {
     // Hooks
-    const scrollCard = useRef(null)
+    // const scrollCard = useRef(null)
     // const [menu, setMenu] = useState(undefined)
 
     // Custom Hooks
-    useCarrousel(scrollCard)
+    // useCarrousel(scrollCard)
 
     // JSX
     return <>
@@ -24,8 +24,12 @@ function HomeHero() {
                     <li><Link href="/trends"><a>Tendencias</a></Link></li>
                 </ul>
             </div> */}
-            <div className="hero min-h-screen relative bg-black/[.7]">
+            <div className="hero grid justify-center items-center min-h-screen relative bg-black/[.7]">
                 <div className="header-title relative">
+                    <img
+                        className='md:h-8 md:w-fit'
+                        src="/static/images/logo-hd.png"
+                        alt="qonexia-logo" />
                     <h1>Bienvenidos a Qonexia</h1>
                     <p>Visita la gran variedad de dispositivos moviles</p>
                     <Link href="/catalogo">
@@ -37,7 +41,7 @@ function HomeHero() {
                 <div className="header-list-card">
                     <div className="card">
                         <div className="card-image">
-                            <img src="/static/images/loading.gif" ref={scrollCard} alt="Telefonos" title="Carrousel de imagenes" />
+                            <img src="/static/images/album/albumEnero.webp" alt="Telefonos" title="Carrousel de imagenes" />
                         </div>
                     </div>
                 </div>
@@ -52,12 +56,9 @@ function HomeHero() {
 function ResponsiveBackground() {
     return (
         <>
-            <div className="background absolute z-0 inset-0 flex justify-center">
-                <img
-                    src="/static/images/qonexia.webp"
-                    className='object-cover w-full max-w-full bg-dark-blue'
-                    alt="Bienvenidos a qonexia"
-                />
+            <div
+                className="background bg-[url('/static/images/qonexia.webp')] bg-cover bg-right absolute z-0 inset-0 flex justify-center"
+            >
             </div>
         </>
     )

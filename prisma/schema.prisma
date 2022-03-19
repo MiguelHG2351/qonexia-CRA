@@ -12,7 +12,7 @@ datasource db {
 }
 
 model phones {
-  _id    String @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
   name        String
   price       Float
   image       String

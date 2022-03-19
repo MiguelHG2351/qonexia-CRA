@@ -185,7 +185,7 @@ function Producthead() {
                             </a>
                         </Link>
                     </div>
-                    <div className="form-container">
+                    <div className="form-container hidden md:flex">
                         <div
                             className="search h-10 rounded-md"
                         >

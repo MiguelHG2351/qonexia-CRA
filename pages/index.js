@@ -7,7 +7,7 @@ function Index() {
     return (
         <>
             <Head>
-                <title>Home | Qonexia tecnología</title>
+                <title>Home | Qonexia tecnología (no oficial)</title>
                 <meta
                     name="description"
                     content="Página web principal de Qonexia, test"
@@ -17,6 +17,9 @@ function Index() {
             <div align="center" className='py-8'>
                 <img src="/static/images/logos-products.png" className='md:h-16' alt="logos" />
             </div>
+            <section className="explorer">
+                <h2 className='dark:text-white text-center font-medium text-3xl'>Explora nuestro catálogo de productos</h2>
+            </section>
             <section className="choose-preferences">
                 <div className="preference-title text-center">
                     <p className='text-slate-400'>Encuentre más de 200 dispositivos</p>

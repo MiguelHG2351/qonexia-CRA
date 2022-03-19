@@ -2,12 +2,9 @@ import css from 'styled-jsx/css'
 
 export default css`
     .hero {
-        display: grid;
         grid-template-columns: 50% 50%;
         grid-template-rows: 10% 30% 60%;
         grid-template-areas: 'menu menu' 'title title' 'list list';
-        justify-content: center;
-        align-items: center;
     }
 
     .toggle-menu {
