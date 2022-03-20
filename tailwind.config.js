@@ -24,6 +24,8 @@ module.exports = {
             blue: colors.blue,
             sky: colors.sky,
             slate: colors.slate,
+            indigo: colors.indigo,
+            cyan: colors.cyan,
             // 'dark-blue': '#050d5c',
             'dark-bg': '#0B021E',
             'dark-blue': '#020010',
