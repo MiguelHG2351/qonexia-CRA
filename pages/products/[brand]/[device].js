@@ -1,6 +1,5 @@
 /* eslint-disable multiline-ternary */
 import { useState, useEffect } from 'react'
-import styles from 'styles/devices'
 import { gql, useLazyQuery } from '@apollo/client'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
@@ -88,7 +87,6 @@ function Product() {
                 <ProductList data={device.device} />
                 <Similarities data={suggestions} />
             </div>
-            <style jsx>{styles}</style>
         </>
     )
 }

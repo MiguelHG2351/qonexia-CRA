@@ -53,4 +53,16 @@ const styles = css`
     .container-card {
         width: calc(100vw - 8.3333333333%);
     }
+
+    .similarities-list::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+        background-color: #fff;
+        border-radius: 0.75rem;
+    }
+
+    .similarities-list::-webkit-scrollbar-thumb {
+        background-color: #20D2C6;
+        border-radius: 0.75rem;
+    }
 `
