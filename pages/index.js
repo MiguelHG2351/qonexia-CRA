@@ -23,13 +23,15 @@ function Index() {
                         <h2 className='dark:text-white text-center font-medium text-3xl mb-4'>Explora nuestro catálogo de productos</h2>
                         <p className='dark:text-white hidden md:inline-block'>Tenemos un amplio catalogo de productos a los que puedes acceder facilmente para ahorrate tiempo y obtengas tu dispositivo sin ningún problema</p>
                     </div>
-                    <div className="info-explorer bg-gradient-to-r from-blue-600 bg-blue-900 rounded-3xl py-12 flex flex-col gap-8 items-center">
-                        <div className="images-explorer flex flex-col items-end justify-center w-full">
-                            <img src="/static/images/examples/macbook.png" alt="Macbook" />
-                            <img className='self-start' src="/static/images/examples/samsung.png" alt="Samsung S20 series" />
-                            <img src="/static/images/examples/ps5.png" alt="Play Station 5 / PS5" />
+                    <div className="info-explorer_container md:flex-1 flex justify-end">
+                        <div className="info-explorer bg-gradient-to-r from-blue-600 bg-blue-900 rounded-3xl py-12 flex w-full md:w-4/6 md:inline-flex flex-col gap-8 items-center md:px-16">
+                            <div className="images-explorer flex flex-col items-end justify-center w-full">
+                                <img className='md:w-32' src="/static/images/examples/macbook.png" alt="Macbook" />
+                                <img className='md:w-32 self-start' src="/static/images/examples/samsung.png" alt="Samsung S20 series" />
+                                <img className='md:w-32' src="/static/images/examples/ps5.png" alt="Play Station 5 / PS5" />
+                            </div>
+                            <button className='bg-white text-blue-400 font-medium text-xl w-5/6 py-4 rounded-md'>Ver catálogo</button>
                         </div>
-                        <button className='bg-white text-blue-400 font-medium text-xl w-5/6 py-4 rounded-md'>Ver catálogo</button>
                     </div>
                 </section>
                 <section className="choose-preferences">
