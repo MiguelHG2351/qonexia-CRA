@@ -1,5 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
+import Image from 'next/image'
 
 import HomeHero from 'components/Hero/HomeHero'
 
@@ -15,33 +17,203 @@ function Index() {
             </Head>
             <HomeHero />
             <section className="container-home flex flex-col gap-y-12">
-                <div align="center" className='py-8'>
-                    <img src="/static/images/logos-products.png" className='md:h-16' alt="logos" />
+                <div align="center" className="py-8">
+                    <img
+                        src="/static/images/logos-products.png"
+                        className="md:h-16"
+                        alt="logos"
+                    />
                 </div>
-                <section className="explorer w-5/6 mx-auto md:flex md:items-center md:gap-x-16" align='center'>
+                <section
+                    className="explorer w-5/6 mx-auto md:flex md:items-center md:gap-x-16"
+                    align="center"
+                >
                     <div className="explorer-description md:flex-1">
-                        <h2 className='dark:text-white text-center font-medium text-3xl mb-4'>Explora nuestro catálogo de productos</h2>
-                        <p className='dark:text-white hidden md:inline-block'>Tenemos un amplio catalogo de productos a los que puedes acceder facilmente para ahorrate tiempo y obtengas tu dispositivo sin ningún problema</p>
+                        <h2 className="dark:text-white text-left font-medium text-4xl mb-4">
+                            Explora nuestro catálogo de productos
+                        </h2>
+                        <p className="dark:text-gray-400 text-left hidden md:inline-block">
+                            Tenemos un amplio catalogo de productos a los que
+                            puedes acceder facilmente para ahorrate tiempo y
+                            obtengas tu dispositivo sin ningún problema
+                        </p>
                     </div>
                     <div className="info-explorer_container md:flex-1 flex justify-end">
                         <div className="info-explorer bg-gradient-to-r from-blue-600 bg-blue-900 rounded-3xl py-12 flex w-full md:w-4/6 md:inline-flex flex-col gap-8 items-center md:px-16">
                             <div className="images-explorer flex flex-col items-end justify-center w-full">
-                                <img className='md:w-32' src="/static/images/examples/macbook.png" alt="Macbook" />
-                                <img className='md:w-32 self-start' src="/static/images/examples/samsung.png" alt="Samsung S20 series" />
-                                <img className='md:w-32' src="/static/images/examples/ps5.png" alt="Play Station 5 / PS5" />
+                                <img
+                                    className="md:w-32"
+                                    src="/static/images/examples/macbook.png"
+                                    alt="Macbook"
+                                />
+                                <img
+                                    className="md:w-32 self-start"
+                                    src="/static/images/examples/samsung.png"
+                                    alt="Samsung S20 series"
+                                />
+                                <img
+                                    className="md:w-32"
+                                    src="/static/images/examples/ps5.png"
+                                    alt="Play Station 5 / PS5"
+                                />
                             </div>
-                            <button className='bg-white text-blue-400 font-medium text-xl w-5/6 py-4 rounded-md'>Ver catálogo</button>
+                            <button className="bg-white text-blue-600 font-medium text-xl w-5/6 py-4 rounded-md">
+                                Ver catálogo
+                            </button>
                         </div>
                     </div>
                 </section>
+                <section className="catalogo-sections">
+                    <h2 className="text-4xl font-bold text-center dark:text-slate-200">
+                        Explora las secciones de nuestro catálogo
+                    </h2>
+                    <nav className="w-5/6 m-auto">
+                        <ul className="grid grid-cols-2 gap-3">
+                            <li className="text-slate-200 bg-soft-blue rounded-lg">
+                                <Link href="/catalogo/smartphone">
+                                    <a className="inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
+                                        <picture className="inline-block shrink-0 bg-blue-500 rounded-full w-10 h-10">
+                                            <Image
+                                                src="/static/icons/smartphone.svg"
+                                                layout="responsive"
+                                                width={40}
+                                                height={40}
+                                            />
+                                        </picture>
+                                        <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                                            Telefonos y Tablets
+                                        </span>
+                                    </a>
+                                </Link>
+                            </li>
+                            <li className="text-slate-200 bg-soft-blue rounded-lg">
+                                <Link href="/">
+                                    <a className="inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
+                                        <picture className="inline-block shrink-0 bg-red-500 rounded-full w-10 h-10">
+                                            <Image
+                                                src="/static/icons/tablet.svg"
+                                                layout="responsive"
+                                                width={40}
+                                                height={40}
+                                            />
+                                        </picture>
+                                        <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                                            Laptops
+                                        </span>
+                                    </a>
+                                </Link>
+                            </li>
+                            <li className="text-slate-200 bg-soft-blue rounded-lg">
+                                <Link href="/">
+                                    <a className="inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
+                                        <picture className="inline-block shrink-0 bg-green-500 rounded-full w-10 h-10">
+                                            <Image
+                                                src="/static/icons/console.svg"
+                                                layout="responsive"
+                                                width={40}
+                                                height={40}
+                                            />
+                                        </picture>
+                                        <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                                            Consolas
+                                        </span>
+                                    </a>
+                                </Link>
+                            </li>
+                            <li className="text-slate-200 bg-soft-blue rounded-lg">
+                                <Link href="/">
+                                    <a className="inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
+                                        <picture className="inline-block shrink-0 bg-green-500 rounded-full w-10 h-10">
+                                            <Image
+                                                src="/static/icons/console.svg"
+                                                layout="responsive"
+                                                width={40}
+                                                height={40}
+                                            />
+                                        </picture>
+                                        <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                                            Accesorios
+                                        </span>
+                                    </a>
+                                </Link>
+                            </li>
+                            <li className="text-slate-200 bg-soft-blue rounded-lg">
+                                <Link href="/">
+                                    <a className="inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
+                                        <picture className="inline-block shrink-0 bg-cyan-500 rounded-full w-10 h-10">
+                                            <Image
+                                                src="/static/icons/smartwatch.svg"
+                                                layout="responsive"
+                                                width={40}
+                                                height={40}
+                                            />
+                                        </picture>
+                                        <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                                            SmartWatch
+                                        </span>
+                                    </a>
+                                </Link>
+                            </li>
+                            <li className="text-slate-200 bg-soft-blue rounded-lg">
+                                <Link href="/">
+                                    <a className="inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
+                                        <picture className="inline-block shrink-0 bg-purple-600 rounded-full w-10 h-10">
+                                            <Image
+                                                src="/static/icons/camera.svg"
+                                                layout="responsive"
+                                                width={40}
+                                                height={40}
+                                            />
+                                        </picture>
+                                        <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                                            Camaras
+                                        </span>
+                                    </a>
+                                </Link>
+                            </li>
+                            <li className="text-slate-200 bg-soft-blue rounded-lg">
+                                <Link href="/">
+                                    <a className="inline-flex flex-col md:flex-row md:items-center gap-x-2 items-start px-2 py-3 w-full">
+                                        <picture className="inline-block shrink-0 bg-yellow-500 rounded-full w-10 h-10">
+                                            <Image
+                                                src="/static/icons/camera.svg"
+                                                layout="responsive"
+                                                width={40}
+                                                height={40}
+                                            />
+                                        </picture>
+                                        <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                                            Headphones
+                                        </span>
+                                    </a>
+                                </Link>
+                            </li>
+                        </ul>
+                    </nav>
+                </section>
                 <section className="choose-preferences">
                     <div className="preference-title text-center">
-                        <p className='text-slate-400'>Encuentre más de 200 dispositivos</p>
-                        <h2 className='text-white text-3xl font-bold'>Elije tu estilo favorito</h2>
+                        <p className="text-slate-400">
+                            Encuentre más de 200 dispositivos
+                        </p>
+                        <h2 className="text-white text-3xl font-bold">
+                            Elije tu estilo favorito
+                        </h2>
                     </div>
-                    <div className="preferences-example py-4 flex" align='center'>
-                        <img className='w-1/2' src="/static/images/examples/play.png" alt="Jugando PUBG desde un black shark" />
-                        <img className='w-1/2' src="/static/images/examples/photo.png" alt="Camara con un Iphone 11 pro max" />
+                    <div
+                        className="preferences-example py-4 flex"
+                        align="center"
+                    >
+                        <img
+                            className="w-1/2"
+                            src="/static/images/examples/play.png"
+                            alt="Jugando PUBG desde un black shark"
+                        />
+                        <img
+                            className="w-1/2"
+                            src="/static/images/examples/photo.png"
+                            alt="Camara con un Iphone 11 pro max"
+                        />
                     </div>
                 </section>
             </section>
