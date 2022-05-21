@@ -62,7 +62,7 @@ function Producthead() {
                 indexName="qonexia-products-index"
                 searchClient={searchClient}
             >
-                <header className="header border-b dark:border-slate-50/[0.06] bg-slate-900 p-4 flex justify-between items-center">
+                <header className="header border-b dark:border-slate-50/[0.06] bg-slate-900 p-4 flex justify-between items-center box-border">
                     <div className={`sidenav ${active}`}>
                         <div className="profile">
                             <div className="background">

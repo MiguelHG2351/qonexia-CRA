@@ -34,6 +34,7 @@ module.exports = {
             'very-dark-blue': '#1a162c',
             'qonexia-blue': '#00b0ff',
             'soft-blue': '#272263',
+            'soft-blue-2': '#10032C'
         },
     },
     plugins: [],

@@ -191,7 +191,7 @@ function Index() {
                         </ul>
                     </nav>
                 </section>
-                <section className="choose-preferences">
+                <section className="choose-preferences bg-soft-blue-2">
                     <div className="preference-title text-center">
                         <p className="text-slate-400">
                             Encuentre más de 200 dispositivos
@@ -201,19 +201,23 @@ function Index() {
                         </h2>
                     </div>
                     <div
-                        className="preferences-example py-4 flex"
+                        className="preferences-example py-4 md:flex"
                         align="center"
                     >
-                        <img
-                            className="w-1/2"
-                            src="/static/images/examples/play.png"
-                            alt="Jugando PUBG desde un black shark"
-                        />
-                        <img
-                            className="w-1/2"
-                            src="/static/images/examples/photo.png"
-                            alt="Camara con un Iphone 11 pro max"
-                        />
+                        <div className="preference-description">
+                            <h2>Juega</h2>
+                            <p className='text-white'>
+                                Un dispositivo con el hardware más potente para
+                                poder jugar a tus juegos favoritos sin ningún
+                                problema
+                            </p>
+                        </div>
+                        <div className="preference-image">
+                            <img
+                                src="/static/images/examples/juega.png"
+                                alt="Juega!!"
+                            />
+                        </div>
                     </div>
                 </section>
             </section>
