@@ -44,13 +44,13 @@ export default function ProductAction({ colors = [], price }) {
                     </button>
                 ))}
             </article>
-            <article className="flex gap-x-4 py-4 text-white justify-between">
-                <button className="pricing rounded-md flex-1 bg-white/[.29]">
+            <article className="flex gap-x-4 py-4 justify-between">
+                <button className="pricing text-white border-none rounded-md py-4 flex-1 bg-white/[.29]">
                     {price}$
                 </button>
                 <button
                     onClick={showQR}
-                    className="flex-1 text-black rounded-md py-4 bg-sky-500 font-medium"
+                    className="flex-1 border-none text-black rounded-md py-4 bg-sky-500 font-medium"
                 >
                     Reservar
                 </button>

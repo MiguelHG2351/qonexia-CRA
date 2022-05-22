@@ -234,6 +234,7 @@ function Footer () {
                             <input
                                 type="text"
                                 name="email"
+                                className='box-border'
                                 placeholder="Subscribete para recibir novedades por correo"
                                 required
                             />

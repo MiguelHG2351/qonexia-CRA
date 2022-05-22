@@ -39,7 +39,7 @@ function Index() {
                         </p>
                     </div>
                     <div className="info-explorer_container md:flex-1 flex justify-end">
-                        <div className="info-explorer bg-gradient-to-r from-blue-600 bg-blue-900 rounded-3xl py-12 flex w-full md:w-4/6 md:inline-flex flex-col gap-8 items-center md:px-16">
+                        <div className="info-explorer box-border bg-gradient-to-r from-blue-600 bg-blue-900 rounded-3xl py-12 flex w-full md:w-4/6 md:inline-flex flex-col gap-8 items-center md:px-16">
                             <div className="images-explorer flex flex-col items-end justify-center w-full">
                                 <img
                                     className="md:w-32"
@@ -57,7 +57,7 @@ function Index() {
                                     alt="Play Station 5 / PS5"
                                 />
                             </div>
-                            <button className="bg-white text-blue-600 font-medium text-xl w-5/6 py-4 rounded-md">
+                            <button className="bg-white text-blue-600 font-medium text-xl w-5/6 py-4 border-none rounded-md">
                                 Ver catálogo
                             </button>
                         </div>
@@ -69,9 +69,9 @@ function Index() {
                     </h2>
                     <nav className="w-5/6 m-auto">
                         <ul className="grid grid-cols-2 gap-3">
-                            <li className="text-slate-200 bg-soft-blue rounded-lg">
+                            <li className="text-slate-200 bg-soft-blue rounded-lg list-none">
                                 <Link href="/catalogo/smartphone">
-                                    <a className="inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
+                                    <a className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
                                         <picture className="inline-block shrink-0 bg-blue-500 rounded-full w-10 h-10">
                                             <Image
                                                 src="/static/icons/smartphone.svg"
@@ -86,9 +86,9 @@ function Index() {
                                     </a>
                                 </Link>
                             </li>
-                            <li className="text-slate-200 bg-soft-blue rounded-lg">
+                            <li className="text-slate-200 bg-soft-blue rounded-lg list-none">
                                 <Link href="/">
-                                    <a className="inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
+                                    <a className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
                                         <picture className="inline-block shrink-0 bg-red-500 rounded-full w-10 h-10">
                                             <Image
                                                 src="/static/icons/tablet.svg"
@@ -103,9 +103,9 @@ function Index() {
                                     </a>
                                 </Link>
                             </li>
-                            <li className="text-slate-200 bg-soft-blue rounded-lg">
+                            <li className="text-slate-200 bg-soft-blue rounded-lg list-none">
                                 <Link href="/">
-                                    <a className="inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
+                                    <a className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
                                         <picture className="inline-block shrink-0 bg-green-500 rounded-full w-10 h-10">
                                             <Image
                                                 src="/static/icons/console.svg"
@@ -120,9 +120,9 @@ function Index() {
                                     </a>
                                 </Link>
                             </li>
-                            <li className="text-slate-200 bg-soft-blue rounded-lg">
+                            <li className="text-slate-200 bg-soft-blue rounded-lg list-none">
                                 <Link href="/">
-                                    <a className="inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
+                                    <a className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
                                         <picture className="inline-block shrink-0 bg-green-500 rounded-full w-10 h-10">
                                             <Image
                                                 src="/static/icons/console.svg"
@@ -137,9 +137,9 @@ function Index() {
                                     </a>
                                 </Link>
                             </li>
-                            <li className="text-slate-200 bg-soft-blue rounded-lg">
+                            <li className="text-slate-200 bg-soft-blue rounded-lg list-none">
                                 <Link href="/">
-                                    <a className="inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
+                                    <a className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
                                         <picture className="inline-block shrink-0 bg-cyan-500 rounded-full w-10 h-10">
                                             <Image
                                                 src="/static/icons/smartwatch.svg"
@@ -154,9 +154,9 @@ function Index() {
                                     </a>
                                 </Link>
                             </li>
-                            <li className="text-slate-200 bg-soft-blue rounded-lg">
+                            <li className="text-slate-200 bg-soft-blue rounded-lg list-none">
                                 <Link href="/">
-                                    <a className="inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
+                                    <a className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
                                         <picture className="inline-block shrink-0 bg-purple-600 rounded-full w-10 h-10">
                                             <Image
                                                 src="/static/icons/camera.svg"
@@ -171,9 +171,9 @@ function Index() {
                                     </a>
                                 </Link>
                             </li>
-                            <li className="text-slate-200 bg-soft-blue rounded-lg">
+                            <li className="text-slate-200 bg-soft-blue rounded-lg list-none">
                                 <Link href="/">
-                                    <a className="inline-flex flex-col md:flex-row md:items-center gap-x-2 items-start px-2 py-3 w-full">
+                                    <a className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-x-2 items-start px-2 py-3 w-full">
                                         <picture className="inline-block shrink-0 bg-yellow-500 rounded-full w-10 h-10">
                                             <Image
                                                 src="/static/icons/camera.svg"

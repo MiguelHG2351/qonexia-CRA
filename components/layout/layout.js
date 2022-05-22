@@ -1,5 +1,5 @@
 import styles from '../GlobalStyle'
-import Header from 'components/container/Header/products'
+import Header from 'components/container/Header'
 import Footer from 'components/container/footer/'
 
 export default function Layout(props) {

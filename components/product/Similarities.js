@@ -28,12 +28,12 @@ export const Similarities = (props) => {
                                 </div>
                                 <div className="productDetails flex flex-col justify-center gap-y-6">
                                     <div className="product-info">
-                                        <h6>Poco X3 Pro</h6>
-                                        <p className="text-gray-400">
+                                        <h6 className='m-0 text-sm'>Poco X3 Pro</h6>
+                                        <p className="text-gray-400 m-0 text-[0.67em]">
                                             Xiaomi - Poco
                                         </p>
                                     </div>
-                                    <button className="bg-sky-500 text-black py-2 px-8 rounded-md">
+                                    <button className="bg-sky-500 text-black py-2 border-none px-8 rounded-md">
                                         Más info
                                     </button>
                                 </div>

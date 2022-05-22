@@ -26,7 +26,7 @@ export default function Device({ data }) {
                                 />
                             </svg>
                         </i>
-                        <p>{data.screen} pulgadas</p>
+                        <p className='m-0'>{data.screen} pulgadas</p>
                     </div>
                     <div className="flex align-center gap-x-5">
                         <i>
@@ -43,7 +43,7 @@ export default function Device({ data }) {
                                 />
                             </svg>
                         </i>
-                        <p>
+                        <p className='m-0'>
                             {data.camera_back
                                 .map((quality) => `${quality}MP`)
                                 .join(' + ')}
@@ -64,7 +64,7 @@ export default function Device({ data }) {
                                 />
                             </svg>
                         </i>
-                        <p>
+                        <p className='m-0'>
                             {data.camera_front
                                 .map((quality) => `${quality}MP`)
                                 .join(' + ')}
@@ -85,7 +85,7 @@ export default function Device({ data }) {
                                 />
                             </svg>
                         </i>
-                        <p>{data.cpu}</p>
+                        <p className='m-0'>{data.cpu}</p>
                     </div>
                     <div className="flex align-center gap-x-5">
                         <i>
@@ -102,7 +102,7 @@ export default function Device({ data }) {
                                 />
                             </svg>
                         </i>
-                        <p>{data.battery}mAh</p>
+                        <p className='m-0'>{data.battery}mAh</p>
                     </div>
                 </div>
             </section>
