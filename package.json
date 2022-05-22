@@ -29,7 +29,8 @@
     "dev": "next dev",
     "build": "next build",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "vercel-build": "prisma generate && next build"
   },
   "browserslist": {
     "production": [
