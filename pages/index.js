@@ -20,7 +20,7 @@ function Index() {
                 <div align="center" className="py-8">
                     <img
                         src="/static/images/logos-products.png"
-                        className="md:h-16"
+                        className="md:h-16 max-w-full"
                         alt="logos"
                     />
                 </div>
@@ -214,6 +214,7 @@ function Index() {
                         </div>
                         <div className="preference-image">
                             <img
+                                className='max-w-full'
                                 src="/static/images/examples/juega.png"
                                 alt="Juega!!"
                             />
