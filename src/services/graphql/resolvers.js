@@ -1,30 +1,40 @@
-import MongoLib from 'src/libs/mongo'
+// import MongoLib from 'src/libs/mongo'
+import { PrismaClient } from '@prisma/client'
+
+const prisma = new PrismaClient()
 
 export default {
     Query: {
         getProducts: async () => {
             // eslint-disable-next-line no-new
-            const lib = new MongoLib()
-            const getPhones = await lib.getAll('phones', {})
+            const getPhones = await prisma.phones.findMany({})
             return getPhones
         },
         getProduct: async (_, { name }) => {
             // eslint-disable-next-line no-new
-            const lib = new MongoLib()
-            const getPhones = await lib.get('phones', {
-                name,
+            const getPhone = await prisma.phones.findFirst({
+                where: {
+                    name
+                }
             })
-            return getPhones
+            return getPhone
         },
         findProducts: async (_, { name }) => {
             // eslint-disable-next-line no-new
-            const lib = new MongoLib()
-            const findPhones = await lib.getAll('phones', {})
-            const phones = findPhones.filter((phone) =>
-                phone.name.toLowerCase().includes(name.toLowerCase())
-            )
+            const findProducts = await prisma.phones.findMany({
+                where: {
+                    name: {
+                        contains: name
+                    }
+                }
+            })
+            // const lib = new MongoLib()
+            // const findPhones = await lib.getAll('phones', {})
+            // const phones = findPhones.filter((phone) =>
+            //     phone.name.toLowerCase().includes(name.toLowerCase())
+            // )
 
-            return phones
+            return findProducts
         },
     },
 }

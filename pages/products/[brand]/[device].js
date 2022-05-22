@@ -71,10 +71,14 @@ function Product() {
     }, [router.query.device])
 
     function setProducts() {
-        setDevice({
-            device: data.getProduct,
-            products: data.getProducts,
-        })
+        if (data.getProduct === null) {
+            router.push('/')
+        } else {
+            setDevice({
+                device: data.getProduct,
+                products: data.getProducts,
+            })
+        }
     }
 
     return (
