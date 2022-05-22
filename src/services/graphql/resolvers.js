@@ -1,4 +1,4 @@
-import MongoLib from 'libs/mongo'
+import MongoLib from 'src/libs/mongo'
 
 export default {
     Query: {

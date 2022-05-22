@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { gql, useLazyQuery } from '@apollo/client'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import mockDevice from 'mocks/mockDevice'
+import mockDevice from 'src/mocks/mockDevice'
 
 import ProductList from 'components/productList/'
 import { Similarities } from 'components/product/Similarities'

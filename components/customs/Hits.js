@@ -1,5 +1,5 @@
 import { connectStateResults } from 'react-instantsearch-dom'
-import sortCategories from 'utils/sortCategories'
+import sortCategories from 'src/utils/sortCategories'
 
 function CustomHist({ searchState, searchResults, hitComponent: HitComponent }) {
     const validQuery = searchState.query && searchState.query.length >= 3
