@@ -215,7 +215,7 @@ function Index() {
                         <div className="preference-image">
                             <img
                                 className='max-w-full'
-                                src="/static/images/examples/juega.png"
+                                src="/static/images/examples/juega.webp"
                                 alt="Juega!!"
                             />
                         </div>
