@@ -55,9 +55,16 @@ function Product() {
             fetchPolicy: 'cache-and-network',
             nextFetchPolicy: 'cache-first',
             onCompleted: (data) => {
-                console.log('siuuu', data)
-                setProducts()
-            }
+                console.log(data)
+                if (data.getProduct === null) {
+                    router.push('/')
+                } else {
+                    setDevice({
+                        device: data.getProduct,
+                        products: data.getProducts,
+                    })
+                }
+            },
         }
     )
 
@@ -65,21 +72,10 @@ function Product() {
         console.log('called', called)
         console.log('device', router.query)
         if (router.query?.device && !called) {
-            console.log('here');
-            (() => loadingProduct())()
+            console.log('here')
+            ;(() => loadingProduct())()
         }
     }, [router.query.device])
-
-    function setProducts() {
-        if (data.getProduct === null) {
-            router.push('/')
-        } else {
-            setDevice({
-                device: data.getProduct,
-                products: data.getProducts,
-            })
-        }
-    }
 
     return (
         <>

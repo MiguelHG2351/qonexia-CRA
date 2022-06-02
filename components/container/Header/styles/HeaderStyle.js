@@ -41,6 +41,10 @@ export default css`
         font-size: calc(var(--font-title) * 2.91);
     }
 
+    .logo > span {
+        vertical-align: middle;
+    }
+
     .search {
         position: relative;
         width: 0;
@@ -91,7 +95,7 @@ export default css`
         left: 0;
         right: 0;
         bottom: 0;
-        height: 100vh;
+        height: calc(100vh - 73px);
         width: 90vw;
         background: #fff;
         overflow-y: auto;

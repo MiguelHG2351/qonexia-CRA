@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import styles from './styles/productsStyle'
-
-import algoliasearch from 'algoliasearch/lite'
-import { InstantSearch } from 'react-instantsearch-dom'
+import dynamic from 'next/dynamic'
+import Image from 'next/image'
+import styles from './styles/HeaderStyle'
 import CustomHits from 'components/customs/Hits'
 import CustomSearchBox from 'components/customs/SearchBox'
+// import { InstantSearch } from 'react-instantsearch-dom'
+
+import algoliasearch from 'algoliasearch/lite'
+const InstantSearch = dynamic(() => import('react-instantsearch-dom').then(mod => mod.InstantSearch), { ssr: false })
 // import CustomRefinementList from 'components/customs/RefinementList'
 // import baseContext from 'context/descriptionContext'
 
@@ -180,8 +183,8 @@ function Producthead() {
                             <i className="material-icons">menu</i>
                         </button>
                         <Link href="/">
-                            <a className="logo hidden lg:inline-block cursor-pointer">
-                                <img className='align-middle inline-block' src="/static/images/logo-hd.png" alt="Logo" />
+                            <a className="logo hidden lg:inline-flex items-center cursor-pointer">
+                                <Image layout='fixed' width={141} height={27} src={'/static/images/logo-hd.png'} alt="Logo de Qonexia" />
                             </a>
                         </Link>
                     </div>

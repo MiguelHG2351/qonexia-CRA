@@ -6,7 +6,9 @@ function HomeHero() {
     return (
         <>
             <section className="hero-container relative min-h-screen">
-                <div className="background bg-[url('/static/images/qonexia.webp')] bg-cover bg-right absolute z-0 inset-0 flex justify-center"></div>
+                <div className="background bg-cover bg-right absolute z-0 inset-0 flex justify-center">
+                    <img src="/static/images/qonexia.webp" className='w-full h-full object-cover' alt="imagen" />
+                </div>
                 <div className="hero grid justify-center items-center min-h-screen relative bg-black/[.7]">
                     <div className="header-title relative">
                         <img
