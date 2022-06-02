@@ -24,6 +24,7 @@ export default function ProductAction({ colors = [], price }) {
             <article className="colors dark:bg-very-dark-blue flex justify-center gap-x-3 p-3 rounded-xl">
                 {colors.map((color, index) => (
                     <button
+                        aria-label={`Color número ${index + 1}`}
                         // style={{ border: '2px solid red' }}
                         className={classNames(
                             'relative p-4 z-10 overflow-hidden mix-blend-normal rounded-full'
