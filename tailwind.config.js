@@ -15,6 +15,9 @@ module.exports = {
             fontFamily: {
                 sans: ['Inter', ...defaultTheme.fontFamily.sans],
             },
+            backgroundImage: theme => ({
+                'white-gradient': 'linear-gradient(180deg, #FFFFFF 0%, #aaa)',
+            }),
         },
         colors: {
             transparent: 'transparent',
@@ -37,7 +40,7 @@ module.exports = {
             'very-dark-blue': '#1a162c',
             'qonexia-blue': '#00b0ff',
             'soft-blue': '#272263',
-            'soft-blue-2': '#10032C'
+            'soft-blue-2': '#10032C',
         },
     },
     plugins: [],
