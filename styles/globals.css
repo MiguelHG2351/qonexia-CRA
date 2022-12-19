@@ -276,3 +276,7 @@ body {
   margin: auto;
   font-family: 'Inter', sans-serif;
 }
+
+.text-fill-transparent {
+  -webkit-text-fill-color: transparent;
+}

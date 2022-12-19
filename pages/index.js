@@ -30,7 +30,7 @@ function Index() {
                         align="center"
                     >
                         <div className="explorer-description md:flex-1">
-                            <h2 className="dark:text-white text-left font-medium text-4xl mb-4">
+                            <h2 className="dark:text-white text-left font-medium text-4xl mb-4 bg-clip-text text-fill-transparent dark:bg-white-gradient">
                                 Explora nuestro catálogo de productos
                             </h2>
                             <p className="dark:text-gray-400 text-left hidden md:inline-block">
@@ -66,7 +66,7 @@ function Index() {
                         </div>
                     </section>
                     <section className="catalogo-sections">
-                        <h2 className="text-4xl font-bold text-center dark:text-slate-200">
+                        <h2 className="text-4xl font-bold text-center bg-clip-text text-fill-transparent dark:bg-white-gradient">
                             Explora las secciones de nuestro catálogo
                         </h2>
                         <nav className="w-5/6 m-auto">
