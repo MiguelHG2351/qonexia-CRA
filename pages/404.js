@@ -46,35 +46,35 @@ const styles = css`
 
 function NotFound () {
   return (
-        <>
-            <div className="container">
-                <h2>Dirección no encontrada 404 Not found</h2>
-                <img
-                    src="https://media.giphy.com/media/6uGhT1O4sxpi8/giphy.gif"
-                    alt="No encontramos su sitio"
-                    title="No encontramos su sitio"
-                />
-                <p>Lista de rutas del sito: </p>
-                <ul>
-                    <li>
-                        <Link href="/"><a>Home</a></Link>
-                    </li>
-                    <li>
-                        <Link href="/products"><a>Productos</a></Link>
-                    </li>
-                    <li>
-                        <Link href="/trends"><a>Tendencias</a></Link>
-                    </li>
-                    <li>
-                        <Link href="/catalogo"><a>Catalogo</a></Link>
-                    </li>
-                    <li>
-                        <Link href="/social"><a>Social Media</a></Link>
-                    </li>
-                </ul>
-            </div>
-            <style jsx>{styles}</style>
-        </>
+    <>
+      <div className="container">
+        <h2>Dirección no encontrada 404 Not found</h2>
+        <img
+          src="https://media.giphy.com/media/6uGhT1O4sxpi8/giphy.gif"
+          alt="No encontramos su sitio"
+          title="No encontramos su sitio"
+        />
+        <p>Lista de rutas del sito: </p>
+        <ul>
+          <li>
+            <Link href="/"><a>Home</a></Link>
+          </li>
+          <li>
+            <Link href="/products"><a>Productos</a></Link>
+          </li>
+          <li>
+            <Link href="/trends"><a>Tendencias</a></Link>
+          </li>
+          <li>
+            <Link href="/catalogo"><a>Catalogo</a></Link>
+          </li>
+          <li>
+            <Link href="/social"><a>Social Media</a></Link>
+          </li>
+        </ul>
+      </div>
+      <style jsx>{styles}</style>
+    </>
   )
 }
 

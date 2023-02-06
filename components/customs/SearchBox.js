@@ -3,25 +3,25 @@ import css from 'styled-jsx/css'
 
 function CustomSearchBox({ refine, placeholder, styleInput, styleForm, onBlur, children }) {
   return (
-        <>
-            <form action="" role="search" className={styleForm}>
-                <input
-                    id='algolia_search'
-                    type="search"
-                    autoCorrect="true"
-                    autoComplete="off"
-                    required={true}
-                    onBlur={onBlur}
-                    className={`inputSearch ${styleInput}`}
-                    placeholder={placeholder}
-                    onChange={event => refine(event.currentTarget.value)}
-                />
-                {children}
-            </form>
-            <style jsx>
-                {inputStyle}
-            </style>
-        </>
+    <>
+      <form action="" role="search" className={styleForm}>
+        <input
+          id='algolia_search'
+          type="search"
+          autoCorrect="true"
+          autoComplete="off"
+          required={true}
+          onBlur={onBlur}
+          className={`inputSearch ${styleInput}`}
+          placeholder={placeholder}
+          onChange={event => refine(event.currentTarget.value)}
+        />
+        {children}
+      </form>
+      <style jsx>
+        {inputStyle}
+      </style>
+    </>
   )
 }
 

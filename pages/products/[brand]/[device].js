@@ -78,17 +78,17 @@ function Product() {
   }, [router.query.device])
 
   return (
-        <>
-            <Head>
-                <title>{router.query.device || 'Cargando...'} | Qonexia</title>
-                <meta name="description" content='Información sobre un dispositivo de la tienda' />
-            </Head>
-            <div className="container-devices w-11/12 mx-auto py-12 flex flex-col gap-y-10">
-                {/* Información de cada producto */}
-                <ProductList data={device.device} />
-                <Similarities data={suggestions} />
-            </div>
-        </>
+    <>
+      <Head>
+        <title>{router.query.device || 'Cargando...'} | Qonexia</title>
+        <meta name="description" content='Información sobre un dispositivo de la tienda' />
+      </Head>
+      <div className="container-devices w-11/12 mx-auto py-12 flex flex-col gap-y-10">
+        {/* Información de cada producto */}
+        <ProductList data={device.device} />
+        <Similarities data={suggestions} />
+      </div>
+    </>
   )
 }
 

@@ -7,10 +7,10 @@ export default function App({ Component, pageProps }) {
   const apolloClient = useApollo(pageProps.initialApolloState)
 
   return (
-        <ApolloProvider client={apolloClient}>
-            <Layout>
-                <Component {...pageProps} />
-            </Layout>
-        </ApolloProvider>
+    <ApolloProvider client={apolloClient}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ApolloProvider>
   )
 }

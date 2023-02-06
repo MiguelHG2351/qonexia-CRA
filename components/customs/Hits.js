@@ -8,28 +8,28 @@ function CustomHist({ searchState, searchResults, hitComponent: HitComponent }) 
   console.log(categoriesResults)
 
   return (
-        <>
-            {searchResults?.hits.length === 0 && validQuery && (
-                <div className="no-results">
-                    <p>
+    <>
+      {searchResults?.hits.length === 0 && validQuery && (
+        <div className="no-results">
+          <p>
                         No results found for{' '}
-                        <strong>{searchState.query}</strong>
-                    </p>
-                </div>
-            )}
-            {
-                Object.keys(categoriesResults).map(category => (
-                    <div key={category} className="category">
-                        <h2>{category}</h2>
-                        <div className="products">
-                            {categoriesResults[category].map(product => (
-                                <HitComponent hit={product} key={`${category}-${product.name}`} />
-                            ))}
-                        </div>
-                    </div>
-                ))
-            }
-        </>
+            <strong>{searchState.query}</strong>
+          </p>
+        </div>
+      )}
+      {
+        Object.keys(categoriesResults).map(category => (
+          <div key={category} className="category">
+            <h2>{category}</h2>
+            <div className="products">
+              {categoriesResults[category].map(product => (
+                <HitComponent hit={product} key={`${category}-${product.name}`} />
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </>
   )
 }
 

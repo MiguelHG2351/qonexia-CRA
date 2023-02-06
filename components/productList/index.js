@@ -7,16 +7,16 @@ import DescriptionPhone from 'components/product/ProductFeatures'
 import ProductAction from 'components/product/ProductAction'
 function ProductList({ data }) {
   return (
-        <>
-            <section className="productList">
-                <div className="hero-product flex flex-col gap-y-4 md:grid md:grid-cols-3 md:place-items-center">
-                    <ProductHero image={data.image} name={data.name} />
-                    <DescriptionPhone data={data} />
-                    <ProductAction price={data.price} colors={data.colors} />
-                </div>
-            </section>
-            <style jsx>{styles}</style>
-        </>
+    <>
+      <section className="productList">
+        <div className="hero-product flex flex-col gap-y-4 md:grid md:grid-cols-3 md:place-items-center">
+          <ProductHero image={data.image} name={data.name} />
+          <DescriptionPhone data={data} />
+          <ProductAction price={data.price} colors={data.colors} />
+        </div>
+      </section>
+      <style jsx>{styles}</style>
+    </>
   )
 }
 

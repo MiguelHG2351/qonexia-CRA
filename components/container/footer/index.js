@@ -162,89 +162,89 @@ const styles = css`
 
 function Footer () {
   return (
-        <>
-            <footer className="footer-site">
-                <div className="container">
-                    <div className="logo">
-                        <img src="/static/images/logo.jpg" loading="lazy" alt="Logo de nuestra empresa" />
-                    </div>
-                    <div className="social-media">
-                        <a
-                            href="https://facebook.com/Qonexia"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <img src="/static/images/icon-facebook.svg" loading="lazy" alt="Visitanos en Facebook" />
-                        </a>
-                        <a
-                            href="https://instagram.com/Qonexia"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <img src="/static/images/icon-instagram.svg" loading="lazy" alt="Visitanos en Instagram" />
-                        </a>
-                    </div>
-                    <ul className="section-site">
-                        <li>
-                            <Link href="/">
-                                <a>Inicio</a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/catalogo">
-                                <a>Catálogo</a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/products/">
-                                <a>Productos</a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/agenda">
-                                <a>Ágenda</a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/trends">
-                                <a>Tendencias</a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/contact">
-                                <a>contacto</a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/about">
-                                <a>Acerca de</a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/support">
-                                <a>Soporte</a>
-                            </Link>
-                        </li>
-                    </ul>
-                    <form
-                        className="form-footer"
-                        onSubmit={(e) => e.preventDefault()}
-                    >
-                        <div className="form-footer-container">
-                            <input
-                                type="text"
-                                name="email"
-                                className='box-border'
-                                placeholder="Subscribete para recibir novedades por correo"
-                                required
-                            />
-                            <button type="submit">Enviar</button>
-                        </div>
-                    </form>
-                </div>
-            </footer>
-            <style jsx>{styles}</style>
-        </>
+    <>
+      <footer className="footer-site">
+        <div className="container">
+          <div className="logo">
+            <img src="/static/images/logo.jpg" loading="lazy" alt="Logo de nuestra empresa" />
+          </div>
+          <div className="social-media">
+            <a
+              href="https://facebook.com/Qonexia"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/static/images/icon-facebook.svg" loading="lazy" alt="Visitanos en Facebook" />
+            </a>
+            <a
+              href="https://instagram.com/Qonexia"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/static/images/icon-instagram.svg" loading="lazy" alt="Visitanos en Instagram" />
+            </a>
+          </div>
+          <ul className="section-site">
+            <li>
+              <Link href="/">
+                <a>Inicio</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/catalogo">
+                <a>Catálogo</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/products/">
+                <a>Productos</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/agenda">
+                <a>Ágenda</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/trends">
+                <a>Tendencias</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact">
+                <a>contacto</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/about">
+                <a>Acerca de</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/support">
+                <a>Soporte</a>
+              </Link>
+            </li>
+          </ul>
+          <form
+            className="form-footer"
+            onSubmit={(e) => e.preventDefault()}
+          >
+            <div className="form-footer-container">
+              <input
+                type="text"
+                name="email"
+                className='box-border'
+                placeholder="Subscribete para recibir novedades por correo"
+                required
+              />
+              <button type="submit">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </footer>
+      <style jsx>{styles}</style>
+    </>
   )
 }
 

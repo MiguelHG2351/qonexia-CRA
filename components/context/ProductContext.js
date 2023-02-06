@@ -12,9 +12,9 @@ function ProductContextProvider({ children, initialState }) {
   }, [])
 
   return (
-        <ProductContext.Provider value={{ products, setProducts }}>
-            {children}
-        </ProductContext.Provider>
+    <ProductContext.Provider value={{ products, setProducts }}>
+      {children}
+    </ProductContext.Provider>
   )
 }
 

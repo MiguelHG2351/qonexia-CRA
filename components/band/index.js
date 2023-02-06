@@ -56,47 +56,47 @@ const styles = css`
 
 function Band ({ data }) {
   return (
-        <>
-            <section className="container-description">
-                <div className="nameProduct">
-                    <strong>{data.name}</strong>
-                </div>
-                <div className="info">
-                    <div>
-                        <p>{data.bateria}</p>
-                    </div>
-                    <div>
-                        <p>{data.screen} pulgadas</p>
-                        <p>{data.quality}</p>
-                    </div>
-                    <div>
-                        <p>{data.camara2} camaras</p>
-                        <p>{data.camara2_quality}</p>
-                    </div>
-                    <div>
-                        <p>{data.resistencia}</p>
-                    </div>
-                    <div>
-                        <p>{data.OS}</p>
-                    </div>
-                    <div>
-                        {data.sensores.map((sensores, index) => (
-                            <p key={index * 10}>{sensores}</p>
-                        ))}
-                    </div>
-                </div>
-                <div className="colors">
-                    {data.colores.map((colors, index) => (
-                        <button
-                            aria-hidden="true"
-                            style={{ background: colors }}
-                            key={index}
-                        ></button>
-                    ))}
-                </div>
-            </section>
-            <style jsx>{styles}</style>
-        </>
+    <>
+      <section className="container-description">
+        <div className="nameProduct">
+          <strong>{data.name}</strong>
+        </div>
+        <div className="info">
+          <div>
+            <p>{data.bateria}</p>
+          </div>
+          <div>
+            <p>{data.screen} pulgadas</p>
+            <p>{data.quality}</p>
+          </div>
+          <div>
+            <p>{data.camara2} camaras</p>
+            <p>{data.camara2_quality}</p>
+          </div>
+          <div>
+            <p>{data.resistencia}</p>
+          </div>
+          <div>
+            <p>{data.OS}</p>
+          </div>
+          <div>
+            {data.sensores.map((sensores, index) => (
+              <p key={index * 10}>{sensores}</p>
+            ))}
+          </div>
+        </div>
+        <div className="colors">
+          {data.colores.map((colors, index) => (
+            <button
+              aria-hidden="true"
+              style={{ background: colors }}
+              key={index}
+            ></button>
+          ))}
+        </div>
+      </section>
+      <style jsx>{styles}</style>
+    </>
   )
 }
 

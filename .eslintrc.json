@@ -31,7 +31,7 @@
     ],
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
-    // "indent": ["error", 4],
+    "indent": ["error", 2],
     "space-before-function-paren": "off",
     "comma-dangle": "off"
   },

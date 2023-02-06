@@ -14,22 +14,22 @@ export default function ProductImage({ src, alt = 'Cargando imagen', className, 
   )
 
   return (
-        <div className={classNames(className)}>
-            <Image
-                src={src}
-                width={290}
-                height={311}
-                alt={alt}
-                priority={true}
-                className={classNames(
-                  'transition-all duration-2000 ease-out-expo can-hover:group-hover:scale-110',
-                  {
-                    '!opacity-0': !loaded,
-                  }
-                )}
-                onLoadingComplete={handleComplete}
-                draggable={draggable}
-            />
-        </div>
+    <div className={classNames(className)}>
+      <Image
+        src={src}
+        width={290}
+        height={311}
+        alt={alt}
+        priority={true}
+        className={classNames(
+          'transition-all duration-2000 ease-out-expo can-hover:group-hover:scale-110',
+          {
+            '!opacity-0': !loaded,
+          }
+        )}
+        onLoadingComplete={handleComplete}
+        draggable={draggable}
+      />
+    </div>
   )
 }
