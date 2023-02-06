@@ -2,23 +2,23 @@ import React from 'react'
 // import context from 'context/descriptionContext'
 
 function Form () {
-    const categories = ['money', 'quality', 'power', 'trending']
-    const keyword = {
-        money: 'money',
-        quality: 'quality',
-        power: 'power',
-        trending: 'trending'
-    }
+  const categories = ['money', 'quality', 'power', 'trending']
+  const keyword = {
+    money: 'money',
+    quality: 'quality',
+    power: 'power',
+    trending: 'trending'
+  }
 
-    console.log(keyword, categories)
+  console.log(keyword, categories)
 
-    function searchForm (e) {
-        e.preventDefault()
-        const formData = new FormData(e.currentTarget)
-        console.log(formData)
-    }
+  function searchForm (e) {
+    e.preventDefault()
+    const formData = new FormData(e.currentTarget)
+    console.log(formData)
+  }
 
-    return <form onSubmit={searchForm}>
+  return <form onSubmit={searchForm}>
         <div className="input-container">
             <input name="devices" placeholder="Buscar dispositivos" />
             <button>Buscar</button>

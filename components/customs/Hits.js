@@ -2,12 +2,12 @@ import { connectStateResults } from 'react-instantsearch-dom'
 import sortCategories from 'src/utils/sortCategories'
 
 function CustomHist({ searchState, searchResults, hitComponent: HitComponent }) {
-    const validQuery = searchState.query && searchState.query.length >= 3
-    const categoriesResults = validQuery ? sortCategories(searchResults) : {}
+  const validQuery = searchState.query && searchState.query.length >= 3
+  const categoriesResults = validQuery ? sortCategories(searchResults) : {}
 
-    console.log(categoriesResults)
+  console.log(categoriesResults)
 
-    return (
+  return (
         <>
             {searchResults?.hits.length === 0 && validQuery && (
                 <div className="no-results">
@@ -30,7 +30,7 @@ function CustomHist({ searchState, searchResults, hitComponent: HitComponent }) 
                 ))
             }
         </>
-    )
+  )
 }
 
 export default connectStateResults(CustomHist)

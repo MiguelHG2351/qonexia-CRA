@@ -161,7 +161,7 @@ const styles = css`
 `
 
 function Footer () {
-    return (
+  return (
         <>
             <footer className="footer-site">
                 <div className="container">
@@ -245,7 +245,7 @@ function Footer () {
             </footer>
             <style jsx>{styles}</style>
         </>
-    )
+  )
 }
 
 export default Footer

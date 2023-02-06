@@ -6,7 +6,7 @@ import Image from 'next/image'
 import HomeHero from 'components/Hero/HomeHero'
 
 function Index() {
-    return (
+  return (
         <>
             <Head>
                 <title>Home | Qonexia tecnología (no oficial)</title>
@@ -226,7 +226,7 @@ function Index() {
                 </section>
             </React.Suspense>
         </>
-    )
+  )
 }
 
 export default Index

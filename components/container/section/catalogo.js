@@ -30,7 +30,7 @@ const styles = css`
 `
 
 export default function CatalogoSection () {
-    return (
+  return (
         <>
             <div className="container">
                 <div>
@@ -91,5 +91,5 @@ export default function CatalogoSection () {
                 { styles }
             </style>
         </>
-    )
+  )
 }

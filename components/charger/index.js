@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Charger ({ data }) {
-    return <>
+  return <>
         <table>
             <thead>
                 <tr>

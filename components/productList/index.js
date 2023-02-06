@@ -6,7 +6,7 @@ import ProductHero from 'components/product/ProductHero'
 import DescriptionPhone from 'components/product/ProductFeatures'
 import ProductAction from 'components/product/ProductAction'
 function ProductList({ data }) {
-    return (
+  return (
         <>
             <section className="productList">
                 <div className="hero-product flex flex-col gap-y-4 md:grid md:grid-cols-3 md:place-items-center">
@@ -17,7 +17,7 @@ function ProductList({ data }) {
             </section>
             <style jsx>{styles}</style>
         </>
-    )
+  )
 }
 
 export default ProductList

@@ -55,7 +55,7 @@ const styles = css`
 `
 
 function Band ({ data }) {
-    return (
+  return (
         <>
             <section className="container-description">
                 <div className="nameProduct">
@@ -97,7 +97,7 @@ function Band ({ data }) {
             </section>
             <style jsx>{styles}</style>
         </>
-    )
+  )
 }
 
 export default Band

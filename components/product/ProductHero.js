@@ -1,7 +1,7 @@
 import ProductImage from 'components/product/ProductImage'
 
 export default function ProductHero({ image, name }) {
-    return (
+  return (
         <>
             <div className="device text-center md:order-2">
                 <div className="container-image flex justify-center">
@@ -18,5 +18,5 @@ export default function ProductHero({ image, name }) {
                 </div>
             </div>
         </>
-    )
+  )
 }

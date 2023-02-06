@@ -2,9 +2,9 @@ import Image from 'next/image'
 import css from 'styled-jsx/css'
 
 export const Similarities = (props) => {
-    const { data } = props
+  const { data } = props
 
-    return (
+  return (
         <>
             <section className="overflow-hidden text-white">
                 <h3 className="text-xl font-bold">Similares</h3>
@@ -46,7 +46,7 @@ export const Similarities = (props) => {
                 {styles}
             </style>
         </>
-    )
+  )
 }
 
 const styles = css`

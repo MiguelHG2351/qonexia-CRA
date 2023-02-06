@@ -4,22 +4,22 @@ import ProductModal from './ProductModal'
 import Modal from 'components/portals/Modal'
 
 export default function ProductAction({ colors = [], price }) {
-    const [isShowQRcode, setIsShowQRcode] = useState(false)
-    const [token, setToken] = useState(null)
-    console.log(token)
-    const showQR = useCallback(function () {
-        if (!token) {
-            console.log('showQR')
-            fetch('/api/genHash')
-                .then((res) => res.json())
-                .then((res) => {
-                    setToken(res.token)
-                })
-        }
-        setIsShowQRcode(true)
-    })
+  const [isShowQRcode, setIsShowQRcode] = useState(false)
+  const [token, setToken] = useState(null)
+  console.log(token)
+  const showQR = useCallback(function () {
+    if (!token) {
+      console.log('showQR')
+      fetch('/api/genHash')
+        .then((res) => res.json())
+        .then((res) => {
+          setToken(res.token)
+        })
+    }
+    setIsShowQRcode(true)
+  })
 
-    return (
+  return (
         <section className="md:order-3 w-full flex flex-col justify-center">
             <article className="colors dark:bg-very-dark-blue flex justify-center gap-x-3 p-3 rounded-xl">
                 {colors.map((color, index) => (
@@ -27,7 +27,7 @@ export default function ProductAction({ colors = [], price }) {
                         aria-label={`Color número ${index + 1}`}
                         // style={{ border: '2px solid red' }}
                         className={classNames(
-                            'relative p-4 z-10 overflow-hidden mix-blend-normal rounded-full'
+                          'relative p-4 z-10 overflow-hidden mix-blend-normal rounded-full'
                         )}
                         key={`color-${index}`}
                     >
@@ -38,7 +38,7 @@ export default function ProductAction({ colors = [], price }) {
                         <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 bg-very-dark-blue w-7 h-7 rounded-full"></span>
                         <span
                             className={classNames(
-                                'absolute z-30 top-2 left-2 w-4 h-4 rounded-full'
+                              'absolute z-30 top-2 left-2 w-4 h-4 rounded-full'
                             )}
                             style={{ background: color }}
                         ></span>
@@ -60,5 +60,5 @@ export default function ProductAction({ colors = [], price }) {
                 <ProductModal isShowQRcode={isShowQRcode} changeState={setIsShowQRcode} token={token} />
             </Modal>
         </section>
-    )
+  )
 }

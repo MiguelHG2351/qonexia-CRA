@@ -36,48 +36,48 @@ const query = (device) => gql`
 `
 
 function Product() {
-    const suggestions = mockDevice.suggestions
-    const router = useRouter()
-    const [device, setDevice] = useState({
-        device: {
-            ...mockDevice,
-        },
-        products: [],
-    })
+  const suggestions = mockDevice.suggestions
+  const router = useRouter()
+  const [device, setDevice] = useState({
+    device: {
+      ...mockDevice,
+    },
+    products: [],
+  })
 
-    // eslint-disable-next-line no-unused-vars
-    const [loadingProduct, { called, loading, data }] = useLazyQuery(
-        query(router.query.device),
-        {
-            ssr: false,
-            onError: (error) => console.log(error),
-            // Estas dos lineas GOD evitan que aparezca con los valores del mock el componente de Similarities
-            fetchPolicy: 'cache-and-network',
-            nextFetchPolicy: 'cache-first',
-            onCompleted: (data) => {
-                console.log(data)
-                if (data.getProduct === null) {
-                    router.push('/')
-                } else {
-                    setDevice({
-                        device: data.getProduct,
-                        products: data.getProducts,
-                    })
-                }
-            },
+  // eslint-disable-next-line no-unused-vars
+  const [loadingProduct, { called, loading, data }] = useLazyQuery(
+    query(router.query.device),
+    {
+      ssr: false,
+      onError: (error) => console.log(error),
+      // Estas dos lineas GOD evitan que aparezca con los valores del mock el componente de Similarities
+      fetchPolicy: 'cache-and-network',
+      nextFetchPolicy: 'cache-first',
+      onCompleted: (data) => {
+        console.log(data)
+        if (data.getProduct === null) {
+          router.push('/')
+        } else {
+          setDevice({
+            device: data.getProduct,
+            products: data.getProducts,
+          })
         }
-    )
+      },
+    }
+  )
 
-    useEffect(() => {
-        console.log('called', called)
-        console.log('device', router.query)
-        if (router.query?.device && !called) {
-            console.log('here')
-            ;(() => loadingProduct())()
-        }
-    }, [router.query.device])
+  useEffect(() => {
+    console.log('called', called)
+    console.log('device', router.query)
+    if (router.query?.device && !called) {
+      console.log('here')
+      ;(() => loadingProduct())()
+    }
+  }, [router.query.device])
 
-    return (
+  return (
         <>
             <Head>
                 <title>{router.query.device || 'Cargando...'} | Qonexia</title>
@@ -89,7 +89,7 @@ function Product() {
                 <Similarities data={suggestions} />
             </div>
         </>
-    )
+  )
 }
 
 /* Que el Header almacene todo el sitio y que */

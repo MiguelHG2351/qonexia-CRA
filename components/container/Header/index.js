@@ -16,50 +16,50 @@ const InstantSearch = dynamic(() => import('react-instantsearch-dom').then(mod =
 // https://www.youtube.com/watch?v=RJpevpbC4YY
 
 const algoliaClient = algoliasearch(
-    '5L0EKC0AON',
-    '711e3da538f646c399c7618fae6f56c3'
+  '5L0EKC0AON',
+  '711e3da538f646c399c7618fae6f56c3'
 )
 
 const searchClient = {
-    ...algoliaClient,
-    search: (requests) => {
-        if (requests.every(({ params }) => !params.query)) {
-            return Promise.resolve({
-                results: requests.map(() => ({
-                    hits: [],
-                    nbHits: 0,
-                    nbPages: 0,
-                    page: 0,
-                    processingTimeMS: 0,
-                })),
-            })
-        }
-        const datas = algoliaClient.search(requests)
-        datas.then((res) => {
-            console.log(res)
-        })
+  ...algoliaClient,
+  search: (requests) => {
+    if (requests.every(({ params }) => !params.query)) {
+      return Promise.resolve({
+        results: requests.map(() => ({
+          hits: [],
+          nbHits: 0,
+          nbPages: 0,
+          page: 0,
+          processingTimeMS: 0,
+        })),
+      })
+    }
+    const datas = algoliaClient.search(requests)
+    datas.then((res) => {
+      console.log(res)
+    })
 
-        return datas
-    },
+    return datas
+  },
 }
 
 function Producthead() {
-    // hooks
-    const [active, setActive] = useState(null)
+  // hooks
+  const [active, setActive] = useState(null)
 
-    // algolia
+  // algolia
 
-    function loadSideNav() {
-        setActive(null)
-    }
+  function loadSideNav() {
+    setActive(null)
+  }
 
-    // Ordenar por potencia, precio, camara, Más comprado, Marca en especifico,
+  // Ordenar por potencia, precio, camara, Más comprado, Marca en especifico,
 
-    function openMenu() {
-        setActive('active')
-    }
+  function openMenu() {
+    setActive('active')
+  }
 
-    return (
+  return (
         <>
             <InstantSearch
                 indexName="qonexia-products-index"
@@ -218,19 +218,19 @@ function Producthead() {
             <div className={`overlay ${active}`} onClick={loadSideNav}></div>
             <style jsx>{styles}</style>
         </>
-    )
+  )
 }
 
 function HitComponents({ hit }) {
-    console.log(hit.type)
+  console.log(hit.type)
 
-    return (
+  return (
         <div className="results w-full overflow-hidden">
             <Link href={`/products/${hit.brand}/${hit.name}`}>
                 <a className="w-full text-sm overflow-hidden truncate inline-block p-2 hover:text-gray-400">{hit.name}</a>
             </Link>
         </div>
-    )
+  )
 }
 
 export default React.memo(Producthead)

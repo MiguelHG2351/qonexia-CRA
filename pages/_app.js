@@ -4,13 +4,13 @@ import Layout from '../components/layout/layout'
 import '../styles/globals.css'
 
 export default function App({ Component, pageProps }) {
-    const apolloClient = useApollo(pageProps.initialApolloState)
+  const apolloClient = useApollo(pageProps.initialApolloState)
 
-    return (
+  return (
         <ApolloProvider client={apolloClient}>
             <Layout>
                 <Component {...pageProps} />
             </Layout>
         </ApolloProvider>
-    )
+  )
 }

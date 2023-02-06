@@ -6,26 +6,26 @@ import Cors from 'micro-cors'
 const cors = Cors({})
 
 const apolloServer = new ApolloServer({
-    typeDefs,
-    resolvers,
-    introspection: process.env.NODE_ENV !== 'production'
+  typeDefs,
+  resolvers,
+  introspection: process.env.NODE_ENV !== 'production'
 })
 
 const startServer = apolloServer.start()
 
 export default cors(async function (req, res) {
-    if (req.method === 'OPTIONS') {
-        res.end()
-        return false
-    }
-    await startServer
-    await apolloServer.createHandler({
-        path: '/api/graphql',
-    })(req, res)
+  if (req.method === 'OPTIONS') {
+    res.end()
+    return false
+  }
+  await startServer
+  await apolloServer.createHandler({
+    path: '/api/graphql',
+  })(req, res)
 })
 
 export const config = {
-    api: {
-        bodyParser: false,
-    },
+  api: {
+    bodyParser: false,
+  },
 }

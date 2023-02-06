@@ -1,7 +1,7 @@
 import { connectRefinementList } from 'react-instantsearch-dom'
 
 function CustomRefinementList({ items, refine, createURL, className, style, onBlur }) {
-    return (
+  return (
         <div className={className} style={style}>
             {items.map(item => (
                 <button
@@ -14,7 +14,7 @@ function CustomRefinementList({ items, refine, createURL, className, style, onBl
                 </button>
             ))}
         </div>
-    )
+  )
 }
 
 export default connectRefinementList(CustomRefinementList)

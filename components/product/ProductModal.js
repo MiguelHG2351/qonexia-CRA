@@ -3,26 +3,26 @@ import classNames from 'classnames'
 import ProductQR from './ProductQR'
 
 export default function ProductModal({ isShowQRcode, changeState, token }) {
-    const ref = useRef(null)
+  const ref = useRef(null)
 
-    const downloadCode = (e) => {
-        if (ref.current.children[0]) {
-            console.log(ref.current.children[0])
-            const getURL = ref.current.children[0].toDataURL('image/png')
-            const link = document.createElement('a')
-            link.setAttribute('download', 'qrcode.png')
-            link.setAttribute('href', getURL)
-            link.setAttribute('target', '_blank')
-            link.click()
-        }
+  const downloadCode = (e) => {
+    if (ref.current.children[0]) {
+      console.log(ref.current.children[0])
+      const getURL = ref.current.children[0].toDataURL('image/png')
+      const link = document.createElement('a')
+      link.setAttribute('download', 'qrcode.png')
+      link.setAttribute('href', getURL)
+      link.setAttribute('target', '_blank')
+      link.click()
     }
+  }
 
-    return (
+  return (
         <div
             className={classNames(
-                'modal2 fixed z-40 bg-black/[.88] top-0 left-0 w-screen h-screen flex justify-center items-center',
-                { 'pointer-events-auto opacity-1': isShowQRcode },
-                { 'pointer-events-none opacity-0': !isShowQRcode }
+              'modal2 fixed z-40 bg-black/[.88] top-0 left-0 w-screen h-screen flex justify-center items-center',
+              { 'pointer-events-auto opacity-1': isShowQRcode },
+              { 'pointer-events-none opacity-0': !isShowQRcode }
             )}
             onClick={(e) => changeState(false)}
         >
@@ -53,5 +53,5 @@ export default function ProductModal({ isShowQRcode, changeState, token }) {
                 )}
             </div>
         </div>
-    )
+  )
 }

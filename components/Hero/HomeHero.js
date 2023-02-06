@@ -3,7 +3,7 @@ import Link from 'next/link'
 import styles from './styles/style'
 
 function HomeHero() {
-    return (
+  return (
         <>
             <section className="hero-container relative min-h-screen">
                 <div className="background bg-cover bg-right absolute z-0 inset-0 flex justify-center">
@@ -37,7 +37,7 @@ function HomeHero() {
             </section>
             <style jsx>{styles}</style>
         </>
-    )
+  )
 }
 
 export default React.memo(HomeHero)

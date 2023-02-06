@@ -3,7 +3,7 @@ import Header from 'components/container/Header'
 import Footer from 'components/container/footer/'
 
 export default function Layout(props) {
-    return (
+  return (
         <>
             <Header />
             <main className='bg-dark-bg max-w-screen-2xl mx-auto'>
@@ -14,5 +14,5 @@ export default function Layout(props) {
                 {styles}
             </style>
         </>
-    )
+  )
 }

@@ -45,7 +45,7 @@ const styles = css`
 `
 
 function NotFound () {
-    return (
+  return (
         <>
             <div className="container">
                 <h2>Dirección no encontrada 404 Not found</h2>
@@ -75,7 +75,7 @@ function NotFound () {
             </div>
             <style jsx>{styles}</style>
         </>
-    )
+  )
 }
 
 export default NotFound

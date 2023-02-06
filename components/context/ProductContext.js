@@ -3,19 +3,19 @@ import { useState, useEffect, createContext } from 'react'
 const ProductContext = createContext({})
 
 function ProductContextProvider({ children, initialState }) {
-    const [products, setProducts] = useState(initialState)
+  const [products, setProducts] = useState(initialState)
 
-    useEffect(() => {
-        if (initialState) {
-            setProducts(initialState)
-        }
-    }, [])
+  useEffect(() => {
+    if (initialState) {
+      setProducts(initialState)
+    }
+  }, [])
 
-    return (
+  return (
         <ProductContext.Provider value={{ products, setProducts }}>
             {children}
         </ProductContext.Provider>
-    )
+  )
 }
 
 export { ProductContextProvider }

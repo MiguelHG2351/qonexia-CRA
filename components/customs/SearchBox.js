@@ -2,7 +2,7 @@ import { connectSearchBox } from 'react-instantsearch-dom'
 import css from 'styled-jsx/css'
 
 function CustomSearchBox({ refine, placeholder, styleInput, styleForm, onBlur, children }) {
-    return (
+  return (
         <>
             <form action="" role="search" className={styleForm}>
                 <input
@@ -22,7 +22,7 @@ function CustomSearchBox({ refine, placeholder, styleInput, styleForm, onBlur, c
                 {inputStyle}
             </style>
         </>
-    )
+  )
 }
 
 const inputStyle = css`

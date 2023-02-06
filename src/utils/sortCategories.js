@@ -1,14 +1,14 @@
 function sortCategories(searchResults) {
-    const categoriesResults = {}
+  const categoriesResults = {}
 
-    for (const product of searchResults.hits) {
-        if (!categoriesResults[product.type]) {
-            categoriesResults[product.type] = []
-        }
-        categoriesResults[product.type].push(product)
+  for (const product of searchResults.hits) {
+    if (!categoriesResults[product.type]) {
+      categoriesResults[product.type] = []
     }
+    categoriesResults[product.type].push(product)
+  }
 
-    return categoriesResults
+  return categoriesResults
 }
 
 export default sortCategories

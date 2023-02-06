@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './devices'
 
 export default function Device({ data }) {
-    return (
+  return (
         <>
             <section className="container-description text-white flex flex-col gap-y-10">
                 <div className="description text-center">
@@ -45,8 +45,8 @@ export default function Device({ data }) {
                         </i>
                         <p className='m-0'>
                             {data.camera_back
-                                .map((quality) => `${quality}MP`)
-                                .join(' + ')}
+                              .map((quality) => `${quality}MP`)
+                              .join(' + ')}
                         </p>
                     </div>
                     <div className="flex align-center gap-x-5">
@@ -66,8 +66,8 @@ export default function Device({ data }) {
                         </i>
                         <p className='m-0'>
                             {data.camera_front
-                                .map((quality) => `${quality}MP`)
-                                .join(' + ')}
+                              .map((quality) => `${quality}MP`)
+                              .join(' + ')}
                         </p>
                     </div>
                     <div className="flex align-center gap-x-5">
@@ -108,5 +108,5 @@ export default function Device({ data }) {
             </section>
             <style jsx>{styles}</style>
         </>
-    )
+  )
 }

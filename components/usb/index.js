@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Usb ({ data }) {
-    return <>
+  return <>
         <table>
             <thead>
                 <tr>

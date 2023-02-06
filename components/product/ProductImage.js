@@ -5,15 +5,15 @@ import Image from 'next/image'
 import { useIsMounted } from 'hooks/useIsMounted'
 
 export default function ProductImage({ src, alt = 'Cargando imagen', className, draggable }) {
-    const [loaded, setLoaded] = useState(false)
-    const isMounted = useIsMounted()
+  const [loaded, setLoaded] = useState(false)
+  const isMounted = useIsMounted()
 
-    const handleComplete = useCallback(
-        () => (isMounted() ? setLoaded(true) : null),
-        []
-    )
+  const handleComplete = useCallback(
+    () => (isMounted() ? setLoaded(true) : null),
+    []
+  )
 
-    return (
+  return (
         <div className={classNames(className)}>
             <Image
                 src={src}
@@ -22,14 +22,14 @@ export default function ProductImage({ src, alt = 'Cargando imagen', className, 
                 alt={alt}
                 priority={true}
                 className={classNames(
-                    'transition-all duration-2000 ease-out-expo can-hover:group-hover:scale-110',
-                    {
-                        '!opacity-0': !loaded,
-                    }
+                  'transition-all duration-2000 ease-out-expo can-hover:group-hover:scale-110',
+                  {
+                    '!opacity-0': !loaded,
+                  }
                 )}
                 onLoadingComplete={handleComplete}
                 draggable={draggable}
             />
         </div>
-    )
+  )
 }

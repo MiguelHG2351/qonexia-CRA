@@ -4,7 +4,7 @@ import Head from 'next/head'
 import ProductCatalogo from '../components/container/section/catalogo'
 
 function Catalogo () {
-    return (
+  return (
         <>
             <Head>
                 <title>Catalogo | Qonexia</title>
@@ -15,7 +15,7 @@ function Catalogo () {
             </Head>
             <ProductCatalogo />
         </>
-    )
+  )
 }
 
 export default Catalogo
