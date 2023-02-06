@@ -6,13 +6,8 @@ import resolvers from 'src/services/graphql/resolvers'
 const apolloServer = new ApolloServer({
   typeDefs,
   resolvers,
-  introspection: process.env.NODE_ENV !== 'production'
+  // introspection: process.env.NODE_ENV !== 'production'
+  // introspection: true
 })
 
 export default startServerAndCreateNextHandler(apolloServer)
-
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-}

@@ -8,7 +8,10 @@ import CustomSearchBox from 'components/customs/SearchBox'
 // import { InstantSearch } from 'react-instantsearch-dom'
 
 import algoliasearch from 'algoliasearch/lite'
-const InstantSearch = dynamic(() => import('react-instantsearch-dom').then(mod => mod.InstantSearch), { ssr: false })
+const InstantSearch = dynamic(
+  () => import('react-instantsearch-dom').then((mod) => mod.InstantSearch),
+  { ssr: false }
+)
 // import CustomRefinementList from 'components/customs/RefinementList'
 // import baseContext from 'context/descriptionContext'
 
@@ -90,88 +93,60 @@ function Producthead() {
             <ul className="header-nav">
               <li>
                 <i className="material-icons">home</i>
-                <Link href="/">
-                  <a>Inicio</a>
-                </Link>
+                <Link href="/">Inicio</Link>
               </li>
               <li>
                 <i className="material-icons">smartphone</i>
-                <Link href="/products">
-                  <a>Productos</a>
-                </Link>
+                <Link href="/products">Productos</Link>
               </li>
               <li>
                 <i className="material-icons">trending_up</i>
-                <Link href="/trends">
-                  <a>Tendencias</a>
-                </Link>
+                <Link href="/trends">Tendencias</Link>
               </li>
               <li>
                 <i className="material-icons">shopping_cart</i>
-                <Link href="/catalogo">
-                  <a>Catalogo</a>
-                </Link>
+                <Link href="/catalogo">Catalogo</Link>
               </li>
               <li>
                 <i className="material-icons">contact_phone</i>
-                <Link href="/contact">
-                  <a>Contactanos</a>
-                </Link>
+                <Link href="/contact">Contactanos</Link>
               </li>
               <li>
                 <i className="material-icons">support_agent</i>
-                <Link href="/support">
-                  <a>Soporte Técnico</a>
-                </Link>
+                <Link href="/support">Soporte Técnico</Link>
               </li>
               <hr />
               <li>
                 <i className="material-icons">smartphone</i>
-                <Link href="/catalogo#phone">
-                  <a>Telefonos</a>
-                </Link>
+                <Link href="/catalogo#phone">Telefonos</Link>
               </li>
               <hr />
               <li>
-                <Link href="/catalogo#samsung">
-                  <a>Samsung</a>
-                </Link>
+                <Link href="/catalogo#samsung">Samsung</Link>
               </li>
               <li>
-                <Link href="/catalogo#xiaomi">
-                  <a>Xiaomi</a>
-                </Link>
+                <Link href="/catalogo#xiaomi">Xiaomi</Link>
               </li>
               <li>
-                <Link href="/catalogo#huawei">
-                  <a>Huawei</a>
-                </Link>
+                <Link href="/catalogo#huawei">Huawei</Link>
               </li>
               <li>
-                <Link href="/catalogo#apple">
-                  <a>Apple</a>
-                </Link>
+                <Link href="/catalogo#apple">Apple</Link>
               </li>
               <hr />
               <li>
                 <i className="material-icons">coronavirus</i>
-                <Link href="/support">
-                  <a>Coronavirus</a>
-                </Link>
+                <Link href="/support">Coronavirus</Link>
               </li>
               <hr />
               <li>
                 <i className="material-icons">laptop</i>
-                <Link href="/catalogo#laptop">
-                  <a>Laptop</a>
-                </Link>
+                <Link href="/catalogo#laptop">Laptop</Link>
               </li>
               <hr />
               <li>
                 <i className="material-icons">laptop</i>
-                <Link href="/catalogo#laptop">
-                  <a>Mac MacOS Catalina</a>
-                </Link>
+                <Link href="/catalogo#laptop">Mac MacOS Catalina</Link>
               </li>
             </ul>
           </div>
@@ -182,16 +157,21 @@ function Producthead() {
             >
               <i className="material-icons">menu</i>
             </button>
-            <Link href="/">
-              <a className="logo hidden lg:inline-flex items-center cursor-pointer">
-                <Image layout='fixed' width={141} height={27} src={'/static/images/logo-hd.png'} alt="Logo de Qonexia" />
-              </a>
+            <Link
+              className="logo hidden lg:inline-flex items-center cursor-pointer"
+              href="/"
+            >
+              <Image
+                // layout="fixed"
+                width={141}
+                height={27}
+                src={'/static/images/logo-hd.png'}
+                alt="Logo de Qonexia"
+              />
             </Link>
           </div>
           <div className="form-container hidden md:flex">
-            <div
-              className="search h-10 rounded-md"
-            >
+            <div className="search h-10 rounded-md">
               {/* <CustomRefinementList attribute="brand" /> */}
 
               <div className="search-container overflow-hidden w-full flex justify-center items-stretch h-full">
@@ -201,9 +181,7 @@ function Producthead() {
                   styleInput="text-white text-sm bg-dark-blue h-full w-full border-0 rounded-l-sm flex-1 p-3 shadow-inner"
                   placeholder="Buscar"
                 >
-                  <div
-                    className="close-attachment rounded-r-sm bg-blue-900 h-full cursor-pointer flex items-center px-3"
-                  >
+                  <div className="close-attachment rounded-r-sm bg-blue-900 h-full cursor-pointer flex items-center px-3">
                     <i className="material-icons">search</i>
                   </div>
                 </CustomSearchBox>
@@ -226,8 +204,11 @@ function HitComponents({ hit }) {
 
   return (
     <div className="results w-full overflow-hidden">
-      <Link href={`/products/${hit.brand}/${hit.name}`}>
-        <a className="w-full text-sm overflow-hidden truncate inline-block p-2 hover:text-gray-400">{hit.name}</a>
+      <Link
+        className="w-full text-sm overflow-hidden truncate inline-block p-2 hover:text-gray-400"
+        href={`/products/${hit.brand}/${hit.name}`}
+      >
+        {hit.name}
       </Link>
     </div>
   )

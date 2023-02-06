@@ -31,13 +31,12 @@ function Index() {
           >
             <div className="explorer-description md:flex-1">
               <h2 className="dark:text-white text-left font-medium text-4xl mb-4 bg-clip-text text-fill-transparent dark:bg-white-gradient">
-                                Explora nuestro catálogo de productos
+                Explora nuestro catálogo de productos
               </h2>
               <p className="dark:text-gray-400 text-left hidden md:inline-block">
-                                Tenemos un amplio catalogo de productos a los
-                                que puedes acceder facilmente para ahorrate
-                                tiempo y obtengas tu dispositivo sin ningún
-                                problema
+                Tenemos un amplio catalogo de productos a los que puedes acceder
+                facilmente para ahorrate tiempo y obtengas tu dispositivo sin
+                ningún problema
               </p>
             </div>
             <div className="info-explorer_container md:flex-1 flex justify-end">
@@ -60,134 +59,134 @@ function Index() {
                   />
                 </div>
                 <button className="bg-white text-blue-600 font-medium text-xl w-5/6 py-4 border-none rounded-md">
-                                    Ver catálogo
+                  Ver catálogo
                 </button>
               </div>
             </div>
           </section>
           <section className="catalogo-sections">
             <h2 className="text-4xl font-bold text-center bg-clip-text text-fill-transparent dark:bg-white-gradient">
-                            Explora las secciones de nuestro catálogo
+              Explora las secciones de nuestro catálogo
             </h2>
             <nav className="w-5/6 m-auto">
               <ul className="grid grid-cols-2 gap-3">
                 <li className="text-slate-200 bg-soft-blue rounded-lg list-none">
-                  <Link href="/catalogo/smartphone">
-                    <a className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
-                      <picture className="inline-block shrink-0 bg-blue-500 rounded-full w-10 h-10">
-                        <Image
-                          src="/static/icons/smartphone.svg"
-                          layout="responsive"
-                          width={40}
-                          height={40}
-                        />
-                      </picture>
-                      <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
-                                                Telefonos y Tablets
-                      </span>
-                    </a>
+                  <Link
+                    href="/catalogo/smartphone"
+                    className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full"
+                  >
+                    <picture className="inline-block shrink-0 bg-blue-500 rounded-full w-10 h-10">
+                      <Image
+                        src="/static/icons/smartphone.svg"
+                        width={40}
+                        height={40}
+                      />
+                    </picture>
+                    <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                      Telefonos y Tablets
+                    </span>
                   </Link>
                 </li>
                 <li className="text-slate-200 bg-soft-blue rounded-lg list-none">
-                  <Link href="/">
-                    <a className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
-                      <picture className="inline-block shrink-0 bg-red-500 rounded-full w-10 h-10">
-                        <Image
-                          src="/static/icons/tablet.svg"
-                          layout="responsive"
-                          width={40}
-                          height={40}
-                        />
-                      </picture>
-                      <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
-                                                Laptops
-                      </span>
-                    </a>
+                  <Link
+                    href="/"
+                    className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full"
+                  >
+                    <picture className="inline-block shrink-0 bg-red-500 rounded-full w-10 h-10">
+                      <Image
+                        src="/static/icons/tablet.svg"
+                        width={40}
+                        height={40}
+                      />
+                    </picture>
+                    <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                      Laptops
+                    </span>
                   </Link>
                 </li>
                 <li className="text-slate-200 bg-soft-blue rounded-lg list-none">
-                  <Link href="/">
-                    <a className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
-                      <picture className="inline-block shrink-0 bg-green-500 rounded-full w-10 h-10">
-                        <Image
-                          src="/static/icons/console.svg"
-                          layout="responsive"
-                          width={40}
-                          height={40}
-                        />
-                      </picture>
-                      <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
-                                                Consolas
-                      </span>
-                    </a>
+                  <Link
+                    href="/"
+                    className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full"
+                  >
+                    <picture className="inline-block shrink-0 bg-green-500 rounded-full w-10 h-10">
+                      <Image
+                        src="/static/icons/console.svg"
+                        width={40}
+                        height={40}
+                      />
+                    </picture>
+                    <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                      Consolas
+                    </span>
                   </Link>
                 </li>
                 <li className="text-slate-200 bg-soft-blue rounded-lg list-none">
-                  <Link href="/">
-                    <a className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
-                      <picture className="inline-block shrink-0 bg-green-500 rounded-full w-10 h-10">
-                        <Image
-                          src="/static/icons/console.svg"
-                          layout="responsive"
-                          width={40}
-                          height={40}
-                        />
-                      </picture>
-                      <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
-                                                Accesorios
-                      </span>
-                    </a>
+                  <Link
+                    href="/"
+                    className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full"
+                  >
+                    <picture className="inline-block shrink-0 bg-green-500 rounded-full w-10 h-10">
+                      <Image
+                        src="/static/icons/console.svg"
+                        width={40}
+                        height={40}
+                      />
+                    </picture>
+                    <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                      Accesorios
+                    </span>
                   </Link>
                 </li>
                 <li className="text-slate-200 bg-soft-blue rounded-lg list-none">
-                  <Link href="/">
-                    <a className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
-                      <picture className="inline-block shrink-0 bg-cyan-500 rounded-full w-10 h-10">
-                        <Image
-                          src="/static/icons/smartwatch.svg"
-                          layout="responsive"
-                          width={40}
-                          height={40}
-                        />
-                      </picture>
-                      <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
-                                                SmartWatch
-                      </span>
-                    </a>
+                  <Link
+                    href="/"
+                    className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full"
+                  >
+                    <picture className="inline-block shrink-0 bg-cyan-500 rounded-full w-10 h-10">
+                      <Image
+                        src="/static/icons/smartwatch.svg"
+                        width={40}
+                        height={40}
+                      />
+                    </picture>
+                    <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                      SmartWatch
+                    </span>
                   </Link>
                 </li>
                 <li className="text-slate-200 bg-soft-blue rounded-lg list-none">
-                  <Link href="/">
-                    <a className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full">
-                      <picture className="inline-block shrink-0 bg-purple-600 rounded-full w-10 h-10">
-                        <Image
-                          src="/static/icons/camera.svg"
-                          layout="responsive"
-                          width={40}
-                          height={40}
-                        />
-                      </picture>
-                      <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
-                                                Camaras
-                      </span>
-                    </a>
+                  <Link
+                    href="/"
+                    className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-2 items-start px-2 py-3 w-full"
+                  >
+                    <picture className="inline-block shrink-0 bg-purple-600 rounded-full w-10 h-10">
+                      <Image
+                        src="/static/icons/camera.svg"
+                        width={40}
+                        height={40}
+                      />
+                    </picture>
+                    <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                      Camaras
+                    </span>
                   </Link>
                 </li>
                 <li className="text-slate-200 bg-soft-blue rounded-lg list-none">
-                  <Link href="/">
-                    <a className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-x-2 items-start px-2 py-3 w-full">
-                      <picture className="inline-block shrink-0 bg-yellow-500 rounded-full w-10 h-10">
-                        <Image
-                          src="/static/icons/camera.svg"
-                          layout="responsive"
-                          width={40}
-                          height={40}
-                        />
-                      </picture>
-                      <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
-                                                Headphones
-                      </span>
-                    </a>
+                  <Link
+                    href="/"
+                    className="text-white no-underline inline-flex flex-col md:flex-row md:items-center gap-x-2 items-start px-2 py-3 w-full"
+                  >
+                    <picture className="inline-block shrink-0 bg-yellow-500 rounded-full w-10 h-10">
+                      <Image
+                        src="/static/icons/camera.svg"
+                        width={40}
+                        height={40}
+                      />
+                    </picture>
+                    <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                      Headphones
+                    </span>
                   </Link>
                 </li>
               </ul>
@@ -196,22 +195,18 @@ function Index() {
           <section className="choose-preferences bg-soft-blue-2">
             <div className="preference-title text-center">
               <p className="text-slate-400">
-                                Encuentre más de 200 dispositivos
+                Encuentre más de 200 dispositivos
               </p>
               <h2 className="text-white text-3xl font-bold">
-                                Elije tu estilo favorito
+                Elije tu estilo favorito
               </h2>
             </div>
-            <div
-              className="preferences-example py-4 md:flex"
-              align="center"
-            >
+            <div className="preferences-example py-4 md:flex" align="center">
               <div className="preference-description">
                 <h2>Juega</h2>
                 <p className="text-white">
-                                    Un dispositivo con el hardware más potente
-                                    para poder jugar a tus juegos favoritos sin
-                                    ningún problema
+                  Un dispositivo con el hardware más potente para poder jugar a
+                  tus juegos favoritos sin ningún problema
                 </p>
               </div>
               <div className="preference-image">

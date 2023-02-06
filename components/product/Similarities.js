@@ -22,7 +22,6 @@ export const Similarities = (props) => {
                   <Image
                     src="/static/images/poco-x3-gris.png"
                     id="poco"
-                    layout="fill"
                     className="object-contain"
                   />
                 </div>
