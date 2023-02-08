@@ -68,7 +68,7 @@ function Producthead() {
         indexName="qonexia-products-index"
         searchClient={searchClient}
       >
-        <header className="header border-b dark:border-slate-50/[0.06] bg-slate-900 p-4 flex justify-between items-center box-border">
+        <header className="header box-border flex items-center justify-between border-b bg-slate-900 p-4 dark:border-slate-50/[0.06]">
           <div className={`sidenav ${active}`}>
             <div className="profile">
               <div className="background">
@@ -153,12 +153,12 @@ function Producthead() {
           <div className="header-title">
             <button
               onClick={openMenu}
-              className="lg:hidden flex items-center border-none text-white"
+              className="flex items-center border-none text-white lg:hidden"
             >
               <i className="material-icons">menu</i>
             </button>
             <Link
-              className="logo hidden lg:inline-flex items-center cursor-pointer"
+              className="logo hidden cursor-pointer items-center lg:inline-flex"
               href="/"
             >
               <Image
@@ -174,19 +174,19 @@ function Producthead() {
             <div className="search h-10 rounded-md">
               {/* <CustomRefinementList attribute="brand" /> */}
 
-              <div className="search-container overflow-hidden w-full flex justify-center items-stretch h-full">
+              <div className="search-container flex h-full w-full items-stretch justify-center overflow-hidden">
                 <CustomSearchBox
                   name="search"
                   styleForm="flex flex-1"
                   styleInput="text-white text-sm bg-dark-blue h-full w-full border-0 rounded-l-sm flex-1 p-3 shadow-inner"
                   placeholder="Buscar"
                 >
-                  <div className="close-attachment rounded-r-sm bg-blue-900 h-full cursor-pointer flex items-center px-3">
+                  <div className="close-attachment flex h-full cursor-pointer items-center rounded-r-sm bg-blue-900 px-3">
                     <i className="material-icons">search</i>
                   </div>
                 </CustomSearchBox>
               </div>
-              <div className="absolute z-10 bg-dark-blue/50 left-0 w-full">
+              <div className="absolute left-0 z-10 w-full bg-dark-blue/50">
                 <CustomHits hitComponent={HitComponents} />
               </div>
             </div>
@@ -205,7 +205,7 @@ function HitComponents({ hit }) {
   return (
     <div className="results w-full overflow-hidden">
       <Link
-        className="w-full text-sm overflow-hidden truncate inline-block p-2 hover:text-gray-400"
+        className="inline-block w-full overflow-hidden truncate p-2 text-sm hover:text-gray-400"
         href={`/products/${hit.brand}/${hit.name}`}
       >
         {hit.name}

@@ -2,59 +2,59 @@ import React from 'react'
 import css from 'styled-jsx/css'
 
 const styles = css`
-    .container-description {
-        height: 80%;
-    }
+  .container-description {
+    height: 80%;
+  }
+  .nameProduct {
+    color: var(--color-text);
+    font-weight: 700;
+    text-align: center;
+    height: 10%;
+    padding: 12px;
+  }
+  .info {
+    height: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    color: var(--color-text);
+    font-weight: 700;
+  }
+
+  .info div:not(.colors) {
+    padding: 8px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .info .colors {
+    grid-column: 1 / 3;
+  }
+
+  .info .colors button {
+    border-radius: 12px;
+    padding: 12px;
+    border: 1px solid #fff;
+    background-origin: content-box;
+    margin: 8px;
+  }
+
+  @media screen and (min-width: 992px) {
     .nameProduct {
-        color: var(--color-text);
-        font-weight: 700;
-        text-align: center;
-        height: 10%;
-        padding: 12px;
+      font-size: 20px;
+      /* #00558f */
     }
     .info {
-        height: 90%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        align-items: center;
-        color: var(--color-text);
-        font-weight: 700;
+      font-size: 20px;
     }
-
-    .info div:not(.colors) {
-        padding: 8px;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .info .colors {
-        grid-column: 1 / 3;
-    }
-
-    .info .colors button {
-        border-radius: 12px;
-        padding: 12px;
-        border: 1px solid #fff;
-        background-origin: content-box;
-        margin: 8px;
-    }
-
-    @media screen and (min-width: 992px) {
-        .nameProduct {
-            font-size: 20px;
-            /* #00558f */
-        }
-        .info {
-            font-size: 20px;
-        }
-    }
+  }
 `
 
-function Band ({ data }) {
+function Band({ data }) {
   return (
     <>
       <section className="container-description">

@@ -5,11 +5,11 @@ export default function validateHash(req, res) {
     const verify = jwt.verify(req.query.token, process.env.JWT_SECRET)
     res.json({
       isValid: true,
-      info: verify
+      info: verify,
     })
   } catch (error) {
     res.status(401).json({
-      isValid: false
+      isValid: false,
     })
   }
 }

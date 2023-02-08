@@ -13,10 +13,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
       },
-      backgroundImage: theme => ({
+      backgroundImage: (theme) => ({
         'white-gradient': 'linear-gradient(180deg, #FFFFFF 0%, #aaa)',
+        'blue-gradient':
+          'radial-gradient(80% 50.24% at 49.92% 55.85%, rgba(2, 73, 138, 0.36) 0%, #0B021E 100%)',
       }),
     },
     colors: {
@@ -34,7 +36,10 @@ module.exports = {
       slate: colors.slate,
       indigo: colors.indigo,
       cyan: colors.cyan,
-      // 'dark-blue': '#050d5c',
+      primary: '#20D2C6',
+      secondary: '#FF4FA1',
+      tertiary: '#00DD4B',
+      accent: '#302840',
       'dark-bg': '#0B021E',
       'dark-blue': '#020010',
       'very-dark-blue': '#1a162c',

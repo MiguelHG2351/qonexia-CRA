@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Agenda () {
+export default function Agenda() {
   return (
     <div>
       <h2>Proximamente</h2>

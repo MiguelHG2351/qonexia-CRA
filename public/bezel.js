@@ -1,17 +1,15 @@
 class Bezel {
-  static get inputProperties () {
+  static get inputProperties() {
     return ['--backgroundV', '--bezel-width']
   }
 
-  static get inputArguments () {
+  static get inputArguments() {
     return ['*']
   }
 
-  static get contextOptions () {
+  static get contextOptions() {}
 
-  }
-
-  paint (ctx, geom, properties, args) {
+  paint(ctx, geom, properties, args) {
     console.log(args[0])
     console.log(properties.get('--backgroundV'))
     console.log(geom)

@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import ProductCatalogo from '../components/container/section/catalogo'
 
-function Catalogo () {
+function Catalogo() {
   return (
     <>
       <Head>

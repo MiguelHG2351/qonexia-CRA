@@ -14,8 +14,8 @@ export default {
       // eslint-disable-next-line no-new
       const getPhone = await prisma.phones.findFirst({
         where: {
-          name
-        }
+          name,
+        },
       })
       return getPhone
     },
@@ -24,9 +24,9 @@ export default {
       const findProducts = await prisma.phones.findMany({
         where: {
           name: {
-            contains: name
-          }
-        }
+            contains: name,
+          },
+        },
       })
       // const lib = new MongoLib()
       // const findPhones = await lib.getAll('phones', {})

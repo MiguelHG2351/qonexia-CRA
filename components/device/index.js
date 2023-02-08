@@ -4,14 +4,12 @@ import styles from './devices'
 export default function Device({ data }) {
   return (
     <>
-      <section className="container-description text-white flex flex-col gap-y-10">
+      <section className="container-description flex flex-col gap-y-10 text-white">
         <div className="description text-center">
-          <strong className="font-bold text-2xl">
-                        Características
-          </strong>
+          <strong className="text-2xl font-bold">Características</strong>
         </div>
         <div className="info flex flex-col gap-y-5">
-          <div className="flex align-center gap-x-5">
+          <div className="align-center flex gap-x-5">
             <i>
               <svg
                 width="21"
@@ -26,9 +24,9 @@ export default function Device({ data }) {
                 />
               </svg>
             </i>
-            <p className='m-0'>{data.screen} pulgadas</p>
+            <p className="m-0">{data.screen} pulgadas</p>
           </div>
-          <div className="flex align-center gap-x-5">
+          <div className="align-center flex gap-x-5">
             <i>
               <svg
                 width="27"
@@ -43,13 +41,11 @@ export default function Device({ data }) {
                 />
               </svg>
             </i>
-            <p className='m-0'>
-              {data.camera_back
-                .map((quality) => `${quality}MP`)
-                .join(' + ')}
+            <p className="m-0">
+              {data.camera_back.map((quality) => `${quality}MP`).join(' + ')}
             </p>
           </div>
-          <div className="flex align-center gap-x-5">
+          <div className="align-center flex gap-x-5">
             <i>
               <svg
                 width="27"
@@ -64,13 +60,11 @@ export default function Device({ data }) {
                 />
               </svg>
             </i>
-            <p className='m-0'>
-              {data.camera_front
-                .map((quality) => `${quality}MP`)
-                .join(' + ')}
+            <p className="m-0">
+              {data.camera_front.map((quality) => `${quality}MP`).join(' + ')}
             </p>
           </div>
-          <div className="flex align-center gap-x-5">
+          <div className="align-center flex gap-x-5">
             <i>
               <svg
                 width="26"
@@ -85,9 +79,9 @@ export default function Device({ data }) {
                 />
               </svg>
             </i>
-            <p className='m-0'>{data.cpu}</p>
+            <p className="m-0">{data.cpu}</p>
           </div>
-          <div className="flex align-center gap-x-5">
+          <div className="align-center flex gap-x-5">
             <i>
               <svg
                 width="38"
@@ -102,7 +96,7 @@ export default function Device({ data }) {
                 />
               </svg>
             </i>
-            <p className='m-0'>{data.battery}mAh</p>
+            <p className="m-0">{data.battery}mAh</p>
           </div>
         </div>
       </section>

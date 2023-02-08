@@ -81,9 +81,12 @@ function Product() {
     <>
       <Head>
         <title>{router.query.device || 'Cargando...'} | Qonexia</title>
-        <meta name="description" content='Información sobre un dispositivo de la tienda' />
+        <meta
+          name="description"
+          content="Información sobre un dispositivo de la tienda"
+        />
       </Head>
-      <div className="container-devices w-11/12 mx-auto py-12 flex flex-col gap-y-10">
+      <div className="container-devices mx-auto flex w-11/12 flex-col gap-y-10 py-12">
         {/* Información de cada producto */}
         <ProductList data={device.device} />
         <Similarities data={suggestions} />

@@ -4,7 +4,12 @@ import classNames from 'classnames'
 import Image from 'next/image'
 import { useIsMounted } from 'hooks/useIsMounted'
 
-export default function ProductImage({ src, alt = 'Cargando imagen', className, draggable }) {
+export default function ProductImage({
+  src,
+  alt = 'Cargando imagen',
+  className,
+  draggable,
+}) {
   const [loaded, setLoaded] = useState(false)
   const isMounted = useIsMounted()
 
@@ -22,7 +27,7 @@ export default function ProductImage({ src, alt = 'Cargando imagen', className, 
         alt={alt}
         priority={true}
         className={classNames(
-          'transition-all duration-2000 ease-out-expo can-hover:group-hover:scale-110',
+          'duration-2000 ease-out-expo can-hover:group-hover:scale-110 transition-all',
           {
             '!opacity-0': !loaded,
           }

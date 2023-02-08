@@ -20,44 +20,48 @@ export default function ProductAction({ colors = [], price }) {
   })
 
   return (
-    <section className="md:order-3 w-full flex flex-col justify-center">
-      <article className="colors dark:bg-very-dark-blue flex justify-center gap-x-3 p-3 rounded-xl">
+    <section className="flex w-full flex-col justify-center md:order-3">
+      <article className="colors flex justify-center gap-x-3 rounded-xl p-3 dark:bg-very-dark-blue">
         {colors.map((color, index) => (
           <button
             aria-label={`Color número ${index + 1}`}
             // style={{ border: '2px solid red' }}
             className={classNames(
-              'relative p-4 z-10 overflow-hidden mix-blend-normal rounded-full'
+              'relative z-10 overflow-hidden rounded-full p-4 mix-blend-normal'
             )}
             key={`color-${index}`}
           >
             <span
-              className="absolute z-10 top-0 left-0 w-full h-full"
+              className="absolute top-0 left-0 z-10 h-full w-full"
               style={{ background: color }}
             ></span>
-            <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 bg-very-dark-blue w-7 h-7 rounded-full"></span>
+            <span className="absolute top-1/2 left-1/2 z-20 h-7 w-7 -translate-x-1/2 -translate-y-1/2 rounded-full bg-very-dark-blue"></span>
             <span
               className={classNames(
-                'absolute z-30 top-2 left-2 w-4 h-4 rounded-full'
+                'absolute top-2 left-2 z-30 h-4 w-4 rounded-full'
               )}
               style={{ background: color }}
             ></span>
           </button>
         ))}
       </article>
-      <article className="flex gap-x-4 py-4 justify-between">
-        <button className="pricing text-white border-none rounded-md py-4 flex-1 bg-white/[.29]">
+      <article className="flex justify-between gap-x-4 py-4">
+        <button className="pricing flex-1 rounded-md border-none bg-white/[.29] py-4 text-white">
           {price}$
         </button>
         <button
           onClick={showQR}
-          className="flex-1 border-none text-black rounded-md py-4 bg-sky-500 font-medium"
+          className="flex-1 rounded-md border-none bg-sky-500 py-4 font-medium text-black"
         >
-                    Reservar
+          Reservar
         </button>
       </article>
       <Modal>
-        <ProductModal isShowQRcode={isShowQRcode} changeState={setIsShowQRcode} token={token} />
+        <ProductModal
+          isShowQRcode={isShowQRcode}
+          changeState={setIsShowQRcode}
+          token={token}
+        />
       </Modal>
     </section>
   )
