@@ -19,6 +19,8 @@ module.exports = {
         'white-gradient': 'linear-gradient(180deg, #FFFFFF 0%, #aaa)',
         'blue-gradient':
           'radial-gradient(80% 50.24% at 49.92% 55.85%, rgba(2, 73, 138, 0.36) 0%, #0B021E 100%)',
+        'blue-gradient-desk':
+          'radial-gradient(80% 50.24% at 73.92% 55.85%, rgba(2, 73, 138, 0.36) 0%, #0B021E 100%)',
       }),
     },
     colors: {

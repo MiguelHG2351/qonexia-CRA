@@ -179,7 +179,7 @@ function Footer() {
               rel="noopener noreferrer"
             >
               <img
-                src="/static/images/icon-facebook.svg"
+                src="/static/images/icons/facebook.svg"
                 loading="lazy"
                 alt="Visitanos en Facebook"
               />
@@ -190,7 +190,7 @@ function Footer() {
               rel="noopener noreferrer"
             >
               <img
-                src="/static/images/icon-instagram.svg"
+                src="/static/images/icons/instagram.svg"
                 loading="lazy"
                 alt="Visitanos en Instagram"
               />

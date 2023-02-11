@@ -26,10 +26,19 @@
     -webkit-font-smoothing: antialiased;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: auto;
 }
 
 .text-fill-transparent {
   -webkit-text-fill-color: transparent;
+}
+
+.gradient-text {
+  -webkit-text-fill-color: transparent;
+  @apply bg-clip-text bg-white-gradient
 }
