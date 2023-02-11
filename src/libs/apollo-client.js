@@ -7,9 +7,9 @@ function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: new HttpLink({
-      uri: 'https://qonexia-react.vercel.app/api/graphql',
+      // uri: 'https://qonexia-react.vercel.app/api/graphql',
       credentials: 'same-origin',
-      // uri: 'http://localhost:3000/api/graphql',
+      uri: process.env.NEXT_PUBLIC_APOLLO_CLIENT_URL,
     }),
     cache: new InMemoryCache(),
   })

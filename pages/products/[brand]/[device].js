@@ -80,7 +80,7 @@ function Product() {
   return (
     <>
       <Head>
-        <title>{router.query.device || 'Cargando...'} | Qonexia</title>
+        <title>{`${router.query.device || 'Cargando...'} | Qonexia`}</title>
         <meta
           name="description"
           content="Información sobre un dispositivo de la tienda"

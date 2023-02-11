@@ -19,7 +19,10 @@ export const Similarities = (props) => {
                   <Image
                     src="/static/images/poco-x3-gris.png"
                     id="poco"
+                    width="90"
+                    height="90"
                     className="object-contain"
+                    alt="Poco x3p pro GRIs"
                   />
                 </div>
                 <div className="productDetails flex flex-col justify-center gap-y-6">
