@@ -1,9 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image'
 
 import HomeHero from 'components/Hero/HomeHero'
+import BrandSlide from 'components/slides/BrandSlide'
 
 const tempSlides = [
   {
@@ -35,7 +34,7 @@ function Homepage() {
       </Head>
       <HomeHero />
       <React.Suspense fallback={<div>Loading...</div>}>
-        <section className="container-home flex flex-col gap-y-12">
+        <section className="container-home flex flex-col gap-y-12 pb-8">
           <div>
             <section className="flex items-center justify-evenly bg-accent py-6 px-2">
               <div>
@@ -81,34 +80,15 @@ function Homepage() {
               Explorar las distintas marcas
             </h2>
             <div className="md:flex md:justify-center">
-              <div className="slides flex flex-col items-center gap-y-8 md:inline-flex md:flex-row md:items-center md:justify-evenly md:gap-y-0 md:gap-x-4">
-                <div className="slide">
-                  <Image
-                    width={340}
-                    height={532}
-                    className="h-auto w-64 overflow-hidden rounded-xl md:min-h-[16.625rem] md:w-80 md:cursor-pointer"
-                    src="/static/images/slides/samsung-1.webp"
-                    alt="Slide de samsung"
+              <div className="slides flex flex-col items-center gap-y-8 md:inline-flex md:flex-row md:items-stretch md:justify-evenly md:gap-y-0 md:gap-x-4">
+                {tempSlides.map((slide) => (
+                  <BrandSlide
+                    key={slide.id}
+                    src={slide.image}
+                    url={`/brands/${slide.id}`}
+                    alt={slide.alt}
                   />
-                </div>
-                <div className="slide">
-                  <Image
-                    width={340}
-                    height={532}
-                    className="h-auto w-64 overflow-hidden rounded-xl md:w-80 md:cursor-pointer"
-                    src="/static/images/slides/microsoft.webp"
-                    alt="Slide de samsung"
-                  />
-                </div>
-                <div className="slide">
-                  <Image
-                    width={340}
-                    height={532}
-                    className="h-auto w-64 overflow-hidden rounded-xl md:w-80 md:cursor-pointer"
-                    src="/static/images/slides/one-plus.webp"
-                    alt="Slide de samsung"
-                  />
-                </div>
+                ))}
               </div>
             </div>
           </section>

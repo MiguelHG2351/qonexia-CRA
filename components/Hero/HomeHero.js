@@ -30,7 +30,7 @@ function HomeHero() {
                   src="/static/images/one-plus-10T.png"
                   width={153}
                   height={153}
-                  className="h-full w-auto object-cover"
+                  className="h-full w-auto object-cover md:min-h-[16.625rem]"
                   alt="Imagen temporal"
                 />
               </div>
