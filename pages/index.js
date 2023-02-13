@@ -7,17 +7,17 @@ import BrandSlide from 'components/slides/BrandSlide'
 const tempSlides = [
   {
     id: 'plysagds',
-    image: '/static/images/slides/samsung-1.webp',
+    image: '/static/images/slides/samsung.png',
     alt: 'Slide de samsung',
   },
   {
     id: 'plysaqfs',
-    image: '/static/images/slides/microsoft.webp',
+    image: '/static/images/slides/microsoft.png',
     alt: 'Slide de samsung',
   },
   {
     id: 'prssaqfs',
-    image: '/static/images/slides/one-plus.webp',
+    image: '/static/images/slides/one-plus.png',
     alt: 'Slide de samsung',
   },
 ]
