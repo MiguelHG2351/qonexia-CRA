@@ -98,8 +98,8 @@ function Homepage() {
             <h2 className="gradient-text text-center md:text-5xl">
               Gran variedad de productos
             </h2>
-            <section className="grid grid-cols-2 grid-rows-[max-content_max-content] gap-2 px-4">
-              <section className="col-span-2 flex flex-col items-center justify-center border border-solid border-white bg-dark-gradient-mobile">
+            <section className="md:grid-template-rows-2 grid grid-cols-2 grid-rows-[max-content_max-content] gap-2 px-4 md:mx-auto md:w-5/6 md:grid-cols-3">
+              <section className="col-start-1 col-end-3 flex flex-col items-center justify-center border border-solid border-white bg-dark-gradient-mobile md:col-end-2 md:row-start-1 md:row-end-3">
                 <Image
                   height={144}
                   width={256}
@@ -117,7 +117,7 @@ function Homepage() {
                 <div className="flex flex-col items-center gap-y-2">
                   <Image
                     src="/static/images/logos/logo-blue.png"
-                    className="h-auto w-[90%]"
+                    className="h-auto w-[90%] md:max-w-[144px]"
                     width={232}
                     height={39}
                     alt="logo de qonexia en azul"
@@ -133,7 +133,7 @@ function Homepage() {
                 <div>
                   <Image
                     src="/static/images/slides/alcatel.png"
-                    className="aspect-video h-auto w-[90%]"
+                    className="aspect-video h-auto w-[90%] md:w-[144px]"
                     width={288}
                     height={162}
                     alt="Encuentra tablet para niños :D"
@@ -149,11 +149,11 @@ function Homepage() {
                   </Link>
                 </div>
               </section>
-              <section className="relative flex flex-col items-center justify-center gap-y-4 border border-solid border-white bg-primary px-2 pt-4 pb-2">
+              <section className="relative flex flex-col items-center justify-center gap-y-4 border border-solid border-white bg-primary px-2 pt-4 pb-2 md:row-start-2 md:row-end-3">
                 <div className="flex flex-col items-center gap-y-2">
                   <Image
                     src="/static/images/logos/logo-blue.png"
-                    className="h-auto w-[90%]"
+                    className="h-auto w-[90%] md:max-w-[144px]"
                     width={232}
                     height={39}
                     alt="logo de qonexia en azul"
@@ -185,77 +185,79 @@ function Homepage() {
                   </Link>
                 </div>
               </section>
-              <section className="relative flex flex-col items-center justify-center gap-y-4 border border-solid border-white bg-tertiary px-2 pt-4 pb-2">
-                <div className="flex flex-col items-center gap-y-2">
-                  <Image
-                    src="/static/images/logos/logo-blue.png"
-                    className="h-auto w-[90%]"
-                    width={232}
-                    height={39}
-                    alt="logo de qonexia en azul"
-                    title="logo de la empresa Qonexia"
-                  />
-                  <div>
-                    <h3 className="m-0 text-center">Consolas</h3>
-                    <span className="block text-center text-dark-primary opacity-75">
-                      ¡Experimentá una verdadera potencia de juego!
-                    </span>
+              <section className="col-start-1 col-end-3 flex gap-2 md:col-start-3 md:col-end-4 md:row-start-1 md:row-end-3 md:flex-col">
+                <section className="relative flex flex-1 flex-col items-center justify-center gap-y-4 border border-solid border-white bg-tertiary px-2 pt-4 pb-2">
+                  <div className="flex flex-col items-center gap-y-2">
+                    <Image
+                      src="/static/images/logos/logo-blue.png"
+                      className="h-auto w-[90%] md:max-w-[144px]"
+                      width={232}
+                      height={39}
+                      alt="logo de qonexia en azul"
+                      title="logo de la empresa Qonexia"
+                    />
+                    <div>
+                      <h3 className="m-0 text-center">Consolas</h3>
+                      <span className="block text-center text-dark-primary opacity-75">
+                        ¡Experimentá una verdadera potencia de juego!
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <Image
-                    src="/static/images/slides/xbox.png"
-                    className="h-auto w-full"
-                    width={288}
-                    height={162}
-                    alt="Encuentra tablet para niños :D"
-                    title="Una tableta Alcatel para niños"
-                  />
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 flex h-20 w-full items-center justify-center bg-black-gradient-desk">
-                  <Link
-                    className="inline-block bg-primary py-2 px-3 font-bold text-dark-primary no-underline"
-                    href="/"
-                  >
-                    Entrar
-                  </Link>
-                </div>
-              </section>
-              <section className="relative flex flex-col items-center justify-center gap-y-4 border border-solid border-white bg-orange-primary px-2 pt-4 pb-2">
-                <div className="flex flex-col items-center gap-y-2">
-                  <Image
-                    src="/static/images/logos/logo-blue.png"
-                    className="h-auto w-[90%]"
-                    width={232}
-                    height={39}
-                    alt="logo de qonexia en azul"
-                    title="logo de la empresa Qonexia"
-                  />
                   <div>
-                    <h3 className="m-0 text-center">Smartwatch</h3>
-                    <span className="block text-center text-dark-primary opacity-75">
-                      ¡Experimentá una verdadera potencia de juego!
-                    </span>
+                    <Image
+                      src="/static/images/slides/xbox.png"
+                      className="h-auto w-full md:max-w-[256px]"
+                      width={288}
+                      height={162}
+                      alt="Encuentra tablet para niños :D"
+                      title="Una tableta Alcatel para niños"
+                    />
                   </div>
-                </div>
-                <div>
-                  <Image
-                    src="/static/images/slides/smartwatch.png"
-                    className="h-auto w-full"
-                    width={288}
-                    height={162}
-                    alt="Encuentra tablet para niños :D"
-                    title="Una tableta Alcatel para niños"
-                  />
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 flex h-20 w-full items-center justify-center bg-black-gradient-desk">
-                  <Link
-                    className="inline-block bg-primary py-2 px-3 font-bold text-dark-primary no-underline"
-                    href="/"
-                  >
-                    Entrar
-                  </Link>
-                </div>
+                  <div className="absolute bottom-0 left-0 right-0 flex h-20 w-full items-center justify-center bg-black-gradient-desk">
+                    <Link
+                      className="inline-block bg-primary py-2 px-3 font-bold text-dark-primary no-underline"
+                      href="/"
+                    >
+                      Entrar
+                    </Link>
+                  </div>
+                </section>
+                <section className="relative flex flex-1 flex-col items-center justify-center gap-y-4 border border-solid border-white bg-orange-primary px-2 pt-4 pb-2">
+                  <div className="flex flex-col items-center gap-y-2">
+                    <Image
+                      src="/static/images/logos/logo-blue.png"
+                      className="h-auto w-[90%] md:max-w-[144px]"
+                      width={232}
+                      height={39}
+                      alt="logo de qonexia en azul"
+                      title="logo de la empresa Qonexia"
+                    />
+                    <div>
+                      <h3 className="m-0 text-center">Smartwatch</h3>
+                      <span className="block text-center text-dark-primary opacity-75">
+                        ¡Experimentá una verdadera potencia de juego!
+                      </span>
+                    </div>
+                  </div>
+                  <div>
+                    <Image
+                      src="/static/images/slides/smartwatch.png"
+                      className="h-auto w-full md:max-w-[144px]"
+                      width={288}
+                      height={162}
+                      alt="Encuentra tablet para niños :D"
+                      title="Una tableta Alcatel para niños"
+                    />
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 flex h-20 w-full items-center justify-center bg-black-gradient-desk">
+                    <Link
+                      className="inline-block bg-primary py-2 px-3 font-bold text-dark-primary no-underline"
+                      href="/"
+                    >
+                      Entrar
+                    </Link>
+                  </div>
+                </section>
               </section>
             </section>
           </section>
