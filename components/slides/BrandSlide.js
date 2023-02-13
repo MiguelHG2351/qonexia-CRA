@@ -17,7 +17,7 @@ export default function BrandSlide({ src, alt, url }) {
           href="/catalogo/samsung"
           className="inline-block bg-primary px-6 py-2 font-bold text-black no-underline"
         >
-          Entrar
+          Ver catalogo
         </Link>
         <p className="mx-auto w-5/6 text-xs text-white">
           Encuentra dispositivos moviles, tablets, smartwatch, audifonos y una
